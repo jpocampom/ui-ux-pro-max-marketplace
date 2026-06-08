@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "ui-ux-pro-max",
+  "displayName": "UI/UX Pro Max",
+  "version": "1.0.0",
+  "description": "Inteligencia de diseno UI/UX para web y movil: 50+ estilos, 161 paletas, 57 pares de fuentes, 161 tipos de producto, 99 guias UX y 25 charts en 10 stacks. Incluye design system, branding, slides, ui-styling (shadcn/Tailwind) y banner-design. La generacion de imagenes usa Google Nano Banana (Gemini); el resto lo ejecuta Claude.",
+  "author": {
+    "name": "Pax CP",
+    "email": "jpocampo@paxcp.com"
+  },
+  "repository": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+  "license": "MIT",
+  "keywords": ["ui", "ux", "design", "design-system", "branding", "tailwind", "shadcn", "accessibility", "slides", "nano-banana"],
+  "skills": "./skills/"
+}

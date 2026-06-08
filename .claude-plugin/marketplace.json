@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace-manifest.json",
+  "name": "paxcp-design-tools",
+  "owner": {
+    "name": "Pax CP",
+    "email": "jpocampo@paxcp.com"
+  },
+  "description": "Herramientas de diseno UI/UX de Pax CP para Claude Code.",
+  "version": "1.0.0",
+  "plugins": [
+    {
+      "name": "ui-ux-pro-max",
+      "displayName": "UI/UX Pro Max",
+      "source": "./plugins/ui-ux-pro-max",
+      "description": "Toolkit de diseno UI/UX con 7 skills integradas (ui-ux-pro-max, design, brand, design-system, slides, ui-styling, banner-design). Imagenes via Google Nano Banana; razonamiento via Claude.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Pax CP",
+        "email": "jpocampo@paxcp.com"
+      },
+      "license": "MIT",
+      "keywords": ["ui", "ux", "design", "design-system", "branding"],
+      "category": "design"
+    }
+  ]
+}
