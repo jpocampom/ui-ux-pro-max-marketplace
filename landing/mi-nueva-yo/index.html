@@ -100,7 +100,7 @@
   .top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 30; background: color-mix(in srgb, var(--bg) 86%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
   .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 60px; }
   .brand { font-family: var(--display); font-size: 20px; letter-spacing: 0.02em; text-decoration: none; }
-  .brand span { font-style: italic; color: var(--accent-text); }
+  .brand span { font-style: italic; color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 3px; text-underline-offset: 3px; }
   .top .btn { min-height: 40px; padding-inline: 18px; font-size: 12px; }
   .top .cd-mini { font-family: var(--label); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); display: flex; gap: 8px; align-items: center; }
   .top .cd-mini b { font-family: var(--display); font-size: 16px; color: var(--ink); font-weight: 500; }
@@ -123,9 +123,9 @@
   .wordmark .mark .w > span { display: inline-block; animation: rise 900ms var(--ease) both; }
   .wordmark .mark .w:nth-child(2) > span { animation-delay: 120ms; }
   .wordmark .mark .w:nth-child(3) > span { animation-delay: 240ms; }
-  .wordmark .mark em { font-style: normal; color: var(--accent); }
+  .wordmark .mark em { font-style: normal; color: var(--on-brand); }
   .wordmark .sub { font-family: var(--label); font-weight: 400; font-size: clamp(12px, 1.2vw, 16px); letter-spacing: .3em; text-transform: uppercase; line-height: 1.6; color: var(--on-brand); animation: fade 900ms var(--ease) 450ms both; padding-bottom: .3em; }
-  .wordmark .sub b { display: block; font-weight: 500; color: var(--accent); }
+  .wordmark .sub b { display: inline-block; margin-top: 6px; font-weight: 600; color: var(--ink); background: var(--accent); padding: 4px 10px 3px; border-radius: 3px; letter-spacing: .22em; }
   @keyframes rise { from { transform: translateY(110%); opacity: 0; } to { transform: none; opacity: 1; } }
   .hero h1 { font-size: clamp(24px, 2.6vw, 34px); line-height: 1.2; color: var(--on-brand); animation: fade 900ms var(--ease) 320ms both; font-weight: 400; }
   .hero h1 b { font-weight: 600; }
@@ -235,13 +235,13 @@
   .gift .k { align-self: flex-start; background: var(--accent); color: var(--ink); font-family: var(--label); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; font-weight: 700; padding: 5px 11px; border-radius: 3px; transform: rotate(-2deg); box-shadow: 0 4px 12px -6px rgba(0,0,0,.4); }
   .gift:nth-child(even) .k { transform: rotate(1.5deg); }
   .gift h3 { font-size: 21px; color: var(--on-brand); }
-  .gift .val { font-family: var(--label); font-size: 12px; letter-spacing: .08em; color: var(--accent); text-decoration: line-through; font-weight: 600; }
+  .gift .val { font-family: var(--label); font-size: 12px; letter-spacing: .08em; color: var(--ink); font-weight: 700; }
   .gift p { color: var(--ink); font-size: 15px; }
   .gift p b { font-weight: 600; }
   .gift.vip { background: var(--accent); color: var(--ink); }
   .gift.vip .k { background: var(--ink); color: var(--bg); }
   .gift.vip h3, .gift.vip .val { color: var(--ink); }
-  .gift.vip .val { text-decoration: none; font-style: italic; }
+  .gift.vip .val { font-style: italic; }
   @media (max-width: 700px) { .gifts { grid-template-columns: 1fr; } }
 
   /* Offer box */
@@ -257,8 +257,7 @@
   .items > li::before { content: "✓"; width: 24px; height: 24px; border-radius: 50%; background: var(--accent); color: var(--ink); display: grid; place-items: center; font-size: 13px; font-weight: 700; }
   .items b { font-family: var(--label); font-size: 13px; letter-spacing: .06em; text-transform: uppercase; font-weight: 700; display: block; }
   .items ul { margin: 6px 0 0; padding-left: 18px; color: var(--ink-soft); font-size: 15px; display: flex; flex-direction: column; gap: 2px; }
-  .items .val { display: inline-block; margin-top: 6px; font-family: var(--label); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent-text); text-decoration: line-through; font-weight: 600; }
-  .items .val.nostrike { text-decoration: none; }
+  .items .val { display: inline-block; margin-top: 6px; font-family: var(--label); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink); font-weight: 700; }
   .compare { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; font-size: 14px; }
   .compare .row { display: grid; grid-template-columns: 1.4fr 1fr 1fr; align-items: center; }
   .compare .row > div { padding: 12px 14px; border-bottom: 1px solid var(--line); }
@@ -270,14 +269,26 @@
   .compare s { color: var(--muted); }
   .fomo { font-size: 15px; color: var(--ink-soft); text-align: center; padding: 14px 16px; border-radius: 6px; background: var(--bg); border: 1px dashed color-mix(in srgb, var(--accent) 60%, transparent); }
   .fomo b { color: var(--ink); font-weight: 600; }
+  /* Tachado animado al hacer scroll: negro -> línea rosa -> INCLUIDO */
+  .val { position: relative; display: inline-block; padding-right: 2px; }
+  .val .t { position: relative; display: inline-block; }
+  .val .t::after { content: ""; position: absolute; left: -3%; top: 52%; height: 3px; width: 0; background: var(--accent); border-radius: 2px; transform: rotate(-2deg); transition: width 550ms var(--ease); }
+  .val.struck .t::after { width: 106%; }
+  .items .val .t::after { height: 2.5px; }
+  .val .inc { display: inline-block; margin-left: 12px; vertical-align: 1px; background: var(--accent); color: var(--ink); font-family: var(--label); font-size: 9.5px; letter-spacing: .18em; text-transform: uppercase; font-weight: 700; padding: 3px 8px 2px; border-radius: 3px; opacity: 0; transform: scale(.6) rotate(-8deg); transition: opacity 260ms var(--ease) 480ms, transform 320ms cubic-bezier(.34,1.56,.64,1) 480ms; }
+  .val.struck .inc { opacity: 1; transform: scale(1) rotate(-3deg); }
+  .val.nostrike .t::after { display: none; }
   .totals { text-align: center; display: flex; flex-direction: column; gap: 14px; padding-top: 6px; }
   .totals .lbl { font-family: var(--label); font-size: 12px; letter-spacing: .2em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); }
-  .totals .strike { font-family: var(--display); font-size: clamp(40px, 5vw, 56px); line-height: 1; color: var(--muted); position: relative; display: inline-block; }
-  .totals .strike::after { content: ""; position: absolute; left: -6%; right: -6%; top: 52%; height: 4px; background: var(--accent); transform: rotate(-6deg); }
+  .totals .strike { font-family: var(--display); font-size: clamp(40px, 5vw, 56px); line-height: 1; color: var(--ink); position: relative; display: inline-block; transition: color 400ms var(--ease) 300ms; }
+  .totals .strike::after { content: ""; position: absolute; left: -6%; width: 0; top: 52%; height: 5px; background: var(--accent); transform: rotate(-6deg); border-radius: 3px; transition: width 600ms var(--ease); }
+  .totals .strike.struck { color: var(--muted); }
+  .totals .strike.struck::after { width: 112%; }
   .offer-cta { text-align: center; margin-top: 36px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
   .offer-cta .lbl { font-family: var(--label); font-size: clamp(16px, 2vw, 22px); letter-spacing: .06em; text-transform: uppercase; font-weight: 700; }
   .offer-cta .lbl span { font-weight: 400; }
-  .price-big { font-family: var(--display); font-size: clamp(64px, 9vw, 104px); line-height: 1; color: var(--accent-text); font-weight: 500; }
+  .price-big { font-family: var(--display); font-size: clamp(64px, 9vw, 104px); line-height: 1; color: var(--ink); font-weight: 500; position: relative; display: inline-block; }
+  .price-big::after { content: ""; position: absolute; left: 4%; right: 4%; bottom: .02em; height: .12em; background: var(--accent); z-index: -1; border-radius: 3px; }
   .price-big small { font-size: .45em; vertical-align: top; }
   .installments { font-size: 14px; color: var(--muted); max-width: 40ch; }
   .offer-cta .btn { margin-top: 10px; }
@@ -500,12 +511,12 @@
       <p class="sticker reveal">Solo en la primera edición</p>
       <p class="lede narrow reveal" style="margin-top: 18px">Y por ser el primer programa que saco al público en estos 10 años, he preparado <b>5 regalos gratis y exclusivos</b> para compensarte por la espera. <b>No estarán en la segunda edición.</b></p>
       <div class="gifts">
-        <article class="gift reveal"><span class="k">Regalo 1</span><h3>Masterclass: Marca personal con Piluka de Echegaray</h3><span class="val">Valor: 197 €</span><p>Aprenderás estilo y comunicación no verbal aplicados al entorno corporativo: <b>cómo usar tu imagen para ganar autoridad y atraer oportunidades</b>, sin disfrazarte de nada. Ideal para cuando estás atravesando un momento de cambio profesional.</p></article>
-        <article class="gift reveal" data-delay="1"><span class="k">Regalo 2</span><h3>Colecciones cápsula “1 clic” por arquetipo</h3><span class="val">Valor: 69 €</span><p><b>Colecciones prediseñadas</b> donde cada prenda tiene su enlace directo de compra en tiendas accesibles (nada de tallas imposibles ni precios de otro planeta). Sin pensar en combinar nada: entras, eliges tu momento, y compras con un clic.</p></article>
-        <article class="gift reveal"><span class="k">Regalo 3</span><h3>Guía para comprar lujo de segunda mano: qué merece la pena</h3><span class="val">Valor: 97 €</span><p>Te desvelo <b>qué categorías retienen valor y cuáles no</b>, mi criterio de «esto sí vale la pena», las señales de alerta y dónde comprar según el riesgo. Con un reto: encontrar una pieza dentro de tu presupuesto real y evaluarla con mi tabla antes de pagar.</p></article>
-        <article class="gift reveal" data-delay="1"><span class="k">Regalo 4</span><h3>Guía básica para ser la invitada perfecta</h3><span class="val">Valor: 79 €</span><p>Las reglas de oro, el protocolo por franja horaria y un <b>selector rápido de código de vestimenta</b>, para que la próxima invitación a una boda, cena empresarial, comuniones, cócteles o primera cita no empiece con tres semanas de agobio.</p></article>
-        <article class="gift reveal"><span class="k">Regalo 5</span><h3>Masterclass “Universo Beauty Realista”</h3><span class="val">Valor: 149 €</span><p>Con un gran amigo maquillador, aprenderás todo sobre maquillaje y peinado “efecto buena cara” para usarlo cada vez que vayas a salir. Porque de nada sirve un look impecable si de cuello para arriba no te acompaña.</p></article>
-        <article class="gift vip reveal" data-delay="1"><span class="k">Beneficio especial</span><h3>Auditoría VIP en audio conmigo <small style="display:block;font-family:var(--label);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-top:4px">Solo para las primeras <span data-vip>25</span> alumnas</small></h3><span class="val">Valor incalculable</span><p>Me cuentas tu caso en un formulario de dos minutos, y te respondo yo, en persona, con una nota de voz que contiene tu diagnóstico, y por dónde empezar. <b>¡Solo <span data-vip>25</span> plazas para la auditoría VIP! Disponible únicamente para esta edición.</b></p></article>
+        <article class="gift reveal"><span class="k">Regalo 1</span><h3>Masterclass: Marca personal con Piluka de Echegaray</h3><span class="val" data-strike><span class="t">Valor: 197 €</span><b class="inc">Incluido</b></span><p>Aprenderás estilo y comunicación no verbal aplicados al entorno corporativo: <b>cómo usar tu imagen para ganar autoridad y atraer oportunidades</b>, sin disfrazarte de nada. Ideal para cuando estás atravesando un momento de cambio profesional.</p></article>
+        <article class="gift reveal" data-delay="1"><span class="k">Regalo 2</span><h3>Colecciones cápsula “1 clic” por arquetipo</h3><span class="val" data-strike><span class="t">Valor: 69 €</span><b class="inc">Incluido</b></span><p><b>Colecciones prediseñadas</b> donde cada prenda tiene su enlace directo de compra en tiendas accesibles (nada de tallas imposibles ni precios de otro planeta). Sin pensar en combinar nada: entras, eliges tu momento, y compras con un clic.</p></article>
+        <article class="gift reveal"><span class="k">Regalo 3</span><h3>Guía para comprar lujo de segunda mano: qué merece la pena</h3><span class="val" data-strike><span class="t">Valor: 97 €</span><b class="inc">Incluido</b></span><p>Te desvelo <b>qué categorías retienen valor y cuáles no</b>, mi criterio de «esto sí vale la pena», las señales de alerta y dónde comprar según el riesgo. Con un reto: encontrar una pieza dentro de tu presupuesto real y evaluarla con mi tabla antes de pagar.</p></article>
+        <article class="gift reveal" data-delay="1"><span class="k">Regalo 4</span><h3>Guía básica para ser la invitada perfecta</h3><span class="val" data-strike><span class="t">Valor: 79 €</span><b class="inc">Incluido</b></span><p>Las reglas de oro, el protocolo por franja horaria y un <b>selector rápido de código de vestimenta</b>, para que la próxima invitación a una boda, cena empresarial, comuniones, cócteles o primera cita no empiece con tres semanas de agobio.</p></article>
+        <article class="gift reveal"><span class="k">Regalo 5</span><h3>Masterclass “Universo Beauty Realista”</h3><span class="val" data-strike><span class="t">Valor: 149 €</span><b class="inc">Incluido</b></span><p>Con un gran amigo maquillador, aprenderás todo sobre maquillaje y peinado “efecto buena cara” para usarlo cada vez que vayas a salir. Porque de nada sirve un look impecable si de cuello para arriba no te acompaña.</p></article>
+        <article class="gift vip reveal" data-delay="1"><span class="k">Beneficio especial</span><h3>Auditoría VIP en audio conmigo <small style="display:block;font-family:var(--label);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-top:4px">Solo para las primeras <span data-vip>25</span> alumnas</small></h3><span class="val nostrike" data-strike><span class="t">Valor incalculable</span><b class="inc">Incluido</b></span><p>Me cuentas tu caso en un formulario de dos minutos, y te respondo yo, en persona, con una nota de voz que contiene tu diagnóstico, y por dónde empezar. <b>¡Solo <span data-vip>25</span> plazas para la auditoría VIP! Disponible únicamente para esta edición.</b></p></article>
       </div>
     </div>
   </section>
@@ -518,16 +529,16 @@
         <div class="head"><span class="mark">Mi nueva <em>yo</em></span><span class="new">¡Nuevo! Mi primer programa online</span></div>
         <div class="mockup"><div class="ph">Mockup del programa<br>Portátil + móvil con el campus</div></div>
         <ul class="items">
-          <li><div><b>Método completo “Mi nueva yo”</b><ul><li>6 módulos</li><li>21 lecciones grabadas</li><li>Mini retos diarios y chuletas descargables</li></ul><span class="val">Valor real: 297 €</span></div></li>
-          <li><div><b>6 sesiones en vivo conmigo</b><ul><li>1 sesión de bienvenida, 4 sesiones grupales y 1 sesión de graduación</li></ul><span class="val">Valor real: 250 €</span></div></li>
-          <li><div><b>Comunidad privada “Auténticas”</b><span class="val">Valor real: 149 €</span></div></li>
-          <li><div><b>Los 5 regalos especiales de lanzamiento</b><ul><li>Regalo 01 · Masterclass Marca Personal con Piluka de Echegaray</li><li>Regalo 02 · Colecciones cápsula “1 clic” por arquetipo</li><li>Regalo 03 · Guía para comprar lujo de segunda mano</li><li>Regalo 04 · Guía básica para ser la invitada perfecta</li><li>Regalo 05 · Masterclass Universo Beauty Realista</li></ul><span class="val">Valor real: 591 €</span></div></li>
-          <li><div><b>Auditoría VIP <span style="font-weight:400">(solo para las primeras <span data-vip>25</span> alumnas)</span></b><span class="val nostrike">Valor incalculable</span></div></li>
-          <li><div><b>Garantía “100 % devolución de tu compra”</b><span class="val nostrike">30 días</span></div></li>
+          <li><div><b>Método completo “Mi nueva yo”</b><ul><li>6 módulos</li><li>21 lecciones grabadas</li><li>Mini retos diarios y chuletas descargables</li></ul><span class="val" data-strike><span class="t">Valor real: 297 €</span><b class="inc">Incluido</b></span></div></li>
+          <li><div><b>6 sesiones en vivo conmigo</b><ul><li>1 sesión de bienvenida, 4 sesiones grupales y 1 sesión de graduación</li></ul><span class="val" data-strike><span class="t">Valor real: 250 €</span><b class="inc">Incluido</b></span></div></li>
+          <li><div><b>Comunidad privada “Auténticas”</b><span class="val" data-strike><span class="t">Valor real: 149 €</span><b class="inc">Incluido</b></span></div></li>
+          <li><div><b>Los 5 regalos especiales de lanzamiento</b><ul><li>Regalo 01 · Masterclass Marca Personal con Piluka de Echegaray</li><li>Regalo 02 · Colecciones cápsula “1 clic” por arquetipo</li><li>Regalo 03 · Guía para comprar lujo de segunda mano</li><li>Regalo 04 · Guía básica para ser la invitada perfecta</li><li>Regalo 05 · Masterclass Universo Beauty Realista</li></ul><span class="val" data-strike><span class="t">Valor real: 591 €</span><b class="inc">Incluido</b></span></div></li>
+          <li><div><b>Auditoría VIP <span style="font-weight:400">(solo para las primeras <span data-vip>25</span> alumnas)</span></b><span class="val nostrike" data-strike><span class="t">Valor incalculable</span><b class="inc">Incluido</b></span></div></li>
+          <li><div><b>Garantía “100 % devolución de tu compra”</b><span class="val nostrike" data-strike><span class="t">30 días</span><b class="inc">Incluido</b></span></div></li>
         </ul>
         <div class="totals">
-          <div><div class="lbl">Valorado en</div><div class="strike">1.287 €</div></div>
-          <div><div class="lbl">Precio oficial</div><div class="strike" style="font-size: clamp(32px, 4vw, 44px)">494 €</div></div>
+          <div><div class="lbl">Valorado en</div><div class="strike" data-strike>1.287 €</div></div>
+          <div><div class="lbl">Precio oficial</div><div class="strike" data-strike style="font-size: clamp(32px, 4vw, 44px)">494 €</div></div>
         </div>
         <div class="compare" aria-label="Primera edición frente a próximas ediciones">
           <div class="row head"><div>Qué te llevas</div><div>Primera edición</div><div>Próximas ediciones</div></div>
@@ -612,7 +623,7 @@
         <div><span class="k">Si lo dejas para la siguiente</span><p>Lees en redes cómo les fue a las alumnas de la primera edición. Y entras, si hay plaza, a 494 €, sin regalos y sin auditoría VIP.</p></div>
       </div>
       <div class="offer-cta reveal" style="margin-top: 28px">
-        <div class="totals"><div><div class="lbl">Valorado en</div><div class="strike">1.287 €</div></div></div>
+        <div class="totals"><div><div class="lbl">Valorado en</div><div class="strike" data-strike>1.287 €</div></div></div>
         <p class="lbl" style="margin-top: 14px">Aprovecha ahora la oferta de lanzamiento <span>por tan solo</span></p>
         <div class="price-big">247<small>€</small></div>
         <p class="installments">O financia el pago hasta en 12 cuotas mensuales de unos 25 €/mes.</p>
@@ -705,6 +716,21 @@
     var io = new IntersectionObserver(function (entries) { entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
     revealEls.forEach(function (el) { io.observe(el); });
   } else { revealEls.forEach(function (el) { el.classList.add('in'); }); }
+
+  /* ---------- Tachado al hacer scroll ---------- */
+  var strikes = document.querySelectorAll('[data-strike]');
+  if ('IntersectionObserver' in window) {
+    var sio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var el = e.target, parent = el.closest('.items, .gifts, .totals') || el.parentElement;
+        var sibs = Array.prototype.slice.call(parent.querySelectorAll('[data-strike]')), i = sibs.indexOf(el);
+        setTimeout(function () { el.classList.add('struck'); }, reduce ? 0 : 200 + Math.max(0, i) * 160);
+        sio.unobserve(el);
+      });
+    }, { rootMargin: '0px 0px -15% 0px', threshold: 0.6 });
+    strikes.forEach(function (el) { sio.observe(el); });
+  } else { strikes.forEach(function (el) { el.classList.add('struck'); }); }
 
   /* ---------- Progress + mobile CTA ---------- */
   var progress = document.getElementById('progress'), mobileCta = document.getElementById('mobile-cta'), hero = document.getElementById('hero'), oferta = document.getElementById('oferta'), cierre = document.getElementById('cierre');
