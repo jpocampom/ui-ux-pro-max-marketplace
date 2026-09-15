@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1B3A6B">
 <meta name="description" content="Mi nueva yo: el curso online de Nat Cebrian para reconstruir tu imagen en seis semanas. Estilo personal, colorimetría, silueta y armario cápsula.">
 <title>Mi nueva yo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,22 +11,22 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Karla:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap">
 <style>
   :root {
-    --bg: #F4EFEC;
-    --surface: #FBF8F6;
-    --ink: #1B1718;
-    --ink-soft: #4A4143;
-    --muted: #6F6466;
-    --line: #D9CDC9;
-    --accent: #8E1B2F;
+    --bg: #F2F1EE;
+    --surface: #FAF9F7;
+    --ink: #16181C;
+    --ink-soft: #40454E;
+    --muted: #666C77;
+    --line: #D3D5D8;
+    --accent: #1B3A6B;
     --accent-ink: #FFFFFF;
-    --accent-soft: #E9B7BF;
-    --accent-tint: #F3E4E0;
-    --placeholder: #E4D9D5;
-    --placeholder-stripe: #D6C7C2;
-    --silk-a: #E7C9C6;
-    --silk-b: #D8B0AE;
-    --silk-c: #F1E0DC;
-    --shadow: 0 30px 70px -30px rgba(27, 23, 24, 0.4);
+    --accent-soft: #B7C7E9;
+    --accent-tint: #E3E9F4;
+    --placeholder: #DFE1E4;
+    --placeholder-stripe: #D0D3D8;
+    --silk-a: #C9D3E6;
+    --silk-b: #AEBEDD;
+    --silk-c: #E1E7F1;
+    --shadow: 0 30px 70px -30px rgba(22, 24, 28, 0.4);
     --display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
     --body: "Karla", "Helvetica Neue", Arial, sans-serif;
     --max: 1180px;
@@ -35,19 +36,19 @@
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-      --bg: #151213; --surface: #1F1A1B; --ink: #F1EBE8; --ink-soft: #CFC4C1; --muted: #A89C9E; --line: #3A3133;
-      --accent: #E0687A; --accent-ink: #1B1718; --accent-soft: #E9B7BF; --accent-tint: #2A1D1F;
-      --placeholder: #2A2426; --placeholder-stripe: #352D2F;
-      --silk-a: #3A2226; --silk-b: #4A2B31; --silk-c: #241B1D;
+      --bg: #121418; --surface: #1A1D23; --ink: #ECEEF2; --ink-soft: #C3C7CF; --muted: #979DA8; --line: #2F343C;
+      --accent: #7FA3E0; --accent-ink: #0F1626; --accent-soft: #B7C7E9; --accent-tint: #1C2536;
+      --placeholder: #242830; --placeholder-stripe: #2D323B;
+      --silk-a: #1F2A3F; --silk-b: #263652; --silk-c: #182131;
       --shadow: 0 30px 70px -30px rgba(0, 0, 0, 0.85);
       color-scheme: dark;
     }
   }
   :root[data-theme="dark"] {
-    --bg: #151213; --surface: #1F1A1B; --ink: #F1EBE8; --ink-soft: #CFC4C1; --muted: #A89C9E; --line: #3A3133;
-    --accent: #E0687A; --accent-ink: #1B1718; --accent-soft: #E9B7BF; --accent-tint: #2A1D1F;
-    --placeholder: #2A2426; --placeholder-stripe: #352D2F;
-    --silk-a: #3A2226; --silk-b: #4A2B31; --silk-c: #241B1D;
+    --bg: #121418; --surface: #1A1D23; --ink: #ECEEF2; --ink-soft: #C3C7CF; --muted: #979DA8; --line: #2F343C;
+    --accent: #7FA3E0; --accent-ink: #0F1626; --accent-soft: #B7C7E9; --accent-tint: #1C2536;
+    --placeholder: #242830; --placeholder-stripe: #2D323B;
+    --silk-a: #1F2A3F; --silk-b: #263652; --silk-c: #182131;
     --shadow: 0 30px 70px -30px rgba(0, 0, 0, 0.85);
     color-scheme: dark;
   }
@@ -106,14 +107,26 @@
   .nav-links a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 260ms var(--ease); }
   .nav-links a:hover::after { transform: scaleX(1); }
   .nav .btn { min-height: 42px; padding-inline: 20px; font-size: 14px; }
-  @media (max-width: 800px) { .nav-links { display: none; } }
+  .menu-btn { display: none; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 50%; background: transparent; cursor: pointer; place-items: center; }
+  .menu-btn span { display: block; width: 18px; height: 2px; background: var(--ink); position: relative; }
+  .menu-btn span::before, .menu-btn span::after { content: ""; position: absolute; left: 0; width: 18px; height: 2px; background: var(--ink); }
+  .menu-btn span::before { top: -6px; } .menu-btn span::after { top: 6px; }
+  .menu { position: fixed; inset: 0; z-index: 50; background: var(--bg); padding: calc(24px + env(safe-area-inset-top, 0px)) var(--gutter) calc(24px + env(safe-area-inset-bottom, 0px)); display: none; flex-direction: column; gap: 32px; }
+  .menu.open { display: flex; animation: fade 300ms var(--ease) both; }
+  .menu-top { display: flex; justify-content: space-between; align-items: center; }
+  .menu-close { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: transparent; font-size: 24px; cursor: pointer; }
+  .menu ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+  .menu li a { display: flex; justify-content: space-between; align-items: center; padding-block: 18px; border-bottom: 1px solid var(--line); text-decoration: none; font-family: var(--display); font-size: 30px; }
+  .menu li a small { font-family: var(--body); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .menu .btn { margin-top: auto; }
+  @media (max-width: 800px) { .nav-links { display: none; } .menu-btn { display: grid; } .nav .btn-primary { display: none; } .nav .wrap { min-height: 60px; } }
 
   /* Hero */
-  .hero { position: relative; overflow: hidden; padding-block: clamp(48px, 7vw, 104px) clamp(56px, 8vw, 120px); }
+  .hero { position: relative; overflow: hidden; padding-block: clamp(40px, 5vw, 72px) clamp(56px, 8vw, 120px); }
   .silk { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; opacity: .9; }
   .hero .wrap { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(24px, 4vw, 56px); align-items: center; }
   .hero-copy { display: flex; flex-direction: column; gap: 26px; }
-  .hero h1 { font-size: clamp(64px, 12.5vw, 176px); line-height: 0.88; letter-spacing: -0.035em; }
+  .hero h1 { font-size: clamp(64px, 10.5vw, 148px); line-height: 0.86; letter-spacing: -0.035em; }
   .hero h1 .w { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: .06em; }
   .hero h1 .w > span { display: inline-block; animation: rise 900ms var(--ease) both; }
   .hero h1 .w:nth-child(2) > span { animation-delay: 120ms; }
@@ -137,7 +150,7 @@
   .portrait .ph { position: absolute; inset: 0; }
   .reel { position: absolute; left: -6%; bottom: -8%; width: 38%; aspect-ratio: 9 / 16; border-radius: 14px; overflow: hidden; background: var(--ink); box-shadow: var(--shadow); transform: rotate(-6deg); transition: transform 500ms var(--ease); cursor: pointer; border: 0; padding: 0; animation: fade 1000ms var(--ease) 700ms both; }
   .reel:hover { transform: rotate(0deg) scale(1.03); }
-  .reel .ph { position: absolute; inset: 0; color: var(--bg); background: repeating-linear-gradient(135deg, #2A2426 0 14px, #352D2F 14px 15px); font-size: 10px; align-content: end; padding-bottom: 56px; }
+  .reel .ph { position: absolute; inset: 0; color: var(--bg); background: repeating-linear-gradient(135deg, #1E2330 0 14px, #283044 14px 15px); font-size: 10px; align-content: end; padding-bottom: 56px; }
   .reel .play { position: absolute; left: 50%; top: 50%; width: 54px; height: 54px; margin: -27px 0 0 -27px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; animation: pulse 2.4s ease-in-out infinite; }
   .reel .play svg { width: 18px; height: 18px; fill: var(--accent-ink); margin-left: 3px; }
   @keyframes pulse { 0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 50%, transparent); } 60% { box-shadow: 0 0 0 16px transparent; } }
@@ -149,7 +162,13 @@
   @media (max-width: 860px) {
     .hero .wrap { grid-template-columns: 1fr; }
     .hero h1 .l2 { padding-left: 0; }
-    .stage { max-width: 380px; margin-top: 24px; }
+    .hero { padding-block: 32px 72px; }
+    .hero-copy { gap: 20px; }
+    .hero h1 { font-size: clamp(72px, 22vw, 110px); }
+    .hero-actions .btn { flex: 1 1 auto; }
+    .hero-note { flex-direction: column; align-items: flex-start; gap: 6px; }
+    .countdown b { font-size: 24px; }
+    .stage { max-width: 340px; margin-top: 20px; }
     .badge { right: -2%; }
   }
 
@@ -198,7 +217,7 @@
   .handle { position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; background: var(--ink); transform: translateX(-1px); pointer-events: none; }
   .handle::after { content: "⟷"; position: absolute; left: 50%; top: 50%; width: 48px; height: 48px; margin: -24px 0 0 -24px; border-radius: 50%; background: var(--ink); color: var(--bg); display: grid; place-items: center; font-size: 18px; box-shadow: var(--shadow); }
   .compare-range { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; margin: 0; cursor: ew-resize; }
-  @media (max-width: 640px) { .compare-box { aspect-ratio: 4 / 3; } .rack { gap: .8%; } }
+  @media (max-width: 640px) { .compare-box { aspect-ratio: 4 / 3; } .rack { gap: .8%; padding: 14% 5% 8%; } .handle::after { width: 56px; height: 56px; margin: -28px 0 0 -28px; } .quote:nth-child(even) { transform: none; } .about-quote { position: static; width: auto; margin-top: -40px; margin-left: 8%; transform: rotate(0); } }
   .compare-cap { display: flex; justify-content: space-between; gap: 16px; margin-top: 16px; font-size: 13px; color: var(--muted); }
 
   /* Programme with sticky tracker */
@@ -248,7 +267,8 @@
   .swatch:hover { transform: scale(1.08); }
   .look { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 14px; }
   .look div { height: 88px; border-radius: 6px; transition: background 600ms var(--ease); display: flex; align-items: flex-end; padding: 8px 10px; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; color: rgba(255,255,255,.85); mix-blend-mode: normal; }
-  @media (max-width: 860px) { .lab-grid { grid-template-columns: 1fr; } }
+  .seg button .hint { font-size: 13px; font-weight: 400; opacity: .75; }
+  @media (max-width: 860px) { .lab-grid { grid-template-columns: 1fr; } .seg button .hint { display: none; } .seg button { flex: 1 1 auto; } .swatches { gap: 8px; } }
 
   /* Counters */
   .counters { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -257,7 +277,7 @@
   .counter:first-child { border-left: 0; padding-left: 0; }
   .counter b { display: block; font-family: var(--display); font-size: clamp(40px, 5vw, 64px); font-weight: 500; line-height: 1; font-variant-numeric: tabular-nums; }
   .counter span { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
-  @media (max-width: 860px) { .counters .wrap { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 24px; } .counter { border-left: 0; padding-left: 0; padding-block: 20px; } }
+  @media (max-width: 860px) { .counters .wrap { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; gap: 0; } .counters .wrap::-webkit-scrollbar { display: none; } .counter { flex: 0 0 42%; scroll-snap-align: start; padding-block: 22px; padding-left: 18px; } .counter:first-child { padding-left: 0; } }
 
   /* About */
   .about .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
@@ -277,7 +297,7 @@
 
   /* Video */
   .video-block { position: relative; aspect-ratio: 16 / 9; border-radius: 8px; overflow: hidden; background: var(--ink); box-shadow: var(--shadow); border: 0; padding: 0; width: 100%; cursor: pointer; display: block; }
-  .video-block .ph { position: absolute; inset: 0; background: repeating-linear-gradient(135deg, #2A2426 0 14px, #352D2F 14px 15px); color: var(--bg); opacity: .9; }
+  .video-block .ph { position: absolute; inset: 0; background: repeating-linear-gradient(135deg, #1E2330 0 14px, #283044 14px 15px); color: var(--bg); opacity: .9; }
   .video-block .play { position: absolute; left: 50%; top: 50%; width: 92px; height: 92px; margin: -46px 0 0 -46px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; transition: transform 300ms var(--ease); animation: pulse 2.4s ease-in-out infinite; }
   .video-block:hover .play { transform: scale(1.08); }
   .video-block .play svg { width: 30px; height: 30px; fill: var(--accent-ink); margin-left: 5px; }
@@ -382,8 +402,24 @@
       </ul>
     </nav>
     <a class="btn btn-primary" href="#inscripcion"><span>Únete a la lista</span></a>
+    <button class="menu-btn" type="button" id="menu-open" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span></button>
   </div>
 </header>
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menú">
+  <div class="menu-top">
+    <span class="brand">Nat <span>Cebrian</span></span>
+    <button class="menu-close" type="button" id="menu-close" aria-label="Cerrar menú">×</button>
+  </div>
+  <ul>
+    <li><a href="#curso">El curso <small>01</small></a></li>
+    <li><a href="#antes-despues">Antes y después <small>02</small></a></li>
+    <li><a href="#programa">Programa <small>03</small></a></li>
+    <li><a href="#metodo">Prueba el método <small>04</small></a></li>
+    <li><a href="#nat">Sobre Nat <small>05</small></a></li>
+    <li><a href="#faq">Preguntas <small>06</small></a></li>
+  </ul>
+  <a class="btn btn-primary" href="#inscripcion"><span>Únete a la lista</span></a>
+</div>
 
 <main id="top">
   <section class="hero" id="hero">
@@ -483,7 +519,7 @@
           <div class="garment" style="--h:70%;background:#F1E6DA"></div>
           <div class="garment" style="--h:70%;background:#D8C3B0"></div>
           <div class="garment" style="--h:70%;background:#B49B84"></div>
-          <div class="garment" style="--h:70%;background:#8E1B2F"></div>
+          <div class="garment" style="--h:70%;background:#1B3A6B"></div>
           <div class="garment" style="--h:70%;background:#5B4A42"></div>
           <div class="garment" style="--h:70%;background:#2B2A2E"></div>
           <div class="garment" style="--h:70%;background:#7D8B7A"></div>
@@ -564,9 +600,9 @@
           <div class="seg" role="group" aria-labelledby="lbl-tono">
             <span class="lbl" id="lbl-tono">Tu subtono de piel</span>
             <div class="seg-row" data-key="tono">
-              <button type="button" aria-pressed="true" data-v="frio">Frío (venas azuladas, la plata te favorece)</button>
-              <button type="button" aria-pressed="false" data-v="calido">Cálido (venas verdosas, el oro te favorece)</button>
-              <button type="button" aria-pressed="false" data-v="neutro">Neutro (las dos cosas)</button>
+              <button type="button" aria-pressed="true" data-v="frio">Frío <small class="hint">(venas azuladas, la plata te favorece)</small></button>
+              <button type="button" aria-pressed="false" data-v="calido">Cálido <small class="hint">(venas verdosas, el oro te favorece)</small></button>
+              <button type="button" aria-pressed="false" data-v="neutro">Neutro <small class="hint">(las dos cosas)</small></button>
             </div>
           </div>
           <div class="seg" role="group" aria-labelledby="lbl-prof">
@@ -781,6 +817,14 @@
     revealEls.forEach(function (el) { io.observe(el); });
   } else { revealEls.forEach(function (el) { el.classList.add('in'); }); }
 
+  /* ---------- Mobile menu ---------- */
+  var menu = document.getElementById('menu'), menuOpen = document.getElementById('menu-open'), menuClose = document.getElementById('menu-close');
+  var setMenu = function (open) { menu.classList.toggle('open', open); menuOpen.setAttribute('aria-expanded', String(open)); document.body.style.overflow = open ? 'hidden' : ''; if (open) menuClose.focus(); else menuOpen.focus(); };
+  menuOpen.addEventListener('click', function () { setMenu(true); });
+  menuClose.addEventListener('click', function () { setMenu(false); });
+  menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && menu.classList.contains('open')) setMenu(false); });
+
   /* ---------- Scroll progress + mobile CTA ---------- */
   var progress = document.getElementById('progress'), mobileCta = document.getElementById('mobile-cta');
   var hero = document.getElementById('hero'), enrol = document.getElementById('inscripcion');
@@ -845,7 +889,7 @@
     'calido-claro': { name: 'Cálido suave', colors: ['#F4C27A','#E9A889','#9CC69B','#F7D9B4','#E76F51','#F2A65A','#6FB1A0','#FFD8A8','#C8E0B4','#F28F79','#EBD8A0','#FFF3E0'], look: ['#F7D9B4','#E76F51','#6FB1A0'], tip: 'Crema, melocotón y coral en lugar de blanco y negro. El dorado te sienta mejor que la plata.' },
     'calido-oscuro':{ name: 'Cálido marcado', colors: ['#7A3E1D','#B5651D','#556B2F','#8B5A2B','#C9A227','#6B3F2A','#A0522D','#3C5A40','#D2A24C','#7E4B2A','#4B3621','#C05A2B'], look: ['#4B3621','#C9A227','#556B2F'], tip: 'Tu negro es el chocolate. Mostaza, oliva y teja te dan profundidad sin apagarte.' },
     'neutro-claro': { name: 'Neutro suave', colors: ['#CFC3B5','#B8A99A','#8FA394','#D9B8A8','#A7B0B8','#E6DCD2','#B7C4C0','#C29C8E','#9AA69B','#DDD1C8','#A2938A','#EFE7E1'], look: ['#B8A99A','#D9B8A8','#8FA394'], tip: 'Los tonos piedra, salvia y rosa tierra hacen el trabajo. Los colores muy saturados te roban protagonismo.' },
-    'neutro-oscuro':{ name: 'Neutro marcado', colors: ['#3B3A38','#5C5450','#6D6A5E','#8A6F5E','#4E5A5F','#7B6C63','#2F3B3F','#9C8F82','#5A4A45','#455746','#6E5E62','#8B8479'], look: ['#2F3B3F','#8A6F5E','#3B3A38'], tip: 'Grafito, topo y verde bosque. Un acento burdeos apagado y ya tienes armario de invierno.' }
+    'neutro-oscuro':{ name: 'Neutro marcado', colors: ['#3B3A38','#5C5450','#6D6A5E','#8A6F5E','#4E5A5F','#7B6C63','#2F3B3F','#9C8F82','#5A4A45','#455746','#6E5E62','#8B8479'], look: ['#2F3B3F','#8A6F5E','#3B3A38'], tip: 'Grafito, topo y verde bosque. Un acento azul tinta y ya tienes armario de invierno.' }
   };
   var sel = { tono: 'frio', prof: 'claro' };
   var sw = document.getElementById('swatches'), look = document.getElementById('look'), res = document.getElementById('lab-result');
