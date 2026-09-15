@@ -109,7 +109,12 @@
   /* Hero: wordmark + retrato + reel (VSL en modal) */
   .hero { position: relative; overflow: hidden; background: var(--brand); color: var(--on-brand); padding-block: clamp(36px, 5vw, 64px) 0; }
   .silk { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
-  .hero .wrap { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(24px, 4vw, 56px); align-items: center; max-width: 1180px; padding-bottom: clamp(48px, 6vw, 80px); }
+  .hero .wrap { position: relative; z-index: 1; max-width: 1180px; padding-bottom: clamp(48px, 6vw, 80px); display: flex; flex-direction: column; gap: clamp(28px, 4vw, 48px); }
+  .hero-top { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: clamp(24px, 4vw, 56px); align-items: center; }
+  .hero-video { width: 100%; max-width: 980px; margin-inline: auto; }
+  .hero-video .vsl { max-width: none; }
+  .vsl-cap { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-top: 12px; font-family: var(--label); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); }
+  .vsl-cap b { color: var(--on-brand); font-weight: 600; }
   .hero-copy { display: flex; flex-direction: column; gap: 22px; text-align: left; }
   .hero .eyebrow { color: var(--on-brand); opacity: .9; }
   .wordmark { display: grid; grid-template-columns: auto 1fr; gap: 0 clamp(16px, 3vw, 40px); align-items: end; }
@@ -126,7 +131,7 @@
   .hero h1 b { font-weight: 600; }
   .hero .lede { color: var(--ink); max-width: 40em; animation: fade 900ms var(--ease) 400ms both; font-size: clamp(16px, 1.3vw, 18.5px); }
   .hero .lede b { font-weight: 600; }
-  .stage { position: relative; aspect-ratio: 4 / 5; animation: fade 1000ms var(--ease) 300ms both; }
+  .stage { position: relative; aspect-ratio: 4 / 5; animation: fade 1000ms var(--ease) 300ms both; max-width: 380px; margin-left: auto; }
   .portrait { position: absolute; inset: 0 0 0 12%; border-radius: 4px 4px 200px 4px; overflow: hidden; box-shadow: var(--shadow); }
   .portrait .ph { position: absolute; inset: 0; }
   .reel { position: absolute; left: -6%; bottom: -6%; width: 40%; aspect-ratio: 9 / 16; border-radius: 14px; overflow: hidden; background: var(--ink); box-shadow: var(--shadow); transform: rotate(-6deg); transition: transform 500ms var(--ease); cursor: pointer; border: 0; padding: 0; }
@@ -139,13 +144,14 @@
   .badge svg { width: 100%; height: 100%; overflow: visible; }
   .badge text { font-family: var(--label); font-size: 10.5px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; fill: var(--on-brand); }
   .badge circle { fill: var(--accent); }
-  .badge .in { font-family: var(--display); font-size: 22px; letter-spacing: 0; text-transform: none; fill: var(--ink); font-weight: 500; }
+  .badge .in { font-family: var(--display); font-size: 17px; letter-spacing: 0; text-transform: none; fill: var(--ink); font-weight: 500; }
   .marquee { position: relative; z-index: 1; border-top: 1px solid color-mix(in srgb, var(--on-brand) 30%, transparent); background: color-mix(in srgb, var(--ink) 92%, transparent); color: var(--bg); overflow: hidden; padding-block: 12px; }
   .marquee-track { display: flex; gap: 44px; white-space: nowrap; width: max-content; animation: slide 40s linear infinite; font-family: var(--label); font-size: 12px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; }
   .marquee-track span::after { content: "●"; margin-left: 44px; color: var(--accent); font-size: 8px; vertical-align: 2px; }
   @keyframes slide { to { transform: translateX(-50%); } }
   @media (max-width: 900px) {
-    .hero .wrap { grid-template-columns: 1fr; }
+    .hero-top { grid-template-columns: 1fr; }
+    .stage { margin: 12px auto 0; }
     .wordmark { grid-template-columns: 1fr; gap: 10px; }
     .wordmark .mark { font-size: clamp(64px, 20vw, 100px); }
     .stage { max-width: 340px; margin: 12px auto 0; }
@@ -160,8 +166,9 @@
   .vsl .dur { position: absolute; right: 16px; top: 16px; background: rgba(0,0,0,.55); color: #fff; font-family: var(--label); font-size: 11px; letter-spacing: .12em; padding: 6px 10px; border-radius: 2px; }
   @keyframes pulse { 0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 50%, transparent); } 60% { box-shadow: 0 0 0 18px transparent; } }
   @keyframes fade { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
-  .cta-block { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; width: 100%; animation: fade 900ms var(--ease) 500ms both; }
-  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; width: 100%; }
+  .cta-block { display: flex; flex-direction: column; align-items: center; gap: 14px; width: 100%; max-width: 720px; margin-inline: auto; text-align: center; animation: fade 900ms var(--ease) 500ms both; }
+  .cta-block .urgency { max-width: 640px; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: center; width: 100%; }
   .btn-ghost { border-color: color-mix(in srgb, var(--on-brand) 45%, transparent); color: var(--on-brand); background: transparent; }
   .btn-ghost::before { background: var(--on-brand); }
   .btn-ghost:hover { color: var(--ink); }
@@ -183,7 +190,7 @@
   .seatbar-track { height: 6px; border-radius: 3px; background: color-mix(in srgb, var(--on-brand) 35%, transparent); overflow: hidden; }
   .seatbar-track i { display: block; height: 100%; width: 0; background: var(--accent); transition: width 900ms var(--ease); }
   .seatbar b { font-family: var(--display); font-size: 15px; color: var(--on-brand); }
-  .trust { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 8px 20px; font-family: var(--label); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink); }
+  .trust { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 20px; font-family: var(--label); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink); }
   .trust li::before { content: "✓ "; color: var(--on-brand); font-weight: 700; }
   @media (max-width: 640px) { .cd-row { flex-direction: column; align-items: flex-start; } .btn-xl { font-size: 13px; padding-inline: 20px; } }
 
@@ -378,14 +385,14 @@
 
 <div class="announce" role="region" aria-label="Aviso">
   <div class="wrap">
-    <span><strong>Inscripción abierta</strong> · La oferta de lanzamiento termina en <b data-close-days>—</b> días o al cubrir las <b data-seats>50</b> plazas</span>
+    <span><strong>Inscripción abierta</strong> · La oferta de lanzamiento termina en <b data-close-days>—</b> días o al cubrir las <b data-seats>250</b> plazas</span>
     <a href="#oferta">Asegurar mi plaza →</a>
   </div>
 </div>
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Mi nueva yo, inicio">Mi nueva <span>yo</span></a>
-    <span class="cd-mini" aria-hidden="true">Empieza en <b data-days-left>—</b> días · <b data-seats>50</b> plazas</span>
+    <span class="cd-mini" aria-hidden="true">Empieza en <b data-days-left>—</b> días · <b data-seats>250</b> plazas</span>
     <a class="btn btn-accent" href="#oferta"><span>Asegurar mi plaza</span></a>
   </div>
 </header>
@@ -395,54 +402,56 @@
   <section class="hero on-brand" id="hero">
     <canvas class="silk" id="silk" aria-hidden="true"></canvas>
     <div class="wrap">
-      <div class="hero-copy">
-        <p class="eyebrow">Primera edición · Inscripción abierta · Empieza el 4 de octubre</p>
-        <div class="wordmark">
-          <p class="mark" aria-label="Mi nueva yo"><span class="w"><span>Mi</span></span><span class="w"><span>nueva</span></span><span class="w"><span><em>yo</em></span></span></p>
-          <p class="sub">Programa de 6 semanas con <b>Nat Cebrián</b></p>
+      <div class="hero-top">
+        <div class="hero-copy">
+          <p class="eyebrow">Primera edición · Inscripción abierta · Empieza el 4 de octubre</p>
+          <div class="wordmark">
+            <p class="mark" aria-label="Mi nueva yo"><span class="w"><span>Mi</span></span><span class="w"><span>nueva</span></span><span class="w"><span><em>yo</em></span></span></p>
+            <p class="sub">Programa de 6 semanas con <b>Nat Cebrián</b></p>
+          </div>
+          <h1>Descubre cómo <b>construir el estilo propio</b> que te represente de verdad y potencie tus virtudes.</h1>
+          <p class="lede">Comienza a <b>sentirte empoderada y proyectar seguridad</b> absoluta con tus <em>outfits</em> en cualquier ocasión, sin importar en qué etapa de la vida te encuentres y sin tener que gastar en marcas de lujo o sentirte disfrazada.</p>
         </div>
-        <h1>Descubre cómo <b>construir el estilo propio</b> que te represente de verdad y potencie tus virtudes.</h1>
-        <p class="lede">Comienza a <b>sentirte empoderada y proyectar seguridad</b> absoluta con tus <em>outfits</em> en cualquier ocasión, sin importar en qué etapa de la vida te encuentres y sin tener que gastar en marcas de lujo o sentirte disfrazada.</p>
-        <div class="cta-block">
-          <div class="urgency">
-            <div class="cd-row">
-              <span class="cd-label"><strong>Empezamos en</strong><small>Directo de bienvenida con Nat · Dom 4 oct · 19:00 h</small></span>
-              <span class="countdown" id="countdown" aria-live="off">
-                <span><b data-u="d">00</b><small>días</small></span><span><b data-u="h">00</b><small>horas</small></span><span><b data-u="m">00</b><small>min</small></span><span><b data-u="s">00</b><small>seg</small></span>
-              </span>
-            </div>
-            <p class="seats"><i aria-hidden="true"></i><strong>Plazas limitadas.</strong> Sé una de las <b data-seats>50</b> alumnas de la primera edición. Cuando se cubran, esta página cambia de precio.</p>
-            <div class="seatbar" data-seatbar hidden><div class="seatbar-track"><i></i></div><span><b data-left>50</b> plazas disponibles de <b data-seats>50</b></span></div>
+        <div class="stage">
+          <figure class="portrait"><div class="ph">Foto editorial<br>Nat, retrato vertical 4:5<br>Fondo neutro, luz natural</div></figure>
+          <div class="badge" aria-hidden="true">
+            <svg viewBox="0 0 120 120">
+              <defs><path id="ring" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs>
+              <circle cx="60" cy="60" r="24"/>
+              <text class="in" x="60" y="67" text-anchor="middle">250</text>
+              <text><textPath href="#ring">Solo 250 plazas · Primera edición · Cierra el 3 de octubre · </textPath></text>
+            </svg>
           </div>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="#oferta"><span>Sí, quiero asegurar mi plaza</span></a>
-            <button class="btn btn-ghost" type="button" data-open-video><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg><span>Ver el vídeo de Nat · 6 min</span></button>
-          </div>
-          <p class="cta-note">Oferta única de lanzamiento: <b>247 €</b> en vez de 494 € · <b>Garantía del 100 % durante 30 días</b></p>
-          <ul class="trust" aria-label="Garantías"><li>Pago seguro</li><li>Financiación en 12 cuotas</li><li>Acceso inmediato</li></ul>
         </div>
       </div>
-      <div class="stage">
-        <figure class="portrait"><div class="ph">Foto editorial<br>Nat, retrato vertical 4:5<br>Fondo neutro, luz natural</div></figure>
-        <button class="reel" type="button" data-open-video aria-label="Ver el vídeo de presentación">
-          <div class="ph">Vídeo de Nat<br>6 minutos</div>
+      <div class="hero-video">
+        <button class="vsl" type="button" data-open-video aria-label="Ver el vídeo de presentación">
+          <div class="ph">Vídeo de venta (VSL) 16:9<br>Nat a cámara · 6 a 9 minutos</div>
           <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></span>
-          <span class="tag">Dale al play</span>
+          <span class="dur">Activa el sonido</span>
         </button>
-        <div class="badge" aria-hidden="true">
-          <svg viewBox="0 0 120 120">
-            <defs><path id="ring" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs>
-            <circle cx="60" cy="60" r="24"/>
-            <text class="in" x="60" y="68" text-anchor="middle">50</text>
-            <text><textPath href="#ring">Solo 50 plazas · Primera edición · Cierra el 3 de octubre · </textPath></text>
-          </svg>
+        <p class="vsl-cap"><span><b>Dale al play.</b> Nat te cuenta el método en 6 minutos</span><span>Y por qué esta edición no se repite</span></p>
+      </div>
+      <div class="cta-block">
+        <div class="urgency">
+          <div class="cd-row">
+            <span class="cd-label"><strong>Empezamos en</strong><small>Directo de bienvenida con Nat · Dom 4 oct · 19:00 h</small></span>
+            <span class="countdown" id="countdown" aria-live="off">
+              <span><b data-u="d">00</b><small>días</small></span><span><b data-u="h">00</b><small>horas</small></span><span><b data-u="m">00</b><small>min</small></span><span><b data-u="s">00</b><small>seg</small></span>
+            </span>
+          </div>
+          <p class="seats"><i aria-hidden="true"></i><strong>Plazas limitadas.</strong> Sé una de las <b data-seats>250</b> alumnas de la primera edición. Cuando se cubran, esta página cambia de precio.</p>
+          <div class="seatbar" data-seatbar hidden><div class="seatbar-track"><i></i></div><span><b data-left>250</b> plazas disponibles de <b data-seats>250</b></span></div>
         </div>
+        <a class="btn btn-primary btn-xl" href="#oferta"><span>Sí, quiero asegurar mi plaza en esta edición</span></a>
+        <p class="cta-note">Oferta única de lanzamiento: <b>247 €</b> en vez de 494 € · <b>Garantía del 100 % durante 30 días</b></p>
+        <ul class="trust" aria-label="Garantías"><li>Pago seguro</li><li>Financiación en 12 cuotas</li><li>Acceso inmediato</li></ul>
       </div>
     </div>
     <div class="marquee" aria-hidden="true">
       <div class="marquee-track">
-        <span>7 directos con Nat</span><span>5 regalos exclusivos</span><span>Garantía de 30 días</span><span>Solo 50 plazas</span><span>Precio de lanzamiento 247 €</span><span>Cierra el 3 de octubre</span>
-        <span>7 directos con Nat</span><span>5 regalos exclusivos</span><span>Garantía de 30 días</span><span>Solo 50 plazas</span><span>Precio de lanzamiento 247 €</span><span>Cierra el 3 de octubre</span>
+        <span>7 directos con Nat</span><span>5 regalos exclusivos</span><span>Garantía de 30 días</span><span>Solo 250 plazas</span><span>Precio de lanzamiento 247 €</span><span>Cierra el 3 de octubre</span>
+        <span>7 directos con Nat</span><span>5 regalos exclusivos</span><span>Garantía de 30 días</span><span>Solo 250 plazas</span><span>Precio de lanzamiento 247 €</span><span>Cierra el 3 de octubre</span>
       </div>
     </div>
   </section>
@@ -524,9 +533,9 @@
           <div class="row"><div>Precio</div><div>247 €</div><div><s>247 €</s> 494 €</div></div>
           <div class="row"><div>5 regalos de lanzamiento (591 €)</div><div>Incluidos</div><div>No</div></div>
           <div class="row"><div>Auditoría VIP en audio con Nat</div><div>Primeras <span data-vip>25</span></div><div>No</div></div>
-          <div class="row"><div>Grupo reducido con feedback de Nat</div><div><span data-seats>50</span> alumnas</div><div>Por confirmar</div></div>
+          <div class="row"><div>Grupo reducido con feedback de Nat</div><div><span data-seats>250</span> alumnas</div><div>Por confirmar</div></div>
         </div>
-        <p class="fomo">Cuando se cubran las <b><span data-seats>50</span> plazas</b> o llegue el <b>3 de octubre</b>, lo que ocurra primero, esta página cambia: precio oficial, sin regalos y sin auditoría VIP.</p>
+        <p class="fomo">Cuando se cubran las <b><span data-seats>250</span> plazas</b> o llegue el <b>3 de octubre</b>, lo que ocurra primero, esta página cambia: precio oficial, sin regalos y sin auditoría VIP.</p>
       </div>
       <div class="offer-cta reveal">
         <p class="lbl">Aprovecha ahora la oferta de lanzamiento <span>por tan solo</span></p>
@@ -598,7 +607,7 @@
       <h2 class="reveal"><b>No necesitas más ropa.</b> Solo necesitas reconocerte y encontrar tu propio estilo.</h2>
       <p class="lede reveal">Aprovecha mi gran oferta de lanzamiento (que no volverá a repetirse) y únete ahora a <b>“Mi nueva yo”</b> para empezar a <b>vestirte y sentirte empoderada</b>, en cualquier ocasión.</p>
       <div class="two reveal">
-        <div><span class="k">Si entras hoy</span><p>Dentro de seis semanas abres el armario y sabes qué ponerte. Has hecho el método con Nat en directo, con las <span data-seats>50</span> mujeres de la primera edición, a 247 € y con los 5 regalos.</p></div>
+        <div><span class="k">Si entras hoy</span><p>Dentro de seis semanas abres el armario y sabes qué ponerte. Has hecho el método con Nat en directo, con las <span data-seats>250</span> mujeres de la primera edición, a 247 € y con los 5 regalos.</p></div>
         <div><span class="k">Si lo dejas para la siguiente</span><p>Lees en redes cómo les fue a las alumnas de la primera edición. Y entras, si hay plaza, a 494 €, sin regalos y sin auditoría VIP.</p></div>
       </div>
       <div class="offer-cta reveal" style="margin-top: 28px">
@@ -607,7 +616,7 @@
         <div class="price-big">247<small>€</small></div>
         <p class="installments">O financia el pago hasta en 12 cuotas mensuales de unos 25 €/mes.</p>
         <a class="btn btn-accent btn-xl" href="#" data-checkout><span>¡Me uno a “Mi nueva yo”!</span></a>
-        <p class="cta-note">La oferta termina en <b data-close-days>—</b> días · Sé una de las <b data-seats>50</b> alumnas · Garantía de 30 días</p>
+        <p class="cta-note">La oferta termina en <b data-close-days>—</b> días · Sé una de las <b data-seats>250</b> alumnas · Garantía de 30 días</p>
       </div>
     </div>
   </section>
@@ -660,7 +669,7 @@
      CHECKOUT_URL: enlace de pago (Stripe, Hotmart, ThriveCart...).
      MAX_SEATS: plazas de la edición. SEATS_TAKEN: vendidas (dato real; con 0 no se muestra la barra).
      VIP_SEATS: auditorías VIP. LAUNCH: directo de bienvenida. */
-  var CHECKOUT_URL = '#oferta', MAX_SEATS = 50, SEATS_TAKEN = 0, VIP_SEATS = 25;
+  var CHECKOUT_URL = '#oferta', MAX_SEATS = 250, SEATS_TAKEN = 0, VIP_SEATS = 25;
   var LAUNCH = new Date('2026-10-04T19:00:00+02:00'), CLOSE = new Date('2026-10-03T23:59:00+02:00');
   document.querySelectorAll('[data-checkout]').forEach(function (a) { a.href = CHECKOUT_URL; });
   document.querySelectorAll('[data-seats]').forEach(function (el) { el.textContent = MAX_SEATS; });
