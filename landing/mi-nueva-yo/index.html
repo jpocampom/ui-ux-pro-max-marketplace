@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#6E93B0">
-<meta name="description" content="Mi nueva yo: plan de 21 días con Nat Cebrián. 21 lecciones, 6 directos y 15 minutos al día para vestir a la mujer que eres hoy. Primera edición: 4 de octubre de 2026.">
+<meta name="description" content="Mi nueva yo: plan de 21 días con Nat Cebrián. 21 lecciones, 6 directos y 15 minutos al día para vestir a la mujer que eres hoy. Primera edición: 4 de octubre de 2026. Plazas limitadas.">
 <title>Mi nueva yo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -102,6 +102,14 @@
   .on-brand .btn-ghost { border-color: color-mix(in srgb, var(--on-brand) 40%, transparent); color: var(--on-brand); }
   .on-brand .btn-ghost:hover { color: var(--ink); }
 
+  /* Announce bar */
+  .announce { background: var(--accent); color: var(--ink); font-size: 13px; }
+  .announce .wrap { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px 24px; min-height: 40px; padding-block: 8px; text-align: center; }
+  .announce strong { font-family: var(--label); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; font-size: 11px; }
+  .announce b { font-family: var(--display); font-size: 16px; font-weight: 500; }
+  .announce a { font-weight: 600; text-decoration: none; border-bottom: 1px solid currentColor; white-space: nowrap; }
+  @media (max-width: 640px) { .announce .wrap { font-size: 12px; } }
+
   /* Progress + nav */
   .progress { position: fixed; top: env(safe-area-inset-top, 0px); left: 0; height: 3px; width: 0; background: var(--accent); z-index: 40; transition: width 80ms linear; }
   .nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 30; background: color-mix(in srgb, var(--bg) 86%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
@@ -160,6 +168,13 @@
   .seats i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); margin-right: 8px; vertical-align: middle; animation: pulse 2s ease-in-out infinite; }
   .seats strong { color: var(--on-brand); font-weight: 600; }
   .seats b { font-family: var(--display); font-size: 20px; font-weight: 500; color: var(--on-brand); line-height: 1; }
+  .seatbar { display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: var(--ink); }
+  .seatbar-track { height: 6px; border-radius: 3px; background: color-mix(in srgb, var(--on-brand) 35%, transparent); overflow: hidden; }
+  .seatbar-track i { display: block; height: 100%; width: 0; background: var(--accent); transition: width 900ms var(--ease); }
+  .seatbar b { font-family: var(--display); font-size: 15px; color: var(--on-brand); }
+  .trust { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 20px; font-family: var(--label); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink); animation: fade 900ms var(--ease) 750ms both; }
+  .trust li { display: inline-flex; align-items: center; gap: 6px; }
+  .trust li::before { content: "✓"; color: var(--on-brand); font-weight: 700; }
 
   .stage { position: relative; aspect-ratio: 4 / 5; }
   .portrait { position: absolute; inset: 0 0 0 12%; border-radius: 4px 4px 200px 4px; overflow: hidden; box-shadow: var(--shadow); animation: fade 1000ms var(--ease) 300ms both; }
@@ -359,6 +374,13 @@
   .modal-inner { position: relative; background: #000; border-radius: 8px; overflow: hidden; aspect-ratio: 16 / 9; display: grid; place-items: center; color: #fff; text-align: center; padding: 24px; }
   .modal-inner video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .modal-inner .empty { position: relative; z-index: 1; font-family: var(--label); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; line-height: 1.9; color: rgba(255,255,255,.7); }
+  dialog.exit { max-width: 520px; }
+  .exit-inner { position: relative; background: var(--bg); color: var(--ink); border-radius: 8px; padding: clamp(24px, 4vw, 40px); display: flex; flex-direction: column; gap: 14px; box-shadow: var(--shadow); }
+  .exit-inner h3 { font-size: clamp(26px, 3vw, 34px); }
+  .exit-inner p { color: var(--ink-soft); font-size: 15px; }
+  .exit-inner form { display: flex; flex-direction: column; gap: 12px; margin-top: 6px; }
+  .exit-inner .btn { width: 100%; }
+  .exit-inner .modal-close { background: var(--placeholder); color: var(--ink); }
   .modal-close { position: absolute; right: 12px; top: 12px; z-index: 2; width: 44px; height: 44px; border-radius: 50%; border: 0; background: rgba(255,255,255,.14); color: #fff; font-size: 22px; cursor: pointer; }
 
   /* Bonos + includes */
@@ -404,6 +426,13 @@
   .perks { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; font-size: 16px; }
   .perks li { display: flex; gap: 12px; align-items: baseline; }
   .perks li::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex: none; transform: translateY(-2px); }
+  .perks.stack li { justify-content: space-between; gap: 16px; padding-block: 10px; border-bottom: 1px solid color-mix(in srgb, var(--on-brand) 30%, transparent); }
+  .perks.stack li span { flex: 1; }
+  .perks.stack li small { font-family: var(--label); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--on-brand); white-space: nowrap; }
+  .guarantee { display: flex; gap: 16px; align-items: center; padding: 16px 18px; border-radius: 6px; background: color-mix(in srgb, var(--on-brand) 14%, transparent); border: 1px solid color-mix(in srgb, var(--on-brand) 35%, transparent); font-size: 14px; color: var(--ink); }
+  .guarantee b { color: var(--on-brand); font-weight: 600; }
+  .seal { flex: none; width: 64px; height: 64px; border-radius: 50%; background: var(--accent); color: var(--ink); display: grid; place-items: center; font-family: var(--display); font-size: 26px; line-height: 1; text-align: center; }
+  .seal small { display: block; font-family: var(--label); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; }
   .form { background: var(--bg); color: var(--ink); padding: clamp(24px, 3vw, 40px); border-radius: 6px; display: flex; flex-direction: column; gap: 16px; box-shadow: var(--shadow); position: relative; }
   .form h3 { font-size: 28px; }
   .form p.small { font-size: 13px; color: var(--muted); }
@@ -420,8 +449,15 @@
   .success .check { width: 64px; height: 64px; border-radius: 50%; background: var(--accent); color: var(--ink); display: grid; place-items: center; font-size: 30px; animation: pop 500ms var(--ease) both; }
   @keyframes pop { from { transform: scale(.4); opacity: 0; } to { transform: none; opacity: 1; } }
   .success h4 { font-size: 26px; }
-  .price-note { display: flex; gap: 14px; align-items: center; padding: 14px 16px; border: 1px dashed var(--line); border-radius: 4px; font-size: 13px; color: var(--muted); }
-  .price-note b { font-family: var(--display); font-size: 26px; color: var(--ink); font-weight: 500; }
+  .price { border: 1px solid var(--line); border-radius: 4px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; background: var(--surface); }
+  .price-row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .price-lbl { font-family: var(--label); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); }
+  .price-row b { font-family: var(--display); font-size: 34px; color: var(--ink); font-weight: 500; line-height: 1; }
+  .price-row.muted .price-lbl { color: var(--muted); }
+  .price-row s { font-family: var(--display); font-size: 18px; color: var(--muted); }
+  .price-cd { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-top: 10px; border-top: 1px dashed var(--line); font-size: 12px; color: var(--muted); }
+  .countdown-dark b { color: var(--ink); font-size: 20px; }
+  .countdown-dark small { color: var(--muted); }
   @media (max-width: 860px) { .enrol .wrap { grid-template-columns: 1fr; } }
 
   /* FAQ */
@@ -449,8 +485,11 @@
 
   .mobile-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 35; padding: 10px var(--gutter) calc(10px + env(safe-area-inset-bottom, 0px)); background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(12px); border-top: 1px solid var(--line); display: none; transform: translateY(110%); transition: transform 350ms var(--ease); }
   .mobile-cta.show { transform: none; }
-  .mobile-cta .btn { width: 100%; }
-  @media (max-width: 800px) { .mobile-cta { display: block; } }
+  .mobile-cta { display: none; }
+  .mobile-cta .btn { flex: 1; }
+  .mcta-info { display: flex; flex-direction: column; font-size: 11px; color: var(--muted); line-height: 1.3; white-space: nowrap; }
+  .mcta-info b { font-family: var(--display); font-size: 14px; color: var(--ink); }
+  @media (max-width: 800px) { .mobile-cta.show { display: flex; gap: 12px; align-items: center; } }
 </style>
 </head>
 <body>
@@ -458,6 +497,12 @@
 <a class="skip" href="#curso">Saltar al contenido</a>
 <div class="progress" id="progress" aria-hidden="true"></div>
 
+<div class="announce" role="region" aria-label="Aviso">
+  <div class="wrap">
+    <span><strong>Primera edición</strong> · Directo de bienvenida el domingo 4 de octubre · Sé una de las <b data-seats>50</b> alumnas</span>
+    <a href="#inscripcion">Quiero mi plaza →</a>
+  </div>
+</div>
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Nat Cebrián, inicio">Nat <span>Cebrián</span></a>
@@ -471,7 +516,7 @@
         <li><a href="#faq">Preguntas</a></li>
       </ul>
     </nav>
-    <a class="btn btn-primary" href="#inscripcion"><span>Reservar plaza</span></a>
+    <a class="btn btn-primary" href="#inscripcion"><span>Quiero mi plaza</span></a>
     <button class="menu-btn" type="button" id="menu-open" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span></button>
   </div>
 </header>
@@ -489,7 +534,7 @@
     <li><a href="#nat">Nat <small>06</small></a></li>
     <li><a href="#faq">Preguntas <small>07</small></a></li>
   </ul>
-  <a class="btn btn-primary" href="#inscripcion"><span>Reservar plaza</span></a>
+  <a class="btn btn-primary" href="#inscripcion"><span>Quiero mi plaza</span></a>
 </div>
 
 <main id="top">
@@ -497,12 +542,12 @@
     <canvas class="silk" id="silk" aria-hidden="true"></canvas>
     <div class="wrap">
       <div class="hero-copy">
-        <p class="eyebrow">Primera edición · Del 4 de octubre al 8 de noviembre de 2026</p>
+        <p class="eyebrow">Primera edición · Inscripción abierta · Empieza el 4 de octubre</p>
         <div class="wordmark">
           <h1><span class="w"><span>Mi</span></span><span class="w"><span>nueva</span></span><span class="w"><span>yo</span></span></h1>
           <p class="sub">Plan de 21 días con <b>Nat Cebrián</b></p>
         </div>
-        <p class="lede">21 lecciones, 6 directos y 15 minutos al día para dejar de vestir a la mujer que fuiste y empezar a vestir a la que eres hoy. El método del libro <em>No tengo nada que ponerme</em>, convertido en un plan que cabe en tu vida real.</p>
+        <p class="lede">En 21 días vas a abrir el armario y saber exactamente qué ponerte. 21 lecciones, 6 directos con Nat y 15 minutos al día: el método del libro <em>No tengo nada que ponerme</em>, convertido en un plan que cabe en tu vida real.</p>
         <div class="urgency">
           <div class="cd-row">
             <span class="cd-label"><strong>Empezamos en</strong><small>Directo de bienvenida · Dom 4 oct · 19:00 h</small></span>
@@ -513,12 +558,19 @@
               <span><b data-u="s">00</b><small>seg</small></span>
             </span>
           </div>
-          <p class="seats"><i aria-hidden="true"></i><strong>Plazas limitadas.</strong> Nunca seremos más de <b data-seats>50</b> alumnas en esta edición.</p>
+          <p class="seats"><i aria-hidden="true"></i><strong>Plazas limitadas.</strong> Sé una de las <b data-seats>50</b> alumnas de la primera edición.</p>
+          <div class="seatbar" data-seatbar hidden><div class="seatbar-track"><i></i></div><span><b data-left>50</b> plazas disponibles de <b data-seats>50</b></span></div>
         </div>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#inscripcion"><span>Reservar mi plaza</span></a>
+          <a class="btn btn-primary" href="#inscripcion"><span>Quiero mi plaza</span></a>
           <a class="btn btn-ghost" href="#programa"><span>Ver los 6 módulos</span></a>
         </div>
+        <ul class="trust" aria-label="Garantías">
+          <li>Reserva en 1 minuto</li>
+          <li>Pago seguro</li>
+          <li>Acceso 12 meses</li>
+          <li>Garantía 7 días</li>
+        </ul>
       </div>
       <div class="stage">
         <figure class="portrait">
@@ -556,7 +608,7 @@
     <div class="wrap">
       <div class="section-head reveal">
         <p class="eyebrow">¿Te suena?</p>
-        <h2>Tu vida ha cambiado. Tu armario sigue vistiendo a <span class="em">la de antes.</span></h2>
+        <h2>Si te reconoces en una sola de estas frases, <span class="em">este plan es para ti.</span></h2>
       </div>
       <div class="pains">
         <article class="pain reveal"><span class="mod">Módulo 1</span><h3>“Mi ropa de antes ya no me representa.”</h3><p>Maternidad, cambio de trabajo, madurez, una ruptura. Has cambiado de etapa y sigues abriendo el mismo armario.</p></article>
@@ -619,7 +671,7 @@
     <div class="wrap">
       <div class="section-head reveal">
         <p class="eyebrow">6 módulos · 21 lecciones grabadas · un reto de 15 minutos por lección</p>
-        <h2>De la mujer que fuiste a la que eres hoy, <span class="em">en seis pasos</span> que ya han hecho las clientas de Nat.</h2>
+        <h2>El método completo de la asesoría privada de Nat, <span class="em">a una fracción del precio</span> y en 21 días.</h2>
       </div>
       <div class="prog-grid">
         <aside class="prog-sticky" aria-hidden="true">
@@ -805,8 +857,8 @@
   <section class="section" id="bonos" style="padding-top: 0">
     <div class="wrap">
       <div class="section-head reveal">
-        <p class="eyebrow">Cinco bonos en directo · Los lunes a las 19:00 h</p>
-        <h2>Lo que no cabe en las lecciones y <span class="em">sí en tu vida</span>.</h2>
+        <p class="eyebrow">Cinco bonos en directo · Incluidos con tu plaza, sin coste adicional</p>
+        <h2>Cinco masterclass extra que <span class="em">solo</span> tienen las alumnas de la primera edición.</h2>
       </div>
       <div class="bonos">
         <article class="bono reveal"><span class="k">Bono 1 · 5 oct</span><h4>Guía de la invitada perfecta</h4><small>Bodas de día y de noche, cócteles, eventos. Qué ponerte sin comprar un vestido nuevo.</small></article>
@@ -848,25 +900,36 @@
     <div class="ghost-word" aria-hidden="true">nueva yo</div>
     <div class="wrap">
       <div class="enrol-copy reveal">
-        <p class="eyebrow">Inscripción · Primera edición · Empieza el 4 de octubre</p>
-        <h2>Veintiún días. Quince minutos. <em>Una nueva tú.</em></h2>
-        <p class="lede">La primera edición abre con plazas limitadas para que Nat pueda dar feedback real en Auténticas y en los directos. Un grupo pequeño es la única forma de que el método funcione en el uno a uno.</p>
-        <ul class="perks">
-          <li><strong>Nunca seremos más de <b data-seats>50</b> alumnas.</strong> Cuando se cubren, la inscripción se cierra hasta la siguiente edición.</li>
-          <li>21 lecciones grabadas con su reto de 15 minutos, acceso durante 12 meses.</li>
-          <li>6 directos con Nat los domingos a las 19:00 h, grabados si no puedes asistir.</li>
-          <li>5 bonos en directo los lunes, comunidad Auténticas, hoja de ruta, chuleta de protocolo y certificado.</li>
+        <p class="eyebrow">Inscripción abierta · Primera edición · Empieza el 4 de octubre</p>
+        <h2>Sé una de las <em><b data-seats>50</b> alumnas</em> de la primera edición.</h2>
+        <p class="lede">Plazas limitadas para que Nat pueda darte feedback real en Auténticas y en los directos. Cuando se cubren, la inscripción se cierra hasta la siguiente edición, y la siguiente edición ya no tendrá precio de lanzamiento.</p>
+        <ul class="perks stack">
+          <li><span>21 lecciones grabadas con su reto de 15 minutos</span><small>Acceso 12 meses</small></li>
+          <li><span>6 directos con Nat, domingos 19:00 h</span><small>Grabados si no puedes</small></li>
+          <li><span>5 masterclass bonus en directo</span><small>Solo primera edición</small></li>
+          <li><span>Comunidad Auténticas con feedback semanal</span><small>Grupo privado</small></li>
+          <li><span>Hoja de ruta, diario de estilo, chuleta de protocolo y tarjeta anti-compras</span><small>Descargables</small></li>
+          <li><span>Certificado Digital “Estilo Personal”</span><small>Al completar el reto</small></li>
         </ul>
+        <div class="guarantee">
+          <div class="seal">7<small>días</small></div>
+          <div><b>Garantía de la primera semana.</b> Haz el directo de bienvenida y la primera semana de lecciones. Si no es para ti, escribe antes del 11 de octubre y te devolvemos el importe.</div>
+        </div>
       </div>
       <form class="form reveal" data-delay="1" id="waitlist" action="#" method="post" novalidate>
         <div class="fields" style="display: contents">
-          <h3>Reserva tu plaza</h3>
-          <div class="price-note"><b>—&nbsp;€</b><span>Precio de la primera edición pendiente de confirmar. Sustituye este bloque por el botón de pago (Stripe o Hotmart) antes de lanzar.</span></div>
+          <h3>Reserva tu plaza en 1 minuto</h3>
+          <div class="price">
+            <div class="price-row"><span class="price-lbl">Precio de lanzamiento · primera edición</span><b>—&nbsp;€</b></div>
+            <div class="price-row muted"><span class="price-lbl">Precio en próximas ediciones</span><s>—&nbsp;€</s></div>
+            <div class="price-cd"><span>La inscripción cierra en</span><span class="countdown countdown-dark" data-countdown><span><b data-u="d">00</b><small>días</small></span><span><b data-u="h">00</b><small>h</small></span><span><b data-u="m">00</b><small>min</small></span><span><b data-u="s">00</b><small>seg</small></span></span></div>
+          </div>
+          <p class="small" style="margin-top:-6px">Sustituye los importes y conecta el botón a Stripe o Hotmart antes de lanzar. Pago único o en 3 plazos, según configures la pasarela.</p>
           <div class="field"><label for="nombre">Nombre</label><input id="nombre" name="nombre" type="text" autocomplete="given-name" placeholder="Tu nombre" required></div>
           <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="tu@email.com" required></div>
           <label class="consent"><input id="consent" name="consent" type="checkbox" required> Acepto recibir emails de Nat Cebrián sobre Mi nueva yo. Puedo darme de baja en cualquier momento.</label>
-          <button class="btn btn-accent" type="submit"><span>Reservar mi plaza</span></button>
-          <p class="small">Sin spam. Solo la confirmación, el acceso al directo de bienvenida y tu hoja de ruta.</p>
+          <button class="btn btn-accent" type="submit"><span>Quiero mi plaza</span></button>
+          <p class="small">Pago seguro · Garantía de 7 días · Plazas limitadas a <b data-seats>50</b> alumnas</p>
         </div>
         <div class="success" aria-live="polite">
           <div class="check">✓</div>
@@ -890,17 +953,19 @@
         <details><summary>¿Hay contacto real con Nat?</summary><p>Sí. Seis directos en vivo, feedback semanal en la comunidad Auténticas y cinco bonos en directo los lunes. Por eso nunca seremos más de <b data-seats>50</b> alumnas por edición.</p></details>
         <details><summary>¿Y si me pierdo un día?</summary><p>Todo queda grabado y el acceso dura 12 meses. Los 21 días marcan el ritmo de la edición, no una fecha límite. Tu hoja de ruta te dice exactamente qué toca cada día para retomar sin pensar.</p></details>
         <details><summary>¿Necesito el libro para hacer el programa?</summary><p>No. El programa desarrolla los siete pasos de <em>No tengo nada que ponerme</em> con más profundidad y con retos guiados. Si ya lo has leído, reconocerás el método; si no, no te falta nada.</p></details>
-        <details><summary>¿Cuánto cuesta?</summary><p>El precio de la primera edición se publica aquí en cuanto se abra la inscripción. Las alumnas de la primera edición tienen precio de lanzamiento, que no se repite en ediciones posteriores.</p></details>
+        <details><summary>¿Cuánto cuesta y cómo se paga?</summary><p>El precio de lanzamiento de la primera edición está en el bloque de inscripción y no se repite en ediciones posteriores. Pago único con tarjeta, o fraccionado si lo prefieres. Recibes el acceso al momento.</p></details>
+        <details><summary>¿Y si empiezo y no es para mí?</summary><p>Tienes la garantía de la primera semana: haz el directo de bienvenida y las lecciones del módulo 1. Si antes del 11 de octubre decides que no es para ti, escribe a Nat y te devolvemos el importe.</p></details>
+        <details><summary>¿Por qué solo <b data-seats>50</b> plazas?</summary><p>Porque Nat revisa personalmente los retos en Auténticas y responde en directo cada domingo. Con más alumnas, el feedback deja de ser real. Cuando se cubren las plazas, la inscripción se cierra.</p></details>
       </div>
     </div>
   </section>
 
   <section class="final">
     <div class="wrap reveal">
-      <p class="eyebrow">Mi nueva yo · 4 de octubre de 2026</p>
+      <p class="eyebrow">Quedan <b data-days-left>—</b> días para el directo de bienvenida</p>
       <h2>La mujer que eres hoy, <em>por fin vestida.</em></h2>
-      <p class="lede">Reserva tu plaza y nos vemos en el directo de bienvenida.</p>
-      <a class="btn btn-primary" href="#inscripcion"><span>Reservar mi plaza</span></a>
+      <p class="lede">Sé una de las <b data-seats>50</b> alumnas de la primera edición. Reserva tu plaza y nos vemos el 4 de octubre a las 19:00 h.</p>
+      <a class="btn btn-primary" href="#inscripcion"><span>Quiero mi plaza</span></a>
     </div>
   </section>
 </main>
@@ -918,8 +983,21 @@
   </div>
 </footer>
 
-<div class="mobile-cta" id="mobile-cta"><a class="btn btn-primary" href="#inscripcion"><span>Reservar mi plaza</span></a></div>
+<div class="mobile-cta" id="mobile-cta"><div class="mcta-info"><span>Empieza en <b data-days-left>—</b> días</span><span><b data-seats>50</b> plazas · primera edición</span></div><a class="btn btn-primary" href="#inscripcion"><span>Quiero mi plaza</span></a></div>
 
+<dialog class="modal exit" id="exit-modal">
+  <div class="exit-inner">
+    <button class="modal-close" type="button" data-close-exit aria-label="Cerrar">×</button>
+    <p class="eyebrow">Antes de irte</p>
+    <h3>Llévate gratis la hoja de ruta de los 21 días.</h3>
+    <p>El calendario día a día del programa, con las lecciones, los directos y los bonos. Y te avisamos si las plazas están a punto de cubrirse.</p>
+    <form id="exit-form" action="#" method="post" novalidate>
+      <div class="field"><label for="exit-email">Email</label><input id="exit-email" type="email" autocomplete="email" placeholder="tu@email.com" required></div>
+      <button class="btn btn-accent" type="submit"><span>Enviarme la hoja de ruta</span></button>
+      <p class="small">Sin spam. Te la enviamos y te avisamos de la apertura y del cierre de plazas.</p>
+    </form>
+  </div>
+</dialog>
 <dialog class="modal" id="video-modal">
   <div class="modal-inner">
     <button class="modal-close" type="button" data-close-video aria-label="Cerrar">×</button>
@@ -990,22 +1068,50 @@
   };
   window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
-  /* ---------- Cupo máximo (cámbialo aquí, se actualiza en toda la página) ---------- */
-  var MAX_SEATS = 50;
+  /* ---------- Cupo: cámbialo aquí y se actualiza en toda la página ----------
+     MAX_SEATS: plazas de la edición. SEATS_TAKEN: plazas ya vendidas (actualízalo a mano
+     con el dato real de la pasarela; con 0 la barra de plazas no se muestra). */
+  var MAX_SEATS = 50, SEATS_TAKEN = 0;
   document.querySelectorAll('[data-seats]').forEach(function (el) { el.textContent = MAX_SEATS; });
+  var left = Math.max(0, MAX_SEATS - SEATS_TAKEN);
+  document.querySelectorAll('[data-left]').forEach(function (el) { el.textContent = left; });
+  document.querySelectorAll('[data-seatbar]').forEach(function (bar) {
+    if (SEATS_TAKEN > 0) { bar.hidden = false; requestAnimationFrame(function () { bar.querySelector('i').style.width = (SEATS_TAKEN / MAX_SEATS * 100) + '%'; }); }
+  });
 
-  /* ---------- Countdown: directo de bienvenida ---------- */
-  var LAUNCH = new Date('2026-10-04T19:00:00+02:00');
-  var cd = document.getElementById('countdown');
+  /* ---------- Cuentas atrás: directo de bienvenida (4 oct 19:00) y cierre de inscripción (3 oct 23:59) ---------- */
+  var LAUNCH = new Date('2026-10-04T19:00:00+02:00'), CLOSE = new Date('2026-10-03T23:59:00+02:00');
   var pad = function (n) { return String(n).padStart(2, '0'); };
+  var fill = function (el, target) {
+    var diff = Math.max(0, target - Date.now());
+    el.querySelector('[data-u=d]').textContent = pad(Math.floor(diff / 86400000));
+    el.querySelector('[data-u=h]').textContent = pad(Math.floor(diff / 3600000) % 24);
+    el.querySelector('[data-u=m]').textContent = pad(Math.floor(diff / 60000) % 60);
+    el.querySelector('[data-u=s]').textContent = pad(Math.floor(diff / 1000) % 60);
+  };
   var tick = function () {
-    var diff = Math.max(0, LAUNCH - Date.now());
-    cd.querySelector('[data-u=d]').textContent = pad(Math.floor(diff / 86400000));
-    cd.querySelector('[data-u=h]').textContent = pad(Math.floor(diff / 3600000) % 24);
-    cd.querySelector('[data-u=m]').textContent = pad(Math.floor(diff / 60000) % 60);
-    cd.querySelector('[data-u=s]').textContent = pad(Math.floor(diff / 1000) % 60);
+    fill(document.getElementById('countdown'), LAUNCH);
+    document.querySelectorAll('[data-countdown]').forEach(function (el) { fill(el, CLOSE); });
+    var days = Math.max(0, Math.ceil((LAUNCH - Date.now()) / 86400000));
+    document.querySelectorAll('[data-days-left]').forEach(function (el) { el.textContent = days; });
   };
   tick(); setInterval(tick, 1000);
+
+  /* ---------- Exit intent (una vez por sesión, solo escritorio) ---------- */
+  var exitModal = document.getElementById('exit-modal'), exitShown = false;
+  try { exitShown = sessionStorage.getItem('mny-exit') === '1'; } catch (e) {}
+  var showExit = function () {
+    if (exitShown || document.getElementById('waitlist').classList.contains('done')) return;
+    exitShown = true; try { sessionStorage.setItem('mny-exit', '1'); } catch (e) {}
+    if (exitModal.showModal) exitModal.showModal();
+  };
+  if (window.matchMedia('(pointer: fine)').matches) { document.addEventListener('mouseout', function (e) { if (!e.relatedTarget && e.clientY <= 0) showExit(); }); }
+  exitModal.querySelector('[data-close-exit]').addEventListener('click', function () { exitModal.close(); });
+  exitModal.addEventListener('click', function (e) { if (e.target === exitModal) exitModal.close(); });
+  document.getElementById('exit-form').addEventListener('submit', function (e) {
+    e.preventDefault(); var f = e.target; if (!f.checkValidity()) { f.reportValidity(); return; }
+    f.innerHTML = '<p><b>Hecho.</b> Te enviamos la hoja de ruta a ' + document.getElementById('exit-email').value + '. Conecta este formulario a tu herramienta de email para que el envío sea real.</p>';
+  });
 
   /* ---------- Before / after ---------- */
   var range = document.getElementById('compare-range'), after = document.getElementById('after'), handle = document.getElementById('handle');
