@@ -4,167 +4,130 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#6E93B0">
-<meta name="description" content="Mi nueva yo: plan de 21 días con Nat Cebrián. 21 lecciones, 6 directos y 15 minutos al día para vestir a la mujer que eres hoy. Primera edición: 4 de octubre de 2026. Plazas limitadas.">
+<meta name="description" content="Mi nueva yo: el programa de 6 semanas de Nat Cebrián para construir el estilo propio que te represente. 21 lecciones, 7 sesiones en vivo, 5 regalos y garantía de 30 días.">
 <title>Mi nueva yo</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Montserrat:wght@300;400;500;600&family=Karla:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Montserrat:wght@300;400;500;600;700&family=Karla:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap">
 <style>
   :root {
-    --bg: #F5EEE7;
-    --surface: #FBF7F3;
-    --ink: #1E2B3A;
-    --ink-soft: #44515F;
-    --muted: #6B7683;
-    --line: #DCD2C9;
-    --brand: #6E93B0;
-    --brand-deep: #55799A;
-    --on-brand: #F5EEE7;
-    --accent: #F06CA4;
-    --accent-text: #C43C7C;
-    --accent-tint: #FBE3EE;
-    --placeholder: #E6DCD3;
-    --placeholder-stripe: #D9CDC2;
-    --silk-a: #7FA1BC;
-    --silk-b: #5F86A5;
-    --silk-c: #8FB0C9;
+    --bg: #F5EEE7; --surface: #FBF7F3; --ink: #1E2B3A; --ink-soft: #44515F; --muted: #6B7683; --line: #DCD2C9;
+    --brand: #6E93B0; --brand-deep: #55799A; --brand-tint: #E4ECF3; --on-brand: #F5EEE7;
+    --accent: #F06CA4; --accent-text: #C43C7C; --accent-tint: #FBE3EE;
+    --placeholder: #E6DCD3; --placeholder-stripe: #D9CDC2;
+    --silk-a: #7FA1BC; --silk-b: #5F86A5; --silk-c: #8FB0C9;
     --shadow: 0 30px 70px -30px rgba(30, 43, 58, 0.45);
     --display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
     --label: "Montserrat", "Helvetica Neue", Arial, sans-serif;
     --body: "Karla", "Helvetica Neue", Arial, sans-serif;
-    --max: 1180px;
-    --gutter: clamp(16px, 5vw, 64px);
-    --ease: cubic-bezier(.2,.7,.2,1);
+    --max: 1040px; --narrow: 760px; --gutter: clamp(16px, 5vw, 64px); --ease: cubic-bezier(.2,.7,.2,1);
     color-scheme: light;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
       --bg: #121A22; --surface: #192330; --ink: #EFE7DF; --ink-soft: #C9C0B7; --muted: #98A3AE; --line: #2C3745;
-      --brand: #3F5F7C; --brand-deep: #4F759A; --on-brand: #EFE7DF;
+      --brand: #3F5F7C; --brand-deep: #4F759A; --brand-tint: #1C2836; --on-brand: #EFE7DF;
       --accent: #F27DB0; --accent-text: #F58BB9; --accent-tint: #2E1F2A;
       --placeholder: #232C37; --placeholder-stripe: #2B3542;
       --silk-a: #34506A; --silk-b: #2A4259; --silk-c: #3E5B75;
-      --shadow: 0 30px 70px -30px rgba(0, 0, 0, 0.85);
-      color-scheme: dark;
+      --shadow: 0 30px 70px -30px rgba(0, 0, 0, 0.85); color-scheme: dark;
     }
   }
   :root[data-theme="dark"] {
     --bg: #121A22; --surface: #192330; --ink: #EFE7DF; --ink-soft: #C9C0B7; --muted: #98A3AE; --line: #2C3745;
-    --brand: #3F5F7C; --brand-deep: #4F759A; --on-brand: #EFE7DF;
+    --brand: #3F5F7C; --brand-deep: #4F759A; --brand-tint: #1C2836; --on-brand: #EFE7DF;
     --accent: #F27DB0; --accent-text: #F58BB9; --accent-tint: #2E1F2A;
     --placeholder: #232C37; --placeholder-stripe: #2B3542;
     --silk-a: #34506A; --silk-b: #2A4259; --silk-c: #3E5B75;
-    --shadow: 0 30px 70px -30px rgba(0, 0, 0, 0.85);
-    color-scheme: dark;
+    --shadow: 0 30px 70px -30px rgba(0, 0, 0, 0.85); color-scheme: dark;
   }
 
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; overflow-x: clip; }
-  @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-    *, *::before, *::after { animation: none !important; transition: none !important; }
-    .js .reveal { opacity: 1 !important; transform: none !important; }
-  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; } .js .reveal { opacity: 1 !important; transform: none !important; } }
   img, video { max-width: 100%; display: block; }
   figure { margin: 0; }
   a { color: inherit; }
   button { font: inherit; color: inherit; }
-  h1, h2, h3, h4 { font-family: var(--display); font-weight: 500; line-height: 1.05; margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+  h1, h2, h3, h4 { font-family: var(--display); font-weight: 500; line-height: 1.1; margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
   p { margin: 0; }
   .wrap { max-width: var(--max); margin: 0 auto; padding-inline: var(--gutter); }
+  .narrow { max-width: var(--narrow); margin-inline: auto; }
+  .center { text-align: center; }
   .eyebrow { font-family: var(--label); font-size: 12px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-text); }
-  .lede { font-size: clamp(18px, 1.5vw, 21px); line-height: 1.5; color: var(--ink-soft); max-width: 34em; }
+  .lede { font-size: clamp(17px, 1.4vw, 20px); line-height: 1.55; color: var(--ink-soft); }
   .em { font-style: italic; font-weight: 400; color: var(--accent-text); }
   :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
   .skip { position: absolute; left: -999px; top: 8px; background: var(--ink); color: var(--bg); padding: 8px 12px; z-index: 60; }
   .skip:focus { left: 8px; }
-
-  .js .reveal { opacity: 0; transform: translateY(28px); transition: opacity 700ms var(--ease), transform 700ms var(--ease); }
+  .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity 700ms var(--ease), transform 700ms var(--ease); }
   .js .reveal.in { opacity: 1; transform: none; }
-  .js .reveal[data-delay="1"] { transition-delay: 90ms; }
-  .js .reveal[data-delay="2"] { transition-delay: 180ms; }
-  .js .reveal[data-delay="3"] { transition-delay: 270ms; }
+  .js .reveal[data-delay="1"] { transition-delay: 90ms; } .js .reveal[data-delay="2"] { transition-delay: 180ms; } .js .reveal[data-delay="3"] { transition-delay: 270ms; }
+  .section { padding-block: clamp(56px, 8vw, 104px); position: relative; }
+  .section h2 { font-size: clamp(30px, 3.8vw, 46px); }
+  .section h2 b { font-weight: 600; }
+  .sec-sub { margin-top: 16px; }
+  .alt { background: var(--surface); }
+  .tint { background: var(--brand-tint); }
 
   /* Buttons */
-  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; padding: 0 28px; border-radius: 999px; font-family: var(--label); font-weight: 500; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border: 1px solid transparent; cursor: pointer; position: relative; overflow: hidden; transition: transform 200ms var(--ease), color 200ms var(--ease), border-color 200ms var(--ease); }
-  .btn::before { content: ""; position: absolute; inset: 0; background: var(--accent); transform: translateY(101%); transition: transform 320ms var(--ease); z-index: 0; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 54px; padding: 0 30px; border-radius: 999px; font-family: var(--label); font-weight: 600; font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; border: 1px solid transparent; cursor: pointer; position: relative; overflow: hidden; transition: transform 200ms var(--ease), color 200ms var(--ease); text-align: center; }
+  .btn::before { content: ""; position: absolute; inset: 0; background: var(--ink); transform: translateY(101%); transition: transform 320ms var(--ease); z-index: 0; }
   .btn > span { position: relative; z-index: 1; }
   .btn:hover { transform: translateY(-2px); }
   .btn:hover::before { transform: translateY(0); }
-  .btn-primary { background: var(--ink); color: var(--bg); }
-  .btn-primary:hover { color: var(--ink); }
-  .btn-ghost { border-color: var(--line); color: var(--ink); background: transparent; }
-  .btn-ghost:hover { color: var(--ink); border-color: var(--accent); }
   .btn-accent { background: var(--accent); color: var(--ink); }
-  .btn-accent::before { background: var(--ink); }
   .btn-accent:hover { color: var(--bg); }
-  .on-brand .btn-ghost { border-color: color-mix(in srgb, var(--on-brand) 40%, transparent); color: var(--on-brand); }
-  .on-brand .btn-ghost:hover { color: var(--ink); }
+  .btn-primary { background: var(--ink); color: var(--bg); }
+  .btn-primary::before { background: var(--accent); }
+  .btn-primary:hover { color: var(--ink); }
+  .btn-xl { min-height: 62px; padding-inline: 36px; font-size: 15px; width: 100%; max-width: 560px; }
+  .cta-note { font-size: 13px; color: var(--muted); margin-top: 12px; }
+  .cta-note b { color: var(--ink); font-weight: 600; }
+  .on-brand .cta-note, .on-brand .cta-note b { color: var(--ink); }
 
-  /* Announce bar */
-  .announce { background: var(--accent); color: var(--ink); font-size: 13px; }
-  .announce .wrap { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px 24px; min-height: 40px; padding-block: 8px; text-align: center; }
-  .announce strong { font-family: var(--label); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; font-size: 11px; }
-  .announce b { font-family: var(--display); font-size: 16px; font-weight: 500; }
-  .announce a { font-weight: 600; text-decoration: none; border-bottom: 1px solid currentColor; white-space: nowrap; }
-  @media (max-width: 640px) { .announce .wrap { font-size: 12px; } }
-
-  /* Progress + nav */
+  /* Header */
   .progress { position: fixed; top: env(safe-area-inset-top, 0px); left: 0; height: 3px; width: 0; background: var(--accent); z-index: 40; transition: width 80ms linear; }
-  .nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 30; background: color-mix(in srgb, var(--bg) 86%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
-  .nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 68px; }
-  .brand { font-family: var(--display); font-size: 22px; letter-spacing: 0.02em; text-decoration: none; }
+  .top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 30; background: color-mix(in srgb, var(--bg) 86%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+  .top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 60px; }
+  .brand { font-family: var(--display); font-size: 20px; letter-spacing: 0.02em; text-decoration: none; }
   .brand span { font-style: italic; color: var(--accent-text); }
-  .nav-links { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
-  .nav-links a { text-decoration: none; font-size: 14px; font-weight: 500; color: var(--ink-soft); position: relative; padding-block: 6px; }
-  .nav-links a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 260ms var(--ease); }
-  .nav-links a:hover::after { transform: scaleX(1); }
-  .nav .btn { min-height: 42px; padding-inline: 20px; font-size: 12px; }
-  .menu-btn { display: none; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 50%; background: transparent; cursor: pointer; place-items: center; }
-  .menu-btn span { display: block; width: 18px; height: 2px; background: var(--ink); position: relative; }
-  .menu-btn span::before, .menu-btn span::after { content: ""; position: absolute; left: 0; width: 18px; height: 2px; background: var(--ink); }
-  .menu-btn span::before { top: -6px; } .menu-btn span::after { top: 6px; }
-  .menu { position: fixed; inset: 0; z-index: 50; background: var(--bg); padding: calc(24px + env(safe-area-inset-top, 0px)) var(--gutter) calc(24px + env(safe-area-inset-bottom, 0px)); display: none; flex-direction: column; gap: 32px; }
-  .menu.open { display: flex; animation: fade 300ms var(--ease) both; }
-  .menu-top { display: flex; justify-content: space-between; align-items: center; }
-  .menu-close { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: transparent; font-size: 24px; cursor: pointer; }
-  .menu ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
-  .menu li a { display: flex; justify-content: space-between; align-items: center; padding-block: 16px; border-bottom: 1px solid var(--line); text-decoration: none; font-family: var(--display); font-size: 28px; }
-  .menu li a small { font-family: var(--label); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
-  .menu .btn { margin-top: auto; }
-  @media (max-width: 800px) { .nav-links { display: none; } .menu-btn { display: grid; } .nav .btn-primary { display: none; } .nav .wrap { min-height: 60px; } }
+  .top .btn { min-height: 40px; padding-inline: 18px; font-size: 12px; }
+  .top .cd-mini { font-family: var(--label); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); display: flex; gap: 8px; align-items: center; }
+  .top .cd-mini b { font-family: var(--display); font-size: 16px; color: var(--ink); font-weight: 500; }
+  @media (max-width: 700px) { .top .cd-mini { display: none; } }
 
-  /* Hero (brand blue, like the logo) */
-  .hero { position: relative; overflow: hidden; background: var(--brand); color: var(--on-brand); padding-block: clamp(40px, 5vw, 72px) clamp(64px, 8vw, 120px); }
+  /* Hero VSL */
+  .hero { position: relative; overflow: hidden; background: var(--brand); color: var(--on-brand); padding-block: clamp(40px, 6vw, 80px) clamp(56px, 7vw, 96px); text-align: center; }
   .silk { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
-  .hero .wrap { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(24px, 4vw, 56px); align-items: center; }
-  .hero-copy { display: flex; flex-direction: column; gap: 26px; }
-  .hero .eyebrow { color: var(--on-brand); opacity: .85; }
-  .wordmark { display: grid; grid-template-columns: auto 1fr; gap: 0 clamp(16px, 3vw, 40px); align-items: end; }
-  .wordmark h1 { font-size: clamp(64px, 10vw, 140px); line-height: 0.86; letter-spacing: 0.01em; text-transform: uppercase; font-weight: 400; color: var(--on-brand); }
-  .wordmark h1 .w { display: block; overflow: hidden; padding-bottom: .04em; }
-  .wordmark h1 .w > span { display: inline-block; animation: rise 900ms var(--ease) both; }
-  .wordmark h1 .w:nth-child(2) > span { animation-delay: 120ms; }
-  .wordmark h1 .w:nth-child(3) > span { animation-delay: 240ms; }
-  .wordmark .sub { font-family: var(--label); font-weight: 400; font-size: clamp(13px, 1.3vw, 18px); letter-spacing: .32em; text-transform: uppercase; line-height: 1.6; color: var(--on-brand); animation: fade 900ms var(--ease) 450ms both; padding-bottom: .3em; }
-  .wordmark .sub b { display: block; font-weight: 500; color: var(--accent); }
-  @keyframes rise { from { transform: translateY(110%); opacity: 0; } to { transform: none; opacity: 1; } }
+  .hero .wrap { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 24px; }
+  .logo { display: flex; flex-direction: column; align-items: center; gap: 4px; animation: fade 900ms var(--ease) both; }
+  .logo .mark { font-family: var(--display); font-size: clamp(30px, 4vw, 44px); letter-spacing: .06em; text-transform: uppercase; line-height: 1; color: var(--on-brand); }
+  .logo .mark em { font-style: normal; color: var(--accent); }
+  .logo .sub { font-family: var(--label); font-size: 10px; letter-spacing: .3em; text-transform: uppercase; color: var(--on-brand); opacity: .85; }
+  .hero h1 { font-size: clamp(30px, 4.6vw, 56px); max-width: 20ch; color: var(--on-brand); animation: fade 900ms var(--ease) 120ms both; }
+  .hero h1 b { font-weight: 600; }
+  .hero .lede { color: var(--ink); max-width: 44em; animation: fade 900ms var(--ease) 240ms both; }
+  .hero .lede b { font-weight: 600; }
+  .vsl { position: relative; width: 100%; max-width: 820px; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; background: var(--ink); box-shadow: var(--shadow); border: 0; padding: 0; cursor: pointer; display: block; animation: fade 1000ms var(--ease) 360ms both; }
+  .ph { background: repeating-linear-gradient(135deg, var(--placeholder) 0 14px, var(--placeholder-stripe) 14px 15px); display: grid; place-items: center; text-align: center; padding: 24px; color: var(--muted); font-family: var(--label); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1.8; width: 100%; height: 100%; }
+  .vsl .ph { position: absolute; inset: 0; background: repeating-linear-gradient(135deg, #1C2733 0 14px, #26333F 14px 15px); color: var(--bg); align-content: end; padding-bottom: 28px; }
+  .vsl .play { position: absolute; left: 50%; top: 50%; width: 96px; height: 96px; margin: -48px 0 0 -48px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; transition: transform 300ms var(--ease); animation: pulse 2.4s ease-in-out infinite; }
+  .vsl:hover .play { transform: scale(1.08); }
+  .vsl .play svg { width: 32px; height: 32px; fill: var(--ink); margin-left: 5px; }
+  .vsl .dur { position: absolute; right: 16px; top: 16px; background: rgba(0,0,0,.55); color: #fff; font-family: var(--label); font-size: 11px; letter-spacing: .12em; padding: 6px 10px; border-radius: 2px; }
+  @keyframes pulse { 0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 50%, transparent); } 60% { box-shadow: 0 0 0 18px transparent; } }
   @keyframes fade { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
-  .hero .lede { color: var(--ink); animation: fade 900ms var(--ease) 500ms both; }
-  .hero-actions, .hero-note { animation: fade 900ms var(--ease) 650ms both; }
-  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
-  .hero-note { font-size: 13px; color: var(--ink); display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; }
-  .hero-note strong { font-weight: 600; }
-  .urgency { display: flex; flex-direction: column; gap: 12px; padding: 16px 18px; border: 1px solid color-mix(in srgb, var(--on-brand) 35%, transparent); border-radius: 6px; background: color-mix(in srgb, var(--on-brand) 12%, transparent); backdrop-filter: blur(6px); animation: fade 900ms var(--ease) 600ms both; max-width: 560px; }
-  .cd-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 20px; }
-  .cd-label { display: flex; flex-direction: column; gap: 2px; font-size: 14px; color: var(--ink); }
-  .cd-label strong { font-family: var(--label); font-weight: 500; letter-spacing: .14em; text-transform: uppercase; font-size: 11px; color: var(--on-brand); }
-  .cd-label small { font-size: 12px; color: var(--ink); opacity: .85; }
+  .cta-block { display: flex; flex-direction: column; align-items: center; gap: 14px; width: 100%; animation: fade 900ms var(--ease) 500ms both; }
+  .urgency { width: 100%; max-width: 560px; display: flex; flex-direction: column; gap: 12px; padding: 14px 18px; border: 1px solid color-mix(in srgb, var(--on-brand) 35%, transparent); border-radius: 8px; background: color-mix(in srgb, var(--on-brand) 12%, transparent); backdrop-filter: blur(6px); text-align: left; }
+  .cd-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 20px; }
+  .cd-label { display: flex; flex-direction: column; gap: 2px; font-size: 13px; color: var(--ink); }
+  .cd-label strong { font-family: var(--label); font-weight: 600; letter-spacing: .14em; text-transform: uppercase; font-size: 11px; color: var(--on-brand); }
   .countdown { display: inline-flex; gap: 14px; font-variant-numeric: tabular-nums; }
-  .countdown b { font-family: var(--display); font-size: 30px; font-weight: 500; color: var(--on-brand); line-height: 1; }
+  .countdown b { font-family: var(--display); font-size: 28px; font-weight: 500; color: var(--on-brand); line-height: 1; }
   .countdown small { display: block; font-family: var(--label); font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); margin-top: 3px; }
-  .seats { display: block; line-height: 1.6; font-size: 14px; color: var(--ink); padding-top: 12px; border-top: 1px solid color-mix(in srgb, var(--on-brand) 30%, transparent); }
+  .seats { display: block; line-height: 1.6; font-size: 14px; color: var(--ink); padding-top: 10px; border-top: 1px solid color-mix(in srgb, var(--on-brand) 30%, transparent); }
   .seats i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); margin-right: 8px; vertical-align: middle; animation: pulse 2s ease-in-out infinite; }
   .seats strong { color: var(--on-brand); font-weight: 600; }
   .seats b { font-family: var(--display); font-size: 20px; font-weight: 500; color: var(--on-brand); line-height: 1; }
@@ -172,208 +135,153 @@
   .seatbar-track { height: 6px; border-radius: 3px; background: color-mix(in srgb, var(--on-brand) 35%, transparent); overflow: hidden; }
   .seatbar-track i { display: block; height: 100%; width: 0; background: var(--accent); transition: width 900ms var(--ease); }
   .seatbar b { font-family: var(--display); font-size: 15px; color: var(--on-brand); }
-  .trust { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 20px; font-family: var(--label); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink); animation: fade 900ms var(--ease) 750ms both; }
-  .trust li { display: inline-flex; align-items: center; gap: 6px; }
-  .trust li::before { content: "✓"; color: var(--on-brand); font-weight: 700; }
+  .trust { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 20px; font-family: var(--label); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink); }
+  .trust li::before { content: "✓ "; color: var(--on-brand); font-weight: 700; }
+  @media (max-width: 640px) { .cd-row { flex-direction: column; align-items: flex-start; } .btn-xl { font-size: 13px; padding-inline: 20px; } }
 
-  .stage { position: relative; aspect-ratio: 4 / 5; }
-  .portrait { position: absolute; inset: 0 0 0 12%; border-radius: 4px 4px 200px 4px; overflow: hidden; box-shadow: var(--shadow); animation: fade 1000ms var(--ease) 300ms both; }
-  .ph { background: repeating-linear-gradient(135deg, var(--placeholder) 0 14px, var(--placeholder-stripe) 14px 15px); display: grid; place-items: center; text-align: center; padding: 24px; color: var(--muted); font-family: var(--label); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1.8; width: 100%; height: 100%; }
-  .portrait .ph { position: absolute; inset: 0; }
-  .reel { position: absolute; left: -6%; bottom: -8%; width: 38%; aspect-ratio: 9 / 16; border-radius: 14px; overflow: hidden; background: var(--ink); box-shadow: var(--shadow); transform: rotate(-6deg); transition: transform 500ms var(--ease); cursor: pointer; border: 0; padding: 0; animation: fade 1000ms var(--ease) 700ms both; }
-  .reel:hover { transform: rotate(0deg) scale(1.03); }
-  .reel .ph { position: absolute; inset: 0; color: var(--bg); background: repeating-linear-gradient(135deg, #1C2733 0 14px, #26333F 14px 15px); font-size: 10px; align-content: end; padding-bottom: 56px; }
-  .reel .play { position: absolute; left: 50%; top: 50%; width: 54px; height: 54px; margin: -27px 0 0 -27px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; animation: pulse 2.4s ease-in-out infinite; }
-  .reel .play svg { width: 18px; height: 18px; fill: var(--ink); margin-left: 3px; }
-  @keyframes pulse { 0%, 100% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 50%, transparent); } 60% { box-shadow: 0 0 0 16px transparent; } }
-  .badge { position: absolute; right: -4%; top: -6%; width: clamp(110px, 12vw, 150px); aspect-ratio: 1; animation: spin 24s linear infinite; z-index: 2; }
-  .badge svg { width: 100%; height: 100%; overflow: visible; }
-  .badge text { font-family: var(--label); font-size: 11px; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; fill: var(--on-brand); }
-  .badge circle { fill: var(--accent); }
-  @keyframes spin { to { transform: rotate(360deg); } }
-  @media (max-width: 860px) {
-    .hero { padding-block: 32px 72px; }
-    .hero .wrap { grid-template-columns: 1fr; }
-    .hero-copy { gap: 20px; }
-    .wordmark { grid-template-columns: 1fr; gap: 12px; }
-    .wordmark h1 { font-size: clamp(64px, 20vw, 100px); }
-    .hero-actions .btn { flex: 1 1 auto; }
-    .urgency { padding: 14px; max-width: none; }
-    .cd-row { flex-direction: column; align-items: flex-start; }
-    .countdown b { font-size: 28px; }
-    .stage { max-width: 340px; margin-top: 20px; }
-  }
-
-  /* Strips */
-  .strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); overflow: hidden; padding-block: 14px; }
-  .strip + .strip { border-top: 0; }
-  .strip-track { display: flex; gap: 48px; white-space: nowrap; width: max-content; animation: slide 42s linear infinite; font-family: var(--display); font-size: 20px; font-style: italic; color: var(--ink-soft); }
-  .strip.reverse .strip-track { animation-direction: reverse; animation-duration: 56s; font-style: normal; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; font-family: var(--label); font-weight: 500; color: var(--muted); }
-  .strip-track span::after { content: "·"; margin-left: 48px; color: var(--accent); font-style: normal; }
-  @keyframes slide { to { transform: translateX(-50%); } }
-
-  /* Sections */
-  .section { padding-block: clamp(64px, 9vw, 128px); position: relative; }
-  .section-head { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 24px 48px; align-items: start; margin-bottom: clamp(36px, 5vw, 64px); }
-  .section-head h2 { font-size: clamp(36px, 4.5vw, 60px); }
-  .section-head .eyebrow { padding-top: 10px; }
-  @media (max-width: 760px) { .section-head { grid-template-columns: 1fr; } }
-
-  /* Pains */
-  .pains { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); }
-  .pain { padding: 30px 28px 30px 0; border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 10px; position: relative; }
-  .pain::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--accent); transform: scaleY(0); transition: transform 300ms var(--ease); }
-  .pain:hover::before { transform: scaleY(1); }
-  .pain:hover h3 { padding-left: 16px; }
-  .pain h3 { font-size: 24px; font-style: italic; font-weight: 400; transition: padding-left 300ms var(--ease); }
-  .pain p { color: var(--ink-soft); font-size: 15.5px; }
-  .pain .mod { font-family: var(--label); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
-  @media (max-width: 960px) { .pains { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-  @media (max-width: 640px) { .pains { grid-template-columns: 1fr; } .pain { padding-right: 0; } }
-
-  /* Before / after */
-  .compare { background: var(--surface); }
-  .compare-box { position: relative; width: 100%; aspect-ratio: 16 / 8; border-radius: 6px; overflow: hidden; box-shadow: var(--shadow); user-select: none; touch-action: pan-y; }
-  .rack { position: absolute; inset: 0; padding: 12% 6% 8%; display: flex; align-items: flex-end; gap: 1.2%; }
-  .rack::before { content: ""; position: absolute; left: 4%; right: 4%; top: 10%; height: 4px; border-radius: 2px; background: var(--ink-soft); opacity: .4; }
-  .rack.before { background: var(--placeholder); }
-  .rack.after { background: var(--accent-tint); clip-path: inset(0 0 0 50%); }
-  .garment { flex: 1; border-radius: 8px 8px 4px 4px; position: relative; transform-origin: top center; min-width: 0; }
-  .garment::before { content: ""; position: absolute; top: -8%; left: 50%; width: 2px; height: 8%; background: var(--ink-soft); opacity: .5; }
-  .rack.before .garment { transform: rotate(var(--r, 0deg)) translateY(var(--y, 0)); height: var(--h, 70%); opacity: .95; }
-  .rack.after .garment { height: var(--h, 70%); }
-  .rack .tag { position: absolute; top: 16px; left: 16px; background: var(--ink); color: var(--bg); font-family: var(--label); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; padding: 6px 10px; border-radius: 2px; }
-  .rack.after .tag { left: auto; right: 16px; background: var(--accent); color: var(--ink); }
-  .handle { position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; background: var(--ink); transform: translateX(-1px); pointer-events: none; }
-  .handle::after { content: "⟷"; position: absolute; left: 50%; top: 50%; width: 48px; height: 48px; margin: -24px 0 0 -24px; border-radius: 50%; background: var(--ink); color: var(--bg); display: grid; place-items: center; font-size: 18px; box-shadow: var(--shadow); }
-  .compare-range { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; margin: 0; cursor: ew-resize; }
-  @media (max-width: 640px) { .compare-box { aspect-ratio: 4 / 3; } .rack { gap: .8%; padding: 14% 5% 8%; } .handle::after { width: 56px; height: 56px; margin: -28px 0 0 -28px; } }
-  .compare-cap { display: flex; justify-content: space-between; gap: 16px; margin-top: 16px; font-size: 13px; color: var(--muted); }
+  /* Messages */
+  .msgs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin-top: 36px; }
+  .msg { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 26px 24px 24px; position: relative; display: flex; flex-direction: column; gap: 12px; }
+  .msg .who { display: flex; align-items: center; gap: 10px; font-family: var(--label); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .msg .who i { width: 34px; height: 34px; border-radius: 50%; background: var(--brand); display: grid; place-items: center; color: var(--on-brand); font-family: var(--display); font-size: 15px; font-style: italic; }
+  .msg p { font-style: italic; color: var(--ink-soft); font-size: 15.5px; }
+  .msg p b { color: var(--ink); font-style: italic; font-weight: 600; }
+  .bridge { margin-top: 32px; font-size: clamp(18px, 1.6vw, 22px); color: var(--ink-soft); }
+  .bridge b { color: var(--ink); font-weight: 600; }
+  @media (max-width: 860px) { .msgs { grid-template-columns: 1fr; } }
 
   /* Programme */
-  .prog-grid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: clamp(32px, 5vw, 80px); align-items: start; }
-  .prog-sticky { position: sticky; top: 100px; display: flex; flex-direction: column; gap: 14px; min-height: 260px; }
-  .prog-sticky .big { font-family: var(--display); font-size: clamp(96px, 14vw, 200px); line-height: .8; font-style: italic; color: var(--accent); letter-spacing: -.04em; transition: opacity 250ms var(--ease), transform 250ms var(--ease); }
-  .prog-sticky .big.swap { opacity: 0; transform: translateY(12px); }
-  .prog-sticky .week { font-family: var(--label); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; font-weight: 500; color: var(--muted); }
-  .prog-sticky .bar { height: 2px; background: var(--line); position: relative; overflow: hidden; }
-  .prog-sticky .bar i { position: absolute; left: 0; top: 0; bottom: 0; width: 0; background: var(--accent); transition: width 400ms var(--ease); }
-  .modules { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
-  .module { padding-block: 32px; border-bottom: 1px solid var(--line); transition: opacity 300ms var(--ease); }
-  .module.dim { opacity: .42; }
-  .module-head { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 10px 32px; }
-  .module h3 { font-size: 26px; }
-  .module .week { font-family: var(--label); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); font-weight: 500; grid-column: 1; }
-  .module .transf { color: var(--ink-soft); grid-column: 2; grid-row: 1 / span 2; }
-  .module details { margin-top: 18px; }
-  .module summary { list-style: none; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; font-family: var(--label); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; font-weight: 500; color: var(--accent-text); min-height: 44px; }
-  .module summary::-webkit-details-marker { display: none; }
-  .module summary::after { content: "+"; font-size: 18px; transition: transform 250ms var(--ease); }
-  .module details[open] summary::after { transform: rotate(45deg); }
-  .lessons { list-style: none; margin: 8px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 24px; animation: fade 350ms var(--ease) both; }
-  .lessons li { display: grid; grid-template-columns: 36px 1fr; gap: 10px; padding: 12px 0; border-top: 1px solid var(--line); font-size: 15px; }
-  .lessons li b { font-family: var(--display); font-style: italic; font-weight: 400; color: var(--accent-text); font-size: 18px; }
-  .lessons li small { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
-  .module.live { background: var(--accent-tint); margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter); }
-  @media (max-width: 960px) { .prog-grid { grid-template-columns: 1fr; } .prog-sticky { position: static; min-height: 0; flex-direction: row; align-items: baseline; gap: 20px; } .prog-sticky .big { font-size: 64px; } .prog-sticky .bar { display: none; } }
-  @media (max-width: 640px) { .module-head { grid-template-columns: 1fr; } .module .transf { grid-column: 1; grid-row: auto; } .lessons { grid-template-columns: 1fr; } }
+  .prog-title { font-size: clamp(56px, 9vw, 112px) !important; line-height: .95; letter-spacing: .02em; text-transform: uppercase; }
+  .prog-title em { font-style: normal; color: var(--accent-text); }
+  .mods { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 40px; text-align: left; }
+  .mod { background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--brand); border-radius: 8px; padding: 22px; display: flex; flex-direction: column; gap: 8px; transition: transform 300ms var(--ease), border-color 300ms; }
+  .mod:hover { transform: translateY(-4px); border-top-color: var(--accent); }
+  .mod .k { font-family: var(--label); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--brand-deep); }
+  .mod h3 { font-size: 22px; }
+  .mod p { color: var(--ink-soft); font-size: 15px; }
+  .mod p b { color: var(--ink); font-weight: 600; }
+  .lives { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 28px; text-align: left; }
+  .live { background: var(--accent-tint); border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent); border-radius: 8px; padding: 22px; display: flex; flex-direction: column; gap: 8px; }
+  .live .k { font-family: var(--label); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent-text); font-weight: 600; }
+  .live .k b { font-family: var(--display); font-size: 26px; font-weight: 500; margin-right: 4px; vertical-align: -3px; }
+  .live p { color: var(--ink-soft); font-size: 15px; }
+  .live p b { color: var(--ink); font-weight: 600; }
+  @media (max-width: 860px) { .mods, .lives { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .mods, .lives { grid-template-columns: 1fr; } }
 
-  /* Roadmap calendar */
-  .roadmap { background: var(--surface); }
-  .cal { border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: var(--bg); }
-  .cal-head, .cal-week { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); }
-  .cal-head div { padding: 10px 8px; font-family: var(--label); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); text-align: center; border-bottom: 1px solid var(--line); background: var(--surface); }
-  .day { min-height: 92px; padding: 8px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 4px; font-size: 12px; transition: background 200ms; }
-  .day:nth-child(7n) { border-right: 0; }
-  .cal-week:last-child .day { border-bottom: 0; }
-  .day .n { font-family: var(--display); font-size: 16px; color: var(--ink-soft); }
-  .day .n small { font-family: var(--label); font-size: 9px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-left: 3px; }
-  .day.off .n { opacity: .4; }
-  .ev { border-radius: 3px; padding: 4px 6px; line-height: 1.3; font-size: 11px; font-weight: 500; }
-  .ev.lesson { background: var(--placeholder); color: var(--ink); }
-  .ev.live { background: var(--ink); color: var(--bg); }
-  .ev.bono { background: var(--accent); color: var(--ink); }
-  .day:has(.live) { background: color-mix(in srgb, var(--brand) 18%, var(--bg)); }
-  .cal-legend { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 16px; font-size: 13px; color: var(--muted); }
-  .cal-legend span { display: inline-flex; align-items: center; gap: 8px; }
-  .cal-legend i { width: 14px; height: 14px; border-radius: 3px; display: inline-block; }
-  .cal-list { display: none; }
-  @media (max-width: 760px) {
-    .cal { display: none; }
-    .cal-list { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
-    .cal-list .wk { padding: 18px 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 90px 1fr; gap: 12px; }
-    .cal-list .wk h4 { font-size: 20px; }
-    .cal-list .wk h4 small { display: block; font-family: var(--label); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
-    .cal-list ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
-  }
+  /* Gifts */
+  .gifts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 40px; text-align: left; }
+  .gift { background: var(--brand); color: var(--on-brand); border-radius: 10px; padding: 24px; display: flex; flex-direction: column; gap: 8px; transition: transform 300ms var(--ease); }
+  .gift:hover { transform: translateY(-4px); }
+  .gift .k { align-self: flex-start; background: var(--accent); color: var(--ink); font-family: var(--label); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; font-weight: 700; padding: 4px 10px; border-radius: 3px; }
+  .gift h3 { font-size: 21px; color: var(--on-brand); }
+  .gift .val { font-family: var(--label); font-size: 12px; letter-spacing: .08em; color: var(--accent); text-decoration: line-through; font-weight: 600; }
+  .gift p { color: var(--ink); font-size: 15px; }
+  .gift p b { font-weight: 600; }
+  .gift.vip { background: var(--accent); color: var(--ink); }
+  .gift.vip .k { background: var(--ink); color: var(--bg); }
+  .gift.vip h3, .gift.vip .val { color: var(--ink); }
+  .gift.vip .val { text-decoration: none; font-style: italic; }
+  @media (max-width: 700px) { .gifts { grid-template-columns: 1fr; } }
 
-  /* Scarf test */
-  .lab { background: var(--ink); color: var(--bg); }
-  .lab .eyebrow { color: var(--accent); }
-  .lab h2 { color: var(--bg); }
-  .lab .lede { color: color-mix(in srgb, var(--bg) 75%, transparent); }
-  .lab-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 5vw, 80px); align-items: start; }
-  .lab-intro { display: flex; flex-direction: column; gap: 22px; position: sticky; top: 100px; }
-  .pairs { display: flex; flex-direction: column; gap: 14px; }
-  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .pair .q { grid-column: 1 / -1; font-family: var(--label); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: color-mix(in srgb, var(--bg) 60%, transparent); }
-  .chip { border: 2px solid transparent; border-radius: 10px; padding: 10px 12px; min-height: 64px; display: flex; align-items: center; gap: 12px; cursor: pointer; background: color-mix(in srgb, var(--bg) 8%, transparent); color: var(--bg); text-align: left; transition: border-color 200ms, transform 200ms var(--ease); }
-  .chip:hover { transform: translateY(-2px); }
-  .chip[aria-pressed="true"] { border-color: var(--accent); }
-  .chip i { width: 34px; height: 34px; border-radius: 50%; flex: none; box-shadow: inset 0 0 0 1px rgba(255,255,255,.2); }
-  .chip span { font-size: 14px; line-height: 1.3; }
-  .chip small { display: block; font-size: 11px; opacity: .6; }
-  .verdict { margin-top: 24px; padding-top: 24px; border-top: 1px solid color-mix(in srgb, var(--bg) 20%, transparent); display: flex; flex-direction: column; gap: 14px; }
-  .verdict .score { font-family: var(--label); font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: color-mix(in srgb, var(--bg) 60%, transparent); }
-  .verdict h3 { font-size: clamp(28px, 3vw, 40px); font-style: italic; font-weight: 400; color: var(--bg); }
-  .verdict h3 b { font-style: normal; font-weight: 500; color: var(--accent); }
-  .verdict p { color: color-mix(in srgb, var(--bg) 78%, transparent); max-width: 40em; }
-  .trio { display: grid; grid-template-columns: 3fr 2fr 1fr; gap: 8px; margin-top: 8px; }
-  .trio div { height: 72px; border-radius: 6px; display: flex; align-items: flex-end; padding: 8px 10px; font-family: var(--label); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; font-weight: 500; color: rgba(255,255,255,.9); text-shadow: 0 1px 2px rgba(0,0,0,.4); transition: background 500ms var(--ease); }
-  @media (max-width: 860px) { .lab-grid { grid-template-columns: 1fr; } .lab-intro { position: static; } }
+  /* Offer box */
+  .offer { max-width: 680px; margin: 36px auto 0; background: var(--surface); border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent); border-radius: 14px; padding: clamp(24px, 4vw, 44px); box-shadow: var(--shadow); text-align: left; display: flex; flex-direction: column; gap: 20px; }
+  .offer .head { text-align: center; display: flex; flex-direction: column; gap: 4px; }
+  .offer .head .mark { font-family: var(--display); font-size: clamp(32px, 4vw, 44px); text-transform: uppercase; letter-spacing: .06em; line-height: 1; }
+  .offer .head .mark em { font-style: normal; color: var(--accent-text); }
+  .offer .head .new { font-family: var(--label); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--accent-text); font-weight: 600; }
+  .mockup { aspect-ratio: 16 / 9; border-radius: 10px; overflow: hidden; background: var(--brand); position: relative; }
+  .mockup .ph { position: absolute; inset: 0; background: repeating-linear-gradient(135deg, var(--brand) 0 14px, var(--brand-deep) 14px 15px); color: var(--on-brand); }
+  .items { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+  .items > li { display: grid; grid-template-columns: 28px 1fr; gap: 10px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+  .items > li::before { content: "✓"; width: 24px; height: 24px; border-radius: 50%; background: var(--accent); color: var(--ink); display: grid; place-items: center; font-size: 13px; font-weight: 700; }
+  .items b { font-family: var(--label); font-size: 13px; letter-spacing: .06em; text-transform: uppercase; font-weight: 700; display: block; }
+  .items ul { margin: 6px 0 0; padding-left: 18px; color: var(--ink-soft); font-size: 15px; display: flex; flex-direction: column; gap: 2px; }
+  .items .val { display: inline-block; margin-top: 6px; font-family: var(--label); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent-text); text-decoration: line-through; font-weight: 600; }
+  .items .val.nostrike { text-decoration: none; }
+  .totals { text-align: center; display: flex; flex-direction: column; gap: 14px; padding-top: 6px; }
+  .totals .lbl { font-family: var(--label); font-size: 12px; letter-spacing: .2em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); }
+  .totals .strike { font-family: var(--display); font-size: clamp(40px, 5vw, 56px); line-height: 1; color: var(--muted); position: relative; display: inline-block; }
+  .totals .strike::after { content: ""; position: absolute; left: -6%; right: -6%; top: 52%; height: 4px; background: var(--accent); transform: rotate(-6deg); }
+  .offer-cta { text-align: center; margin-top: 36px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .offer-cta .lbl { font-family: var(--label); font-size: clamp(16px, 2vw, 22px); letter-spacing: .06em; text-transform: uppercase; font-weight: 700; }
+  .offer-cta .lbl span { font-weight: 400; }
+  .price-big { font-family: var(--display); font-size: clamp(64px, 9vw, 104px); line-height: 1; color: var(--accent-text); font-weight: 500; }
+  .price-big small { font-size: .45em; vertical-align: top; }
+  .installments { font-size: 14px; color: var(--muted); max-width: 40ch; }
+  .offer-cta .btn { margin-top: 10px; }
+  .fine { font-size: 12px; color: var(--muted); max-width: 60ch; margin-top: 10px; }
+  .fine b { color: var(--ink-soft); text-decoration: underline; }
 
-  /* Counters */
-  .counters { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .counters .wrap { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
-  .counter { padding-block: 32px; border-left: 1px solid var(--line); padding-left: 24px; }
-  .counter:first-child { border-left: 0; padding-left: 0; }
-  .counter b { display: block; font-family: var(--display); font-size: clamp(40px, 5vw, 64px); font-weight: 500; line-height: 1; font-variant-numeric: tabular-nums; }
-  .counter span { font-family: var(--label); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
-  @media (max-width: 860px) { .counters .wrap { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; } .counters .wrap::-webkit-scrollbar { display: none; } .counter { flex: 0 0 44%; scroll-snap-align: start; padding-block: 22px; padding-left: 18px; } .counter:first-child { padding-left: 0; } }
+  /* Guarantee */
+  .guar { background: var(--ink); color: var(--bg); }
+  .guar .wrap { display: grid; grid-template-columns: 220px 1fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
+  .seal { width: 200px; aspect-ratio: 1; border-radius: 50%; background: var(--accent); color: var(--ink); display: grid; place-items: center; text-align: center; position: relative; box-shadow: 0 0 0 10px color-mix(in srgb, var(--accent) 25%, transparent); margin-inline: auto; }
+  .seal .n { font-family: var(--display); font-size: 84px; line-height: .9; font-weight: 500; }
+  .seal .t { font-family: var(--label); font-size: 11px; letter-spacing: .24em; text-transform: uppercase; font-weight: 700; }
+  .seal svg { position: absolute; inset: -22px; width: calc(100% + 44px); height: calc(100% + 44px); animation: spin 30s linear infinite; }
+  .seal svg text { font-family: var(--label); font-size: 10.5px; letter-spacing: .28em; text-transform: uppercase; fill: var(--bg); font-weight: 600; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .guar h2 { color: var(--bg); font-size: clamp(28px, 3.5vw, 42px); }
+  .guar h2 em { color: var(--accent); font-style: italic; font-weight: 400; }
+  .guar p { color: color-mix(in srgb, var(--bg) 82%, transparent); margin-top: 16px; max-width: 58ch; }
+  .guar p b { color: var(--bg); font-weight: 600; }
+  .guar .legal { font-size: 12.5px; color: color-mix(in srgb, var(--bg) 60%, transparent); margin-top: 18px; }
+  @media (max-width: 760px) { .guar .wrap { grid-template-columns: 1fr; } .seal { width: 170px; } .seal .n { font-size: 70px; } }
 
-  /* About */
-  .about .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
-  .about-stage { position: relative; }
-  .about-photo { aspect-ratio: 3 / 4; border-radius: 180px 4px 4px 4px; overflow: hidden; position: relative; box-shadow: var(--shadow); will-change: transform; }
-  .about-photo .ph { position: absolute; inset: 0; }
-  .about-quote { position: absolute; right: -14%; bottom: 8%; width: 62%; background: var(--surface); border: 1px solid var(--line); padding: 22px 24px; font-family: var(--display); font-style: italic; font-size: clamp(18px, 1.6vw, 24px); line-height: 1.3; box-shadow: var(--shadow); transform: rotate(2deg); }
-  .about-quote::before { content: "“"; position: absolute; left: 14px; top: -22px; font-size: 64px; color: var(--accent); line-height: 1; }
-  .about-copy { display: flex; flex-direction: column; gap: 22px; }
-  .about-copy h2 { font-size: clamp(36px, 4.5vw, 56px); }
-  .about-copy p { color: var(--ink-soft); max-width: 36em; }
-  .book { display: flex; gap: 16px; align-items: center; padding: 16px; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); max-width: 460px; }
-  .book .cover { width: 56px; aspect-ratio: 2 / 3; border-radius: 2px; background: var(--brand); flex: none; display: grid; place-items: center; color: var(--on-brand); font-family: var(--display); font-size: 9px; text-align: center; padding: 4px; line-height: 1.2; text-transform: uppercase; }
-  .book b { font-family: var(--display); font-weight: 500; font-size: 18px; display: block; }
-  .book small { color: var(--muted); font-size: 13px; }
-  .socials { display: flex; flex-wrap: wrap; gap: 12px; }
-  .socials a { text-decoration: none; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; border: 1px solid var(--line); border-radius: 999px; padding: 10px 16px; min-height: 44px; display: inline-flex; align-items: center; gap: 8px; transition: border-color 200ms, color 200ms, transform 200ms var(--ease); }
-  .socials a:hover { border-color: var(--accent); color: var(--accent-text); transform: translateY(-2px); }
-  .socials svg { width: 16px; height: 16px; fill: currentColor; }
-  @media (max-width: 860px) { .about .wrap { grid-template-columns: 1fr; } .about-stage { max-width: 380px; } .about-quote { position: static; width: auto; margin: -40px 0 0 8%; transform: none; } }
+  /* Bio */
+  .bio .wrap { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 5vw, 72px); align-items: start; }
+  .bio-photo { aspect-ratio: 3 / 4; border-radius: 180px 4px 4px 4px; overflow: hidden; position: relative; box-shadow: var(--shadow); position: sticky; top: 90px; }
+  .bio-photo .ph { position: absolute; inset: 0; }
+  .bio h2 { font-size: clamp(30px, 3.6vw, 44px); }
+  .bio h2 small { display: block; font-size: .6em; font-weight: 400; margin-top: 6px; }
+  .bio h2 em { font-style: italic; color: var(--accent-text); font-weight: 400; }
+  .bio-copy { display: flex; flex-direction: column; gap: 14px; color: var(--ink-soft); }
+  .bio-copy p b { color: var(--ink); font-weight: 600; }
+  .press { margin-top: 10px; display: flex; flex-direction: column; gap: 12px; }
+  .press .lbl { font-family: var(--label); font-size: 12px; letter-spacing: .18em; text-transform: uppercase; font-weight: 600; color: var(--ink); }
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .pills span { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 8px 14px; font-family: var(--label); font-size: 12px; font-weight: 500; letter-spacing: .04em; color: var(--ink-soft); }
+  @media (max-width: 860px) { .bio .wrap { grid-template-columns: 1fr; } .bio-photo { max-width: 340px; position: static; } }
 
-  /* Video */
-  .video-block { position: relative; aspect-ratio: 16 / 9; border-radius: 8px; overflow: hidden; background: var(--ink); box-shadow: var(--shadow); border: 0; padding: 0; width: 100%; cursor: pointer; display: block; }
-  .video-block .ph { position: absolute; inset: 0; background: repeating-linear-gradient(135deg, #1C2733 0 14px, #26333F 14px 15px); color: var(--bg); opacity: .9; }
-  .video-block .play { position: absolute; left: 50%; top: 50%; width: 92px; height: 92px; margin: -46px 0 0 -46px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; transition: transform 300ms var(--ease); animation: pulse 2.4s ease-in-out infinite; }
-  .video-block:hover .play { transform: scale(1.08); }
-  .video-block .play svg { width: 30px; height: 30px; fill: var(--ink); margin-left: 5px; }
-  .video-block .dur { position: absolute; right: 18px; bottom: 18px; background: rgba(0,0,0,.55); color: #fff; font-family: var(--label); font-size: 11px; letter-spacing: .12em; padding: 6px 10px; border-radius: 2px; }
-  .video-title { position: absolute; left: 24px; bottom: 20px; color: #fff; font-family: var(--display); font-size: clamp(22px, 3vw, 40px); font-style: italic; text-shadow: 0 2px 20px rgba(0,0,0,.4); max-width: 60%; text-align: left; }
+  /* FAQ */
+  .faq-list { max-width: 820px; margin: 36px auto 0; display: flex; flex-direction: column; gap: 10px; text-align: left; }
+  .faq-list details { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 0 20px; }
+  .faq-list summary { list-style: none; cursor: pointer; display: flex; gap: 14px; align-items: center; padding-block: 18px; font-weight: 600; font-size: 16px; min-height: 48px; }
+  .faq-list summary::-webkit-details-marker { display: none; }
+  .faq-list summary::before { content: "+"; font-family: var(--display); font-size: 24px; color: var(--accent-text); flex: none; width: 20px; transition: transform 250ms var(--ease); }
+  .faq-list details[open] summary::before { transform: rotate(45deg); }
+  .faq-list details p { padding: 0 0 20px 34px; color: var(--ink-soft); font-size: 15.5px; animation: fade 350ms var(--ease) both; }
+
+  /* Final */
+  .final { text-align: center; }
+  .final h2 { font-size: clamp(30px, 3.8vw, 46px); }
+  .final h2 b { font-weight: 600; }
+  .final .lede { margin: 18px auto 0; max-width: 40em; }
+  .final .lede b { color: var(--ink); font-weight: 600; }
+
+  .footer { border-top: 1px solid var(--line); padding-block: 32px calc(40px + 72px); font-size: 13px; color: var(--muted); }
+  .footer .wrap { display: flex; flex-wrap: wrap; gap: 16px 32px; justify-content: space-between; align-items: center; }
+  .footer ul { list-style: none; display: flex; flex-wrap: wrap; gap: 20px; margin: 0; padding: 0; }
+  .footer a { text-decoration: none; }
+  .footer a:hover { color: var(--accent-text); }
+  @media (min-width: 801px) { .footer { padding-bottom: 40px; } }
+
+  /* Mobile CTA */
+  .mobile-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 35; padding: 10px var(--gutter) calc(10px + env(safe-area-inset-bottom, 0px)); background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(12px); border-top: 1px solid var(--line); display: none; transform: translateY(110%); transition: transform 350ms var(--ease); gap: 12px; align-items: center; }
+  .mobile-cta.show { transform: none; }
+  .mobile-cta .btn { flex: 1; min-height: 48px; font-size: 12px; padding-inline: 14px; }
+  .mcta-info { display: flex; flex-direction: column; font-size: 11px; color: var(--muted); line-height: 1.3; white-space: nowrap; }
+  .mcta-info b { font-family: var(--display); font-size: 15px; color: var(--ink); }
+  @media (max-width: 800px) { .mobile-cta.show { display: flex; } }
+
+  /* Modals */
   dialog.modal { border: 0; padding: 0; background: transparent; max-width: min(96vw, 1100px); width: 100%; }
   dialog.modal::backdrop { background: rgba(10, 14, 20, .82); backdrop-filter: blur(8px); }
   .modal-inner { position: relative; background: #000; border-radius: 8px; overflow: hidden; aspect-ratio: 16 / 9; display: grid; place-items: center; color: #fff; text-align: center; padding: 24px; }
   .modal-inner video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .modal-inner .empty { position: relative; z-index: 1; font-family: var(--label); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; line-height: 1.9; color: rgba(255,255,255,.7); }
+  .modal-close { position: absolute; right: 12px; top: 12px; z-index: 2; width: 44px; height: 44px; border-radius: 50%; border: 0; background: rgba(255,255,255,.14); color: #fff; font-size: 22px; cursor: pointer; }
   dialog.exit { max-width: 520px; }
   .exit-inner { position: relative; background: var(--bg); color: var(--ink); border-radius: 8px; padding: clamp(24px, 4vw, 40px); display: flex; flex-direction: column; gap: 14px; box-shadow: var(--shadow); }
   .exit-inner h3 { font-size: clamp(26px, 3vw, 34px); }
@@ -381,591 +289,208 @@
   .exit-inner form { display: flex; flex-direction: column; gap: 12px; margin-top: 6px; }
   .exit-inner .btn { width: 100%; }
   .exit-inner .modal-close { background: var(--placeholder); color: var(--ink); }
-  .modal-close { position: absolute; right: 12px; top: 12px; z-index: 2; width: 44px; height: 44px; border-radius: 50%; border: 0; background: rgba(255,255,255,.14); color: #fff; font-size: 22px; cursor: pointer; }
-
-  /* Bonos + includes */
-  .bonos { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
-  .bono { background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 22px 20px; display: flex; flex-direction: column; gap: 10px; min-height: 100%; transition: transform 300ms var(--ease), border-color 300ms; }
-  .bono:hover { transform: translateY(-4px); border-color: var(--accent); }
-  .bono .k { font-family: var(--label); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent-text); }
-  .bono h4 { font-size: 20px; }
-  .bono small { color: var(--muted); font-size: 13px; margin-top: auto; }
-  .includes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px 32px; margin-top: clamp(40px, 5vw, 64px); }
-  .inc { display: flex; flex-direction: column; gap: 8px; padding-top: 16px; border-top: 2px solid var(--ink); }
-  .inc h4 { font-size: 21px; }
-  .inc p { color: var(--ink-soft); font-size: 15.5px; }
-  @media (max-width: 1000px) { .bonos { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-  @media (max-width: 860px) { .includes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-  @media (max-width: 640px) { .bonos { grid-template-columns: 1fr 1fr; } .includes { grid-template-columns: 1fr; } }
-  @media (max-width: 420px) { .bonos { grid-template-columns: 1fr; } }
-
-  /* Testimonials */
-  .car-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; }
-  .car-nav { display: flex; gap: 8px; }
-  .car-nav button { width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--line); background: transparent; cursor: pointer; font-size: 18px; transition: border-color 200ms, background 200ms, color 200ms; }
-  .car-nav button:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
-  .carousel { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding-block: 8px 24px; scrollbar-width: none; cursor: grab; margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter); }
-  .carousel::-webkit-scrollbar { display: none; }
-  .carousel.dragging { cursor: grabbing; scroll-snap-type: none; }
-  .quote { flex: 0 0 min(78vw, 380px); scroll-snap-align: start; background: var(--surface); border: 1px solid var(--line); padding: 32px 28px; display: flex; flex-direction: column; gap: 18px; }
-  .quote:nth-child(even) { transform: translateY(18px); }
-  .quote p { font-family: var(--display); font-size: 22px; line-height: 1.35; font-style: italic; }
-  .quote footer { font-family: var(--label); font-size: 11px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-top: auto; }
-  .quote .tag { align-self: flex-start; font-family: var(--label); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-text); background: var(--accent-tint); padding: 4px 10px; border-radius: 2px; }
-  @media (max-width: 640px) { .quote:nth-child(even) { transform: none; } }
-
-  /* Enrol (brand blue) */
-  .enrol { background: var(--brand); color: var(--ink); overflow: hidden; }
-  .enrol .wrap { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(32px, 6vw, 96px); align-items: center; position: relative; z-index: 1; }
-  .enrol .eyebrow { color: var(--on-brand); }
-  .enrol h2 { font-size: clamp(40px, 5.5vw, 72px); color: var(--on-brand); }
-  .enrol h2 em { font-style: italic; font-weight: 400; color: var(--accent); }
-  .enrol .lede { color: var(--ink); }
-  .enrol-copy { display: flex; flex-direction: column; gap: 24px; }
-  .ghost-word { position: absolute; left: -2%; bottom: -12%; font-family: var(--display); font-size: clamp(120px, 22vw, 320px); line-height: 1; color: color-mix(in srgb, var(--on-brand) 10%, transparent); white-space: nowrap; pointer-events: none; z-index: 0; user-select: none; text-transform: uppercase; }
-  .perks { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; font-size: 16px; }
-  .perks li { display: flex; gap: 12px; align-items: baseline; }
-  .perks li::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex: none; transform: translateY(-2px); }
-  .perks.stack li { justify-content: space-between; gap: 16px; padding-block: 10px; border-bottom: 1px solid color-mix(in srgb, var(--on-brand) 30%, transparent); }
-  .perks.stack li span { flex: 1; }
-  .perks.stack li small { font-family: var(--label); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--on-brand); white-space: nowrap; }
-  .guarantee { display: flex; gap: 16px; align-items: center; padding: 16px 18px; border-radius: 6px; background: color-mix(in srgb, var(--on-brand) 14%, transparent); border: 1px solid color-mix(in srgb, var(--on-brand) 35%, transparent); font-size: 14px; color: var(--ink); }
-  .guarantee b { color: var(--on-brand); font-weight: 600; }
-  .seal { flex: none; width: 64px; height: 64px; border-radius: 50%; background: var(--accent); color: var(--ink); display: grid; place-items: center; font-family: var(--display); font-size: 26px; line-height: 1; text-align: center; }
-  .seal small { display: block; font-family: var(--label); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; }
-  .form { background: var(--bg); color: var(--ink); padding: clamp(24px, 3vw, 40px); border-radius: 6px; display: flex; flex-direction: column; gap: 16px; box-shadow: var(--shadow); position: relative; }
-  .form h3 { font-size: 28px; }
-  .form p.small { font-size: 13px; color: var(--muted); }
   .field { display: flex; flex-direction: column; gap: 6px; }
   .field label { font-family: var(--label); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 500; color: var(--ink-soft); }
   .field input { font: inherit; font-size: 16px; padding: 14px 16px; min-height: 48px; border: 1px solid var(--line); border-radius: 3px; background: var(--surface); color: var(--ink); }
   .field input:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
-  .form .btn { width: 100%; }
-  .consent { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: var(--muted); }
-  .consent input { margin-top: 3px; width: 18px; height: 18px; accent-color: var(--accent-text); flex: none; }
-  .form.done .fields { display: none; }
-  .success { display: none; text-align: center; padding-block: 24px; gap: 10px; flex-direction: column; align-items: center; }
-  .form.done .success { display: flex; }
-  .success .check { width: 64px; height: 64px; border-radius: 50%; background: var(--accent); color: var(--ink); display: grid; place-items: center; font-size: 30px; animation: pop 500ms var(--ease) both; }
-  @keyframes pop { from { transform: scale(.4); opacity: 0; } to { transform: none; opacity: 1; } }
-  .success h4 { font-size: 26px; }
-  .price { border: 1px solid var(--line); border-radius: 4px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; background: var(--surface); }
-  .price-row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
-  .price-lbl { font-family: var(--label); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); }
-  .price-row b { font-family: var(--display); font-size: 34px; color: var(--ink); font-weight: 500; line-height: 1; }
-  .price-row.muted .price-lbl { color: var(--muted); }
-  .price-row s { font-family: var(--display); font-size: 18px; color: var(--muted); }
-  .price-cd { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-top: 10px; border-top: 1px dashed var(--line); font-size: 12px; color: var(--muted); }
-  .countdown-dark b { color: var(--ink); font-size: 20px; }
-  .countdown-dark small { color: var(--muted); }
-  @media (max-width: 860px) { .enrol .wrap { grid-template-columns: 1fr; } }
-
-  /* FAQ */
-  .faq-list { border-top: 1px solid var(--line); max-width: 820px; }
-  .faq-list details { border-bottom: 1px solid var(--line); }
-  .faq-list summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 24px; align-items: center; padding-block: 22px; font-family: var(--display); font-size: 24px; min-height: 48px; transition: color 200ms; }
-  .faq-list summary:hover { color: var(--accent-text); }
-  .faq-list summary::-webkit-details-marker { display: none; }
-  .faq-list summary::after { content: "+"; font-family: var(--body); font-size: 26px; color: var(--accent-text); flex: none; transition: transform 250ms var(--ease); }
-  .faq-list details[open] summary::after { transform: rotate(45deg); }
-  .faq-list details p { padding-bottom: 24px; color: var(--ink-soft); max-width: 60ch; animation: fade 400ms var(--ease) both; }
-
-  /* Final */
-  .final { text-align: center; padding-block: clamp(72px, 10vw, 140px); border-top: 1px solid var(--line); overflow: hidden; }
-  .final h2 { font-size: clamp(44px, 8vw, 112px); line-height: 0.95; letter-spacing: -0.03em; }
-  .final h2 em { font-style: italic; font-weight: 400; color: var(--accent-text); }
-  .final .lede { margin: 24px auto 32px; text-align: center; }
-
-  .footer { border-top: 1px solid var(--line); padding-block: 32px calc(40px + 64px); font-size: 13px; color: var(--muted); }
-  .footer .wrap { display: flex; flex-wrap: wrap; gap: 16px 32px; justify-content: space-between; align-items: center; }
-  .footer ul { list-style: none; display: flex; flex-wrap: wrap; gap: 20px; margin: 0; padding: 0; }
-  .footer a { text-decoration: none; }
-  .footer a:hover { color: var(--accent-text); }
-  @media (min-width: 801px) { .footer { padding-bottom: 40px; } }
-
-  .mobile-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 35; padding: 10px var(--gutter) calc(10px + env(safe-area-inset-bottom, 0px)); background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(12px); border-top: 1px solid var(--line); display: none; transform: translateY(110%); transition: transform 350ms var(--ease); }
-  .mobile-cta.show { transform: none; }
-  .mobile-cta { display: none; }
-  .mobile-cta .btn { flex: 1; }
-  .mcta-info { display: flex; flex-direction: column; font-size: 11px; color: var(--muted); line-height: 1.3; white-space: nowrap; }
-  .mcta-info b { font-family: var(--display); font-size: 14px; color: var(--ink); }
-  @media (max-width: 800px) { .mobile-cta.show { display: flex; gap: 12px; align-items: center; } }
+  .small { font-size: 13px; color: var(--muted); }
 </style>
 </head>
 <body>
 
-<a class="skip" href="#curso">Saltar al contenido</a>
+<a class="skip" href="#oferta">Saltar a la oferta</a>
 <div class="progress" id="progress" aria-hidden="true"></div>
 
-<div class="announce" role="region" aria-label="Aviso">
+<header class="top">
   <div class="wrap">
-    <span><strong>Primera edición</strong> · Directo de bienvenida el domingo 4 de octubre · Sé una de las <b data-seats>50</b> alumnas</span>
-    <a href="#inscripcion">Quiero mi plaza →</a>
-  </div>
-</div>
-<header class="nav">
-  <div class="wrap">
-    <a class="brand" href="#top" aria-label="Nat Cebrián, inicio">Nat <span>Cebrián</span></a>
-    <nav aria-label="Principal">
-      <ul class="nav-links">
-        <li><a href="#curso">El programa</a></li>
-        <li><a href="#programa">Módulos</a></li>
-        <li><a href="#ruta">Hoja de ruta</a></li>
-        <li><a href="#metodo">Test de color</a></li>
-        <li><a href="#nat">Nat</a></li>
-        <li><a href="#faq">Preguntas</a></li>
-      </ul>
-    </nav>
-    <a class="btn btn-primary" href="#inscripcion"><span>Quiero mi plaza</span></a>
-    <button class="menu-btn" type="button" id="menu-open" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span></button>
+    <a class="brand" href="#top" aria-label="Mi nueva yo, inicio">Mi nueva <span>yo</span></a>
+    <span class="cd-mini" aria-hidden="true">Empieza en <b data-days-left>—</b> días · <b data-seats>50</b> plazas</span>
+    <a class="btn btn-accent" href="#oferta"><span>Asegurar mi plaza</span></a>
   </div>
 </header>
-<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menú">
-  <div class="menu-top">
-    <span class="brand">Nat <span>Cebrián</span></span>
-    <button class="menu-close" type="button" id="menu-close" aria-label="Cerrar menú">×</button>
-  </div>
-  <ul>
-    <li><a href="#curso">El programa <small>01</small></a></li>
-    <li><a href="#antes-despues">Antes y después <small>02</small></a></li>
-    <li><a href="#programa">Módulos <small>03</small></a></li>
-    <li><a href="#ruta">Hoja de ruta <small>04</small></a></li>
-    <li><a href="#metodo">Test de color <small>05</small></a></li>
-    <li><a href="#nat">Nat <small>06</small></a></li>
-    <li><a href="#faq">Preguntas <small>07</small></a></li>
-  </ul>
-  <a class="btn btn-primary" href="#inscripcion"><span>Quiero mi plaza</span></a>
-</div>
 
 <main id="top">
+  <!-- 1. HERO VSL -->
   <section class="hero on-brand" id="hero">
     <canvas class="silk" id="silk" aria-hidden="true"></canvas>
     <div class="wrap">
-      <div class="hero-copy">
-        <p class="eyebrow">Primera edición · Inscripción abierta · Empieza el 4 de octubre</p>
-        <div class="wordmark">
-          <h1><span class="w"><span>Mi</span></span><span class="w"><span>nueva</span></span><span class="w"><span>yo</span></span></h1>
-          <p class="sub">Plan de 21 días con <b>Nat Cebrián</b></p>
-        </div>
-        <p class="lede">En 21 días vas a abrir el armario y saber exactamente qué ponerte. 21 lecciones, 6 directos con Nat y 15 minutos al día: el método del libro <em>No tengo nada que ponerme</em>, convertido en un plan que cabe en tu vida real.</p>
+      <div class="logo" aria-label="Mi nueva yo, programa de 6 semanas con Nat Cebrián">
+        <span class="mark">Mi nueva <em>yo</em></span>
+        <span class="sub">Programa de 6 semanas con Nat Cebrián</span>
+      </div>
+      <h1>Descubre cómo <b>construir el estilo propio</b> que te represente de verdad y potencie tus virtudes</h1>
+      <p class="lede">Comienza a <b>sentirte empoderada y proyectar seguridad</b> absoluta con tus <em>outfits</em> en cualquier ocasión, sin importar en qué etapa de la vida te encuentres y sin tener que gastar en marcas de lujo o sentirte disfrazada.</p>
+      <button class="vsl" type="button" data-open-video aria-label="Ver el vídeo de presentación">
+        <div class="ph">Vídeo de venta (VSL) 16:9<br>Nat a cámara · 6 a 9 minutos</div>
+        <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></span>
+        <span class="dur">Activa el sonido</span>
+      </button>
+      <div class="cta-block">
         <div class="urgency">
           <div class="cd-row">
-            <span class="cd-label"><strong>Empezamos en</strong><small>Directo de bienvenida · Dom 4 oct · 19:00 h</small></span>
+            <span class="cd-label"><strong>Empezamos en</strong><small>Directo de bienvenida con Nat · Dom 4 oct · 19:00 h</small></span>
             <span class="countdown" id="countdown" aria-live="off">
-              <span><b data-u="d">00</b><small>días</small></span>
-              <span><b data-u="h">00</b><small>horas</small></span>
-              <span><b data-u="m">00</b><small>min</small></span>
-              <span><b data-u="s">00</b><small>seg</small></span>
+              <span><b data-u="d">00</b><small>días</small></span><span><b data-u="h">00</b><small>horas</small></span><span><b data-u="m">00</b><small>min</small></span><span><b data-u="s">00</b><small>seg</small></span>
             </span>
           </div>
-          <p class="seats"><i aria-hidden="true"></i><strong>Plazas limitadas.</strong> Sé una de las <b data-seats>50</b> alumnas de la primera edición.</p>
+          <p class="seats"><i aria-hidden="true"></i><strong>Plazas limitadas.</strong> Sé una de las <b data-seats>50</b> alumnas de esta edición.</p>
           <div class="seatbar" data-seatbar hidden><div class="seatbar-track"><i></i></div><span><b data-left>50</b> plazas disponibles de <b data-seats>50</b></span></div>
         </div>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#inscripcion"><span>Quiero mi plaza</span></a>
-          <a class="btn btn-ghost" href="#programa"><span>Ver los 6 módulos</span></a>
-        </div>
-        <ul class="trust" aria-label="Garantías">
-          <li>Reserva en 1 minuto</li>
-          <li>Pago seguro</li>
-          <li>Acceso 12 meses</li>
-          <li>Garantía 7 días</li>
+        <a class="btn btn-primary btn-xl" href="#oferta"><span>Sí, quiero asegurar mi plaza en esta edición</span></a>
+        <p class="cta-note">Oferta única de lanzamiento · <b>Garantía del 100 % durante 30 días</b></p>
+        <ul class="trust" aria-label="Garantías"><li>Pago seguro</li><li>Financiación disponible</li><li>Acceso inmediato</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. MENSAJES -->
+  <section class="section center" id="mensajes">
+    <div class="wrap">
+      <h2 class="reveal">Durante los últimos <b>10 años</b>, cada semana he recibido mensajes como estos:</h2>
+      <div class="msgs">
+        <article class="msg reveal"><div class="who"><i>M</i>Mensaje recibido</div><p>«He cambiado de trabajo, subido de puesto y siento que he madurado. <b>La ropa de antes ya no me representa.</b> Me miro al espejo y pienso: “soy yo… pero no del todo”.»</p></article>
+        <article class="msg reveal" data-delay="1"><div class="who"><i>L</i>Mensaje recibido</div><p>«<b>Mi cuerpo ha cambiado</b>, por maternidad, edad, hormonas, salud, y no sé cómo vestirlo. Cada día pienso: esto ya no me queda como antes.»</p></article>
+        <article class="msg reveal" data-delay="2"><div class="who"><i>A</i>Mensaje recibido</div><p>«<b>Tengo el armario lleno y aun así siento que no tengo nada que ponerme.</b> Me pruebo varias cosas, me frustro, y acabo poniéndome lo de siempre.»</p></article>
+      </div>
+      <p class="bridge narrow reveal">Y si te identificaste con alguno de estos mensajes, <b>es momento de reconciliarte con quien eres hoy</b> y construir el estilo que te represente.</p>
+    </div>
+  </section>
+
+  <!-- 3. PROGRAMA -->
+  <section class="section alt center" id="programa">
+    <div class="wrap">
+      <p class="eyebrow reveal">Por eso he creado</p>
+      <h2 class="prog-title reveal" style="margin-top: 12px">Mi nueva <em>yo</em></h2>
+      <p class="lede narrow sec-sub reveal">El viaje guiado de <b>6 semanas</b> donde te llevaré de la mano para reconciliarte con tu autenticidad, descubrir tu identidad actual y potenciarla frente a cualquier cambio vital, <b>construyendo un estilo propio que te empodere en menos de 15 minutos cada mañana.</b></p>
+      <div class="mods">
+        <article class="mod reveal"><span class="k">Módulo 1 · Semana 1</span><h3>Tu nueva yo</h3><p>Dejarás de aferrarte con culpa a la mujer que fuiste, y <b>aceptarás con orgullo la etapa</b> en la que estás hoy.</p></article>
+        <article class="mod reveal" data-delay="1"><span class="k">Módulo 2 · Semana 2</span><h3>Paz en el espejo</h3><p>Pasarás de la frustración de las tallas a <b>tratar tu cuerpo actual con profundo respeto</b>, aprendiendo a potenciarlo.</p></article>
+        <article class="mod reveal" data-delay="2"><span class="k">Módulo 3 · Semana 3</span><h3>Tu yo elevada</h3><p>Lograrás una <b>imagen elegante</b> que se adapte a ti, sin sentir que vas disfrazada, ni de más ni de menos.</p></article>
+        <article class="mod reveal"><span class="k">Módulo 4 · Semana 4</span><h3>Armario emocional</h3><p>Pasarás de un espacio estresante a tener un <b>armario optimizado</b> que te ayude a potenciar tu imagen.</p></article>
+        <article class="mod reveal" data-delay="1"><span class="k">Módulo 5 · Semana 5</span><h3>Compra con criterio</h3><p>Te convertirás en una <b>consumidora inteligente</b>, maximizando cada euro de tu presupuesto.</p></article>
+        <article class="mod reveal" data-delay="2"><span class="k">Módulo 6 · Semana 6</span><h3>Sistema de looks ágiles</h3><p>Adquirirás la habilidad de <b>vestirte impecable</b> en menos de 5 minutos, multiplicando lo que ya tienes.</p></article>
+      </div>
+
+      <p class="lede sec-sub reveal" style="margin-top: 48px">También tendrás acceso a <b>7 sesiones en vivo</b> conmigo, una cada semana</p>
+      <div class="lives">
+        <article class="live reveal"><span class="k"><b>1</b> Directo de bienvenida</span><p>Donde te explico <b>la hoja de ruta</b> y empezamos a trabajar juntas, en vivo, antes de la primera lección.</p></article>
+        <article class="live reveal" data-delay="1"><span class="k"><b>5</b> Sesiones grupales semanales</span><p>Una al cierre de cada semana, para <b>resolver dudas</b>, analizar <b>casos reales</b> del grupo y <b>aclarar tus inquietudes</b>.</p></article>
+        <article class="live reveal" data-delay="2"><span class="k"><b>1</b> Directo especial de graduación</span><p>Donde recibirás tu certificado <b>“Estilo Personal”</b> y celebraremos, juntas, lo que has construido en estas seis semanas.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. REGALOS -->
+  <section class="section center" id="regalos">
+    <div class="wrap">
+      <p class="lede narrow reveal">Y por ser el primer programa que saco al público en estos 10 años, he preparado <b>5 regalos gratis y exclusivos</b> para compensarte por la espera.</p>
+      <div class="gifts">
+        <article class="gift reveal"><span class="k">Regalo 1</span><h3>Masterclass: Marca personal con Piluka de Echegaray</h3><span class="val">Valor: 197 €</span><p>Aprenderás estilo y comunicación no verbal aplicados al entorno corporativo: <b>cómo usar tu imagen para ganar autoridad y atraer oportunidades</b>, sin disfrazarte de nada. Ideal para cuando estás atravesando un momento de cambio profesional.</p></article>
+        <article class="gift reveal" data-delay="1"><span class="k">Regalo 2</span><h3>Colecciones cápsula “1 clic” por arquetipo</h3><span class="val">Valor: 69 €</span><p><b>Colecciones prediseñadas</b> donde cada prenda tiene su enlace directo de compra en tiendas accesibles (nada de tallas imposibles ni precios de otro planeta). Sin pensar en combinar nada: entras, eliges tu momento, y compras con un clic.</p></article>
+        <article class="gift reveal"><span class="k">Regalo 3</span><h3>Guía para comprar lujo de segunda mano: qué merece la pena</h3><span class="val">Valor: 97 €</span><p>Te desvelo <b>qué categorías retienen valor y cuáles no</b>, mi criterio de «esto sí vale la pena», las señales de alerta y dónde comprar según el riesgo. Con un reto: encontrar una pieza dentro de tu presupuesto real y evaluarla con mi tabla antes de pagar.</p></article>
+        <article class="gift reveal" data-delay="1"><span class="k">Regalo 4</span><h3>Guía básica para ser la invitada perfecta</h3><span class="val">Valor: 79 €</span><p>Las reglas de oro, el protocolo por franja horaria y un <b>selector rápido de código de vestimenta</b>, para que la próxima invitación a una boda, cena empresarial, comuniones, cócteles o primera cita no empiece con tres semanas de agobio.</p></article>
+        <article class="gift reveal"><span class="k">Regalo 5</span><h3>Masterclass “Universo Beauty Realista”</h3><span class="val">Valor: 149 €</span><p>Con un gran amigo maquillador, aprenderás todo sobre maquillaje y peinado “efecto buena cara” para usarlo cada vez que vayas a salir. Porque de nada sirve un look impecable si de cuello para arriba no te acompaña.</p></article>
+        <article class="gift vip reveal" data-delay="1"><span class="k">Beneficio especial</span><h3>Auditoría VIP en audio conmigo <small style="display:block;font-family:var(--label);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-top:4px">Solo para las primeras <span data-vip>25</span> alumnas</small></h3><span class="val">Valor incalculable</span><p>Me cuentas tu caso en un formulario de dos minutos, y te respondo yo, en persona, con una nota de voz que contiene tu diagnóstico, y por dónde empezar. <b>¡Solo <span data-vip>25</span> plazas para la auditoría VIP! Disponible únicamente para esta edición.</b></p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. OFERTA -->
+  <section class="section tint center" id="oferta">
+    <div class="wrap">
+      <h2 class="reveal">Esto es exactamente lo que recibes al <b>entrar hoy</b></h2>
+      <div class="offer reveal">
+        <div class="head"><span class="mark">Mi nueva <em>yo</em></span><span class="new">¡Nuevo! Mi primer programa online</span></div>
+        <div class="mockup"><div class="ph">Mockup del programa<br>Portátil + móvil con el campus</div></div>
+        <ul class="items">
+          <li><div><b>Método completo “Mi nueva yo”</b><ul><li>6 módulos, uno por semana</li><li>21 lecciones grabadas</li><li>Mini retos diarios y chuletas descargables</li></ul><span class="val">Valor real: 297 €</span></div></li>
+          <li><div><b>7 sesiones en vivo conmigo</b><ul><li>1 directo de bienvenida, 5 sesiones grupales semanales y 1 directo de graduación</li></ul><span class="val">Valor real: 250 €</span></div></li>
+          <li><div><b>Comunidad privada “Auténticas”</b><span class="val">Valor real: 149 €</span></div></li>
+          <li><div><b>Los 5 regalos especiales de lanzamiento</b><ul><li>Regalo 01 · Masterclass Marca Personal con Piluka de Echegaray</li><li>Regalo 02 · Colecciones cápsula “1 clic” por arquetipo</li><li>Regalo 03 · Guía para comprar lujo de segunda mano</li><li>Regalo 04 · Guía básica para ser la invitada perfecta</li><li>Regalo 05 · Masterclass Universo Beauty Realista</li></ul><span class="val">Valor real: 591 €</span></div></li>
+          <li><div><b>Auditoría VIP <span style="font-weight:400">(solo para las primeras <span data-vip>25</span> alumnas)</span></b><span class="val nostrike">Valor incalculable</span></div></li>
+          <li><div><b>Garantía “100 % devolución de tu compra”</b><span class="val nostrike">30 días</span></div></li>
         </ul>
+        <div class="totals">
+          <div><div class="lbl">Valorado en</div><div class="strike">1.287 €</div></div>
+          <div><div class="lbl">Precio oficial</div><div class="strike" style="font-size: clamp(32px, 4vw, 44px)">494 €</div></div>
+        </div>
       </div>
-      <div class="stage">
-        <figure class="portrait">
-          <div class="ph">Foto editorial<br>Nat, retrato vertical 4:5<br>Fondo neutro, luz natural</div>
-        </figure>
-        <button class="reel" type="button" data-open-video aria-label="Ver el vídeo de presentación">
-          <div class="ph">Reel vertical<br>Nat a cámara, 15 s</div>
-          <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></span>
-        </button>
-        <div class="badge" aria-hidden="true">
-          <svg viewBox="0 0 120 120">
-            <defs><path id="ring" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs>
-            <circle cx="60" cy="60" r="22"/>
-            <text><textPath href="#ring">21 lecciones · 6 directos · 5 bonos · Plazas limitadas · </textPath></text>
-          </svg>
+      <div class="offer-cta reveal">
+        <p class="lbl">Aprovecha ahora la oferta de lanzamiento <span>por tan solo</span></p>
+        <div class="price-big">247<small>€</small></div>
+        <p class="installments">O financia el pago hasta en 12 cuotas mensuales de unos 25 €/mes.</p>
+        <a class="btn btn-accent btn-xl" href="#" data-checkout><span>¡Me uno a “Mi nueva yo”!</span></a>
+        <p class="fine"><b>Importante:</b> la financiación es un servicio externo que no depende de nosotros. Para ver las distintas opciones, te aconsejamos hacer clic, avanzar con la inscripción y analizar los diferentes tipos de pago fraccionado que te proporciona la plataforma.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. GARANTÍA -->
+  <section class="section guar" id="garantia">
+    <div class="wrap">
+      <div class="seal reveal" aria-hidden="true">
+        <svg viewBox="0 0 244 244"><defs><path id="sealring" d="M122,122 m-108,0 a108,108 0 1,1 216,0 a108,108 0 1,1 -216,0"/></defs><text><textPath href="#sealring">Garantía · El riesgo es mío · Devolución del 100 % · Garantía · El riesgo es mío · </textPath></text></svg>
+        <div><div class="n">30</div><div class="t">días</div></div>
+      </div>
+      <div class="reveal" data-delay="1">
+        <h2>Garantía: <em>“el riesgo es mío”</em></h2>
+        <p>Funciona así: entras, haces el programa entero, completas tus retos de las 6 semanas y vienes a los directos.</p>
+        <p>Si al terminarlo te miras al espejo y no sientes esa paz y esa seguridad que te he prometido, me escribes y te devuelvo íntegramente tu dinero. <b>Tienes 30 días desde tu compra para pedirlo.</b> Lo único que te pido es que lo hayas hecho de verdad. Porque yo confío en el método. Solo necesito que tú te des la oportunidad de probarlo. <b>El riesgo, aquí, lo asumo yo.</b></p>
+        <p class="legal">* La garantía aplica a solicitudes realizadas dentro de los 30 días naturales desde la compra, habiendo completado la totalidad del programa y los retos de las 6 semanas. Podremos solicitar evidencia razonable de que el contenido se ha consumido y aplicado conforme a las instrucciones.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. NAT -->
+  <section class="section bio" id="nat">
+    <div class="wrap">
+      <figure class="bio-photo reveal"><div class="ph">Foto de Nat<br>Retrato vertical 3:4<br>Luz natural</div></figure>
+      <div class="bio-copy reveal" data-delay="1">
+        <h2>Natalia Cebrián,<small>la mujer detrás del método <em>“Encuentra tu estilo”</em></small></h2>
+        <p>Estudió Derecho y, mientras sus compañeros de clase leían jurisprudencia, Nat leía a escondidas los blogs de moda de Chiara Ferragni y Rumi Neely. En cuanto acabó la carrera, se fue a <b>Londres, a Central Saint Martins, una de las mejores universidades de moda del mundo.</b></p>
+        <p>Ahí empezó todo: las primeras <b>colaboraciones</b>, <b>Cannes</b>, los <b>Goya</b>, las <b>fashion weeks</b>. Todo iba bien… hasta que llegó el Covid.</p>
+        <p>En ese parón, con todo el tiempo del mundo por delante, notó algo que le incomodaba: sentía que estaba hablando sin fundamento. Así que decidió <b>certificarse como asesora de imagen y coach</b>, y empezó a atender consultas de estilo, cara a cara.</p>
+        <p>Años después, publicó <b>su libro, <em>“No tengo nada que ponerme”</em></b>. Se agotó en menos de 24 horas.</p>
+        <p>Una tarde, tras terminar una relación de muchos años y mudarse sola a una nueva ciudad para empezar de cero, se dio cuenta de que su armario estaba lleno de ropa de una mujer que ya no existía.</p>
+        <p>Y a partir de ahí nace <b>“Mi nueva yo”</b>, el método que toda mujer necesita para encontrar su propio estilo y sentirse brutal, sin importar la ocasión.</p>
+        <div class="press">
+          <span class="lbl">Seguramente la has visto en:</span>
+          <div class="pills"><span>OkDiario</span><span>El Mundo</span><span>La Razón</span><span>Women’s Health</span><span>¡HOLA!</span><span>20Minutos</span><span>Antena 3</span><span>La Vanguardia</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="strip" aria-hidden="true">
-    <div class="strip-track">
-      <span>Tu nueva identidad</span><span>Paz en el espejo</span><span>Tu fórmula de estilo</span><span>El armario sereno</span><span>Compra con criterio</span><span>Looks ágiles</span>
-      <span>Tu nueva identidad</span><span>Paz en el espejo</span><span>Tu fórmula de estilo</span><span>El armario sereno</span><span>Compra con criterio</span><span>Looks ágiles</span>
-    </div>
-  </div>
-  <div class="strip reverse" aria-hidden="true">
-    <div class="strip-track">
-      <span>15 minutos al día</span><span>21 lecciones grabadas</span><span>6 directos con Nat</span><span>5 bonos</span><span>Comunidad Auténticas</span><span>Certificado Estilo Personal</span>
-      <span>15 minutos al día</span><span>21 lecciones grabadas</span><span>6 directos con Nat</span><span>5 bonos</span><span>Comunidad Auténticas</span><span>Certificado Estilo Personal</span>
-    </div>
-  </div>
-
-  <section class="section" id="curso">
+  <!-- 8. FAQ -->
+  <section class="section alt center" id="faq">
     <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">¿Te suena?</p>
-        <h2>Si te reconoces en una sola de estas frases, <span class="em">este plan es para ti.</span></h2>
-      </div>
-      <div class="pains">
-        <article class="pain reveal"><span class="mod">Módulo 1</span><h3>“Mi ropa de antes ya no me representa.”</h3><p>Maternidad, cambio de trabajo, madurez, una ruptura. Has cambiado de etapa y sigues abriendo el mismo armario.</p></article>
-        <article class="pain reveal" data-delay="1"><span class="mod">Módulo 2</span><h3>“Mi cuerpo ha cambiado y la ropa me frustra.”</h3><p>Posparto, edad, un año difícil. Lo que antes te quedaba bien ahora te recuerda cada mañana que ya no eres la misma.</p></article>
-        <article class="pain reveal" data-delay="2"><span class="mod">Módulo 3</span><h3>“No quiero vestir de adolescente ni de señora.”</h3><p>Persigues tendencias que no son tuyas y no encuentras esa elegancia serena que sí quieres transmitir.</p></article>
-        <article class="pain reveal"><span class="mod">Módulo 4</span><h3>“Tengo ropa que me gusta pero no pega con mi vida.”</h3><p>Teletrabajo, parque con los niños, oficina a medias. Un armario lleno de “por si acaso” y vacío de lo que usas de verdad.</p></article>
-        <article class="pain reveal" data-delay="1"><span class="mod">Módulo 5</span><h3>“Compro por aburrimiento o estrés y me arrepiento.”</h3><p>Bolsas que no necesitabas, prendas con etiqueta y un presupuesto que se va sin que el armario mejore.</p></article>
-        <article class="pain reveal" data-delay="2"><span class="mod">Módulo 6</span><h3>“No tengo nada que ponerme.”</h3><p>Diecisiete minutos cada mañana delante del armario, dos o tres looks probados, y sales de casa sin convencerte.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section compare" id="antes-despues">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">Arrastra para comparar · Lección 6.2</p>
-        <h2>Menos prendas. <span class="em">Más looks.</span> Es matemática de armario.</h2>
-      </div>
-      <div class="compare-box reveal" id="compare">
-        <div class="rack before" aria-hidden="true">
-          <span class="tag">Antes · 14 prendas</span>
-          <div class="garment" style="--h:64%;--r:-4deg;--y:2%;background:#3B2F8A"></div>
-          <div class="garment" style="--h:72%;--r:3deg;background:#E0B400"></div>
-          <div class="garment" style="--h:58%;--r:-2deg;--y:4%;background:#1B1B1B"></div>
-          <div class="garment" style="--h:75%;--r:5deg;background:#D64545"></div>
-          <div class="garment" style="--h:66%;--r:-6deg;--y:3%;background:#2E8B57"></div>
-          <div class="garment" style="--h:70%;--r:2deg;background:#1B1B1B"></div>
-          <div class="garment" style="--h:60%;--r:-3deg;--y:5%;background:#FF7F27"></div>
-          <div class="garment" style="--h:74%;--r:4deg;background:#7B4B94"></div>
-          <div class="garment" style="--h:62%;--r:-5deg;--y:2%;background:#1B1B1B"></div>
-          <div class="garment" style="--h:68%;--r:1deg;background:#57A0D3"></div>
-          <div class="garment" style="--h:71%;--r:-2deg;--y:3%;background:#C71585"></div>
-          <div class="garment" style="--h:59%;--r:6deg;background:#8A8A8A"></div>
-          <div class="garment" style="--h:73%;--r:-4deg;background:#1B1B1B"></div>
-          <div class="garment" style="--h:65%;--r:3deg;--y:4%;background:#A0522D"></div>
-        </div>
-        <div class="rack after" id="after" aria-hidden="true">
-          <span class="tag">Después · 9 prendas</span>
-          <div class="garment" style="--h:70%;background:#F4F1EC"></div>
-          <div class="garment" style="--h:70%;background:#D8C3B0"></div>
-          <div class="garment" style="--h:70%;background:#B49B84"></div>
-          <div class="garment" style="--h:70%;background:#6E93B0"></div>
-          <div class="garment" style="--h:70%;background:#1E2B3A"></div>
-          <div class="garment" style="--h:70%;background:#2B2A2E"></div>
-          <div class="garment" style="--h:70%;background:#7D8B7A"></div>
-          <div class="garment" style="--h:70%;background:#C9A88A"></div>
-          <div class="garment" style="--h:70%;background:#4A5A6A"></div>
-        </div>
-        <div class="handle" id="handle" aria-hidden="true"></div>
-        <input class="compare-range" id="compare-range" type="range" min="0" max="100" value="50" aria-label="Comparar antes y después">
-      </div>
-      <div class="compare-cap reveal">
-        <span>Antes: 14 prendas, 11 colores, tres combinan entre sí.</span>
-        <span>Después: 3 arriba × 2 abajo × 2 abrigos × 2 zapatos = 24 looks sin repetir.</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="programa">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">6 módulos · 21 lecciones grabadas · un reto de 15 minutos por lección</p>
-        <h2>El método completo de la asesoría privada de Nat, <span class="em">a una fracción del precio</span> y en 21 días.</h2>
-      </div>
-      <div class="prog-grid">
-        <aside class="prog-sticky" aria-hidden="true">
-          <div class="big" id="prog-big">1</div>
-          <div class="week" id="prog-week">Semana 1 · 3 lecciones</div>
-          <div class="bar"><i id="prog-bar"></i></div>
-        </aside>
-        <ol class="modules" id="modules">
-          <li class="module reveal" data-num="1" data-week="Semana 1 · 3 lecciones" data-pct="16">
-            <div class="module-head">
-              <h3>Tu nueva yo: el punto de partida</h3><span class="week">Módulo 1 · Semana 1</span>
-              <p class="transf">Dejarás de aferrarte con culpa a la mujer que fuiste y aceptarás con orgullo la etapa en la que estás hoy. Una carta, un vision board de virtudes y tu prenda ancla.</p>
-            </div>
-            <details><summary>Ver las 3 lecciones</summary>
-              <ul class="lessons">
-                <li><b>1.1</b><div>El espejo del cambio<small>Reto: la carta a la mujer que fuiste</small></div></li>
-                <li><b>1.2</b><div>Tu nueva identidad visual<small>Reto: el hábito de priorizarte y tu prenda ancla</small></div></li>
-                <li><b>1.3</b><div>El arquetipo del logro<small>Reto: tus creencias limitantes, paso a paso</small></div></li>
-              </ul>
-            </details>
-          </li>
-          <li class="module reveal" data-num="2" data-week="Semanas 1 y 2 · 4 lecciones" data-pct="33">
-            <div class="module-head">
-              <h3>Paz en el espejo: viste tu cuerpo actual sin exigencias</h3><span class="week">Módulo 2 · Semanas 1 y 2</span>
-              <p class="transf">Pasarás de la frustración de las tallas a tratar tu cuerpo actual con respeto. Mides tu silueta real con la regla de los 5 cm y aprendes a potenciarla.</p>
-            </div>
-            <details><summary>Ver las 4 lecciones</summary>
-              <ul class="lessons">
-                <li><b>2.1</b><div>La regla de los 5 cm: reconoce tu silueta<small>Reto: identifica tu silueta</small></div></li>
-                <li><b>2.2</b><div>Reconciliación con tu cuerpo real<small>Reto: el ritual del espejo, 3 días</small></div></li>
-                <li><b>2.3</b><div>Estilo sin presiones<small>Reto: un look, dos verdades</small></div></li>
-                <li><b>2.4</b><div>Texturas y siluetas amables<small>Reto: el armario en dos columnas</small></div></li>
-              </ul>
-            </details>
-          </li>
-          <li class="module reveal" data-num="3" data-week="Semanas 2 y 3 · 4 lecciones" data-pct="50">
-            <div class="module-head">
-              <h3>Tu fórmula de estilo propio: elegancia y serenidad</h3><span class="week">Módulo 3 · Semanas 2 y 3</span>
-              <p class="transf">Lograrás una imagen elegante que se adapte a ti, sin vestir “como una adolescente” ni “como una señora”. Referentes, entornos, colorimetría y accesorios.</p>
-            </div>
-            <details><summary>Ver las 4 lecciones</summary>
-              <ul class="lessons">
-                <li><b>3.1</b><div>Tu fórmula de estilo propio<small>Reto: tu vision board de estilo</small></div></li>
-                <li><b>3.2</b><div>Tu entorno define tu estilo, no al revés<small>Reto: tu inventario de entornos</small></div></li>
-                <li><b>3.3</b><div>Tu colorimetría de calma<small>Reto: tu paleta de calma y la regla de los tres colores</small></div></li>
-                <li><b>3.4</b><div>El lenguaje oculto de los accesorios<small>Reto: el comodín que cambia el look</small></div></li>
-              </ul>
-            </details>
-          </li>
-          <li class="module reveal" data-num="4" data-week="Semana 3 · 4 lecciones" data-pct="66">
-            <div class="module-head">
-              <h3>El armario sereno: limpia tu guardarropa de vidas pasadas</h3><span class="week">Módulo 4 · Semana 3</span>
-              <p class="transf">Convertirás tu armario de un espacio estresante en un refugio ordenado. La purga de las 3P, tu fondo de armario real y un armario donde lo que ves, existe.</p>
-            </div>
-            <details><summary>Ver las 4 lecciones</summary>
-              <ul class="lessons">
-                <li><b>4.1</b><div>La purga de vidas pasadas<small>Reto: tu primera purga</small></div></li>
-                <li><b>4.2</b><div>El armario cápsula real<small>Reto: tu mapa de básicos</small></div></li>
-                <li><b>4.3</b><div>El conflicto de las expectativas<small>Reto: el círculo de tu vida</small></div></li>
-                <li><b>4.4</b><div>Distribución visual estratégica<small>Reto: tu armario a la vista</small></div></li>
-              </ul>
-            </details>
-          </li>
-          <li class="module reveal" data-num="5" data-week="Semana 4 · 3 lecciones" data-pct="83">
-            <div class="module-head">
-              <h3>Compra con criterio: inversión inteligente en el mundo real</h3><span class="week">Módulo 5 · Semana 4</span>
-              <p class="transf">Te convertirás en una consumidora inteligente. Coste por uso, leer la etiqueta antes que el precio y las seis preguntas de oro que frenan la compra impulsiva.</p>
-            </div>
-            <details><summary>Ver las 3 lecciones</summary>
-              <ul class="lessons">
-                <li><b>5.1</b><div>Inversión vs. gasto<small>Reto: tu primera inversión</small></div></li>
-                <li><b>5.2</b><div>Compras inteligentes en el mundo real<small>Reto: tu lectura de composición</small></div></li>
-                <li><b>5.3</b><div>El filtro de la ansiedad<small>Reto: tu filtro en acción + Tarjeta anti-compras compulsivas</small></div></li>
-              </ul>
-            </details>
-          </li>
-          <li class="module reveal" data-num="6" data-week="Semanas 4 y 5 · 3 lecciones" data-pct="100">
-            <div class="module-head">
-              <h3>Sistema de looks ágiles: combinaciones elevadas</h3><span class="week">Módulo 6 · Semanas 4 y 5</span>
-              <p class="transf">Te vestirás impecable en menos de 5 minutos con la ropa que ya tienes. Tu galería de looks, la matemática del mix &amp; match y tu kit de emergencia.</p>
-            </div>
-            <details><summary>Ver las 3 lecciones</summary>
-              <ul class="lessons">
-                <li><b>6.1</b><div>El guardarropa ágil<small>Reto: tu primera galería</small></div></li>
-                <li><b>6.2</b><div>El arte del mix &amp; match<small>Reto: tu multiplicador</small></div></li>
-                <li><b>6.3</b><div>Looks de emergencia<small>Reto: tu kit de emergencia</small></div></li>
-              </ul>
-            </details>
-          </li>
-          <li class="module live reveal" data-num="+" data-week="6 directos con Nat" data-pct="100">
-            <div class="module-head">
-              <h3>Seis directos con Nat, los domingos a las 19:00 h</h3><span class="week">En vivo · Grabados si no puedes</span>
-              <p class="transf">Directo de bienvenida el 4 de octubre, cuatro directos semanales de preguntas y el directo de graduación el 8 de noviembre, con la entrega del Certificado Digital “Estilo Personal”.</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </div>
-  </section>
-
-  <section class="section roadmap" id="ruta">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">Tu hoja de ruta diaria · Octubre 2026</p>
-        <h2>Una lección cada día laborable. Un directo cada domingo. <span class="em">Un bono cada lunes.</span></h2>
-      </div>
-      <div class="cal reveal" id="cal" aria-label="Calendario del programa"></div>
-      <div class="cal-list reveal" id="cal-list"></div>
-      <div class="cal-legend reveal">
-        <span><i style="background: var(--placeholder)"></i> Lección grabada (15 min de reto)</span>
-        <span><i style="background: var(--ink)"></i> Directo con Nat · 19:00 h</span>
-        <span><i style="background: var(--accent)"></i> Bono · 19:00 h</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="section lab" id="metodo">
-    <div class="wrap">
-      <div class="lab-grid">
-        <div class="lab-intro reveal">
-          <p class="eyebrow">Prueba el método · Lección 3.3 en dos minutos</p>
-          <h2 style="font-size: clamp(34px, 4vw, 52px)">El test de los pañuelos: ¿fría o cálida?</h2>
-          <p class="lede">Así empieza la colorimetría del programa, sin profesional y sin filtro. Frente al espejo y con luz natural, Nat te hace comparar cinco parejas de colores junto al rostro. Aquí, elige en cada pareja el que crees que te ilumina más.</p>
-          <div class="verdict" id="verdict">
-            <span class="score" id="score">Elige una opción en cada pareja</span>
-            <h3 id="verdict-title">Tu paleta aparecerá aquí.</h3>
-            <p id="verdict-text">Cuando termines las cinco parejas sabrás si te favorecen los colores fríos o los cálidos, y verás un look montado con la regla de los tres colores.</p>
-            <div class="trio" id="trio" aria-hidden="true"><div>Prenda principal</div><div>Secundario</div><div>Accesorio</div></div>
-          </div>
-        </div>
-        <div class="pairs reveal" data-delay="1" id="pairs"></div>
-      </div>
-    </div>
-  </section>
-
-  <div class="counters" aria-label="El programa en cifras">
-    <div class="wrap">
-      <div class="counter reveal"><b data-count="21">0</b><span>lecciones grabadas</span></div>
-      <div class="counter reveal" data-delay="1"><b data-count="6">0</b><span>directos con Nat</span></div>
-      <div class="counter reveal" data-delay="2"><b data-count="5">0</b><span>bonos</span></div>
-      <div class="counter reveal" data-delay="3"><b data-count="15">0</b><span>minutos al día</span></div>
-      <div class="counter reveal" data-delay="3"><b data-count="24">0</b><span>looks con 9 prendas</span></div>
-    </div>
-  </div>
-
-  <section class="section about" id="nat">
-    <div class="wrap">
-      <div class="about-stage reveal">
-        <figure class="about-photo" id="parallax">
-          <div class="ph">Foto de Nat<br>Trabajando en el studio<br>o en una sesión con clienta</div>
-        </figure>
-        <blockquote class="about-quote">Hoy no empiezas un curso. Empiezas un método para reconocerte.</blockquote>
-      </div>
-      <div class="about-copy reveal" data-delay="1">
-        <p class="eyebrow">Quién te acompaña</p>
-        <h2>Nat Cebrián. Consultora de imagen. Autora de <em>No tengo nada que ponerme</em>.</h2>
-        <p>Nat ha estado donde estás tú. Después de diez años de relación, su vida se puso patas arriba en un mes: nueva ciudad, nueva etapa y ningún espejo en el que reconocerse. De ese proceso salió el método que hoy aplica en sus asesorías privadas de imagen y armario, y que cuenta a diario a su comunidad en Instagram y TikTok como @natcebrian.</p>
-        <p>Mi nueva yo es la primera vez que ese método completo sale del uno a uno: los siete pasos del libro, ordenados en 21 lecciones, con Nat en directo cada domingo para que no lo hagas sola.</p>
-        <div class="book">
-          <div class="cover">No tengo nada que ponerme</div>
-          <div><b>No tengo nada que ponerme</b><small>El libro de Nat en el que se basa el programa. Cada módulo cita el paso del método que desarrolla.</small></div>
-        </div>
-        <div class="socials">
-          <a href="https://www.instagram.com/natcebrian" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7.1.1 5.8.1 4.9.3 4.1.6c-.8.3-1.5.7-2.2 1.4C1.3 2.6.9 3.3.6 4.1.3 4.9.1 5.8.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.1 1.3.3 2.2.6 3 .3.8.7 1.5 1.4 2.2.7.7 1.4 1.1 2.2 1.4.8.3 1.7.5 3 .6 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c1.3-.1 2.2-.3 3-.6.8-.3 1.5-.7 2.2-1.4.7-.7 1.1-1.4 1.4-2.2.3-.8.5-1.7.6-3 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.1-1.3-.3-2.2-.6-3-.3-.8-.7-1.5-1.4-2.2C21.4 1.3 20.7.9 19.9.6c-.8-.3-1.7-.5-3-.6C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg>@natcebrian</a>
-          <a href="https://www.tiktok.com/@natcebrian" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 5.8A4.8 4.8 0 0 1 15.4 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.8 5.8 0 0 0-.8-.1 5.7 5.7 0 1 0 5.7 5.7V9.2a7.7 7.7 0 0 0 4.6 1.5V7.6a4.6 4.6 0 0 1-3.4-1.8z"/></svg>TikTok</a>
-          <a href="https://www.instagram.com/natcebrianstudio" target="_blank" rel="noopener">@natcebrianstudio</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="video" style="padding-top: 0">
-    <div class="wrap">
-      <button class="video-block reveal" type="button" data-open-video>
-        <div class="ph">Vídeo de presentación 16:9<br>Nat en el studio, 90 segundos</div>
-        <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></span>
-        <span class="video-title">Nat te cuenta el plan en 90 segundos</span>
-        <span class="dur">1:30</span>
-      </button>
-    </div>
-  </section>
-
-  <section class="section" id="bonos" style="padding-top: 0">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">Cinco bonos en directo · Incluidos con tu plaza, sin coste adicional</p>
-        <h2>Cinco masterclass extra que <span class="em">solo</span> tienen las alumnas de la primera edición.</h2>
-      </div>
-      <div class="bonos">
-        <article class="bono reveal"><span class="k">Bono 1 · 5 oct</span><h4>Guía de la invitada perfecta</h4><small>Bodas de día y de noche, cócteles, eventos. Qué ponerte sin comprar un vestido nuevo.</small></article>
-        <article class="bono reveal" data-delay="1"><span class="k">Bono 2 · 12 oct</span><h4>Colecciones cápsula</h4><small>Cómo montar tu cápsula de temporada sobre tu fondo de armario.</small></article>
-        <article class="bono reveal" data-delay="2"><span class="k">Bono 3 · 19 oct</span><h4>Guía para comprar vintage</h4><small>Dónde buscar, qué mirar en la etiqueta y qué dejar en la percha.</small></article>
-        <article class="bono reveal" data-delay="3"><span class="k">Bono 4 · 26 oct</span><h4>Universo beauty realista</h4><small>Pelo, piel y maquillaje que acompañan tu imagen sin robarte tiempo.</small></article>
-        <article class="bono reveal" data-delay="3"><span class="k">Bono 5 · 2 nov</span><h4>Proyectar tu marca personal</h4><small>Tu imagen en redes y en el trabajo, coherente con quien eres ahora.</small></article>
-      </div>
-      <div class="includes">
-        <div class="inc reveal"><h4>Comunidad Auténticas</h4><p>Grupo privado de WhatsApp donde compartes tu micro-reto cada semana con mujeres en tu misma etapa. No para que te evalúen: para que no lo hagas sola.</p></div>
-        <div class="inc reveal" data-delay="1"><h4>Tu hoja de ruta y tu diario de estilo</h4><p>Calendario descargable de 15 minutos para tachar cada día, y la estructura del diario donde vas a documentar el proceso.</p></div>
-        <div class="inc reveal" data-delay="2"><h4>Recursos del método</h4><p>Chuleta de protocolo descargable, Tarjeta Filtro Anti-Compras Compulsivas y el Certificado Digital “Estilo Personal” al completar el reto.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="testimonios" style="padding-top: 0">
-    <div class="wrap">
-      <div class="car-head reveal">
-        <div class="section-head" style="margin-bottom: 0">
-          <p class="eyebrow">Clientas de la asesoría</p>
-          <h2>Lo que cambia cuando el criterio es <span class="em">tuyo</span>.</h2>
-        </div>
-        <div class="car-nav">
-          <button type="button" data-car="-1" aria-label="Anterior">←</button>
-          <button type="button" data-car="1" aria-label="Siguiente">→</button>
-        </div>
-      </div>
-      <div class="carousel reveal" id="carousel" style="margin-top: 40px">
-        <article class="quote"><span class="tag">Testimonio pendiente</span><p>Aquí va la cita literal de una clienta real de la asesoría privada. Dos o tres frases, en sus palabras, sobre el antes y el después.</p><footer>Nombre · Ciudad · Profesión</footer></article>
-        <article class="quote"><span class="tag">Testimonio pendiente</span><p>Segunda cita real. Ideal si menciona algo concreto: la purga, la paleta de color, vestirse en cinco minutos.</p><footer>Nombre · Ciudad · Profesión</footer></article>
-        <article class="quote"><span class="tag">Testimonio pendiente</span><p>Tercera cita real. Funciona mejor si viene de un perfil distinto: otra edad, otro sector, otra etapa vital.</p><footer>Nombre · Ciudad · Profesión</footer></article>
-        <article class="quote"><span class="tag">Testimonio pendiente</span><p>Cuarta cita, opcional. Una captura de un mensaje real de Instagram o WhatsApp convierte más que una cita maquetada.</p><footer>Nombre · Ciudad · Profesión</footer></article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section enrol" id="inscripcion">
-    <div class="ghost-word" aria-hidden="true">nueva yo</div>
-    <div class="wrap">
-      <div class="enrol-copy reveal">
-        <p class="eyebrow">Inscripción abierta · Primera edición · Empieza el 4 de octubre</p>
-        <h2>Sé una de las <em><b data-seats>50</b> alumnas</em> de la primera edición.</h2>
-        <p class="lede">Plazas limitadas para que Nat pueda darte feedback real en Auténticas y en los directos. Cuando se cubren, la inscripción se cierra hasta la siguiente edición, y la siguiente edición ya no tendrá precio de lanzamiento.</p>
-        <ul class="perks stack">
-          <li><span>21 lecciones grabadas con su reto de 15 minutos</span><small>Acceso 12 meses</small></li>
-          <li><span>6 directos con Nat, domingos 19:00 h</span><small>Grabados si no puedes</small></li>
-          <li><span>5 masterclass bonus en directo</span><small>Solo primera edición</small></li>
-          <li><span>Comunidad Auténticas con feedback semanal</span><small>Grupo privado</small></li>
-          <li><span>Hoja de ruta, diario de estilo, chuleta de protocolo y tarjeta anti-compras</span><small>Descargables</small></li>
-          <li><span>Certificado Digital “Estilo Personal”</span><small>Al completar el reto</small></li>
-        </ul>
-        <div class="guarantee">
-          <div class="seal">7<small>días</small></div>
-          <div><b>Garantía de la primera semana.</b> Haz el directo de bienvenida y la primera semana de lecciones. Si no es para ti, escribe antes del 11 de octubre y te devolvemos el importe.</div>
-        </div>
-      </div>
-      <form class="form reveal" data-delay="1" id="waitlist" action="#" method="post" novalidate>
-        <div class="fields" style="display: contents">
-          <h3>Reserva tu plaza en 1 minuto</h3>
-          <div class="price">
-            <div class="price-row"><span class="price-lbl">Precio de lanzamiento · primera edición</span><b>—&nbsp;€</b></div>
-            <div class="price-row muted"><span class="price-lbl">Precio en próximas ediciones</span><s>—&nbsp;€</s></div>
-            <div class="price-cd"><span>La inscripción cierra en</span><span class="countdown countdown-dark" data-countdown><span><b data-u="d">00</b><small>días</small></span><span><b data-u="h">00</b><small>h</small></span><span><b data-u="m">00</b><small>min</small></span><span><b data-u="s">00</b><small>seg</small></span></span></div>
-          </div>
-          <p class="small" style="margin-top:-6px">Sustituye los importes y conecta el botón a Stripe o Hotmart antes de lanzar. Pago único o en 3 plazos, según configures la pasarela.</p>
-          <div class="field"><label for="nombre">Nombre</label><input id="nombre" name="nombre" type="text" autocomplete="given-name" placeholder="Tu nombre" required></div>
-          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="tu@email.com" required></div>
-          <label class="consent"><input id="consent" name="consent" type="checkbox" required> Acepto recibir emails de Nat Cebrián sobre Mi nueva yo. Puedo darme de baja en cualquier momento.</label>
-          <button class="btn btn-accent" type="submit"><span>Quiero mi plaza</span></button>
-          <p class="small">Pago seguro · Garantía de 7 días · Plazas limitadas a <b data-seats>50</b> alumnas</p>
-        </div>
-        <div class="success" aria-live="polite">
-          <div class="check">✓</div>
-          <h4>Estás dentro.</h4>
-          <p class="small" id="success-msg">Nos vemos el 4 de octubre a las 19:00 h.</p>
-        </div>
-      </form>
-    </div>
-  </section>
-
-  <section class="section" id="faq">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">Preguntas frecuentes</p>
-        <h2>Antes de que <span class="em">preguntes</span>.</h2>
-      </div>
+      <h2 class="reveal"><b>¿Aún tienes dudas?</b> Aquí las respuestas</h2>
+      <p class="lede narrow sec-sub reveal">Estas son las preguntas que más nos han hecho las alumnas antes de inscribirse al programa, y mis respuestas te ayudarán a aclarar tus ideas.</p>
       <div class="faq-list reveal">
-        <details><summary>¿Para quién es Mi nueva yo?</summary><p>Para mujeres en transición: maternidad, cambio de trabajo, madurez, una ruptura. Si sientes que tu ropa de antes ya no te representa, es para ti. Da igual la talla, la edad o el presupuesto: el método trabaja con lo que ya tienes antes de comprar nada.</p></details>
-        <details><summary>¿Cuánto tiempo necesito de verdad?</summary><p>Una lección corta cada día laborable y un micro-reto de 15 minutos. Los directos son los domingos a las 19:00 h y quedan grabados. No hace falta fuerza de voluntad de hierro: el hábito se construye por repetición pequeña, no por intensidad.</p></details>
-        <details><summary>¿Qué fechas tiene la primera edición?</summary><p>Directo de bienvenida el domingo 4 de octubre. Lecciones del 5 de octubre al 2 de noviembre. Directo de graduación el domingo 8 de noviembre, con la entrega del Certificado Digital “Estilo Personal”.</p></details>
-        <details><summary>¿Hay contacto real con Nat?</summary><p>Sí. Seis directos en vivo, feedback semanal en la comunidad Auténticas y cinco bonos en directo los lunes. Por eso nunca seremos más de <b data-seats>50</b> alumnas por edición.</p></details>
-        <details><summary>¿Y si me pierdo un día?</summary><p>Todo queda grabado y el acceso dura 12 meses. Los 21 días marcan el ritmo de la edición, no una fecha límite. Tu hoja de ruta te dice exactamente qué toca cada día para retomar sin pensar.</p></details>
-        <details><summary>¿Necesito el libro para hacer el programa?</summary><p>No. El programa desarrolla los siete pasos de <em>No tengo nada que ponerme</em> con más profundidad y con retos guiados. Si ya lo has leído, reconocerás el método; si no, no te falta nada.</p></details>
-        <details><summary>¿Cuánto cuesta y cómo se paga?</summary><p>El precio de lanzamiento de la primera edición está en el bloque de inscripción y no se repite en ediciones posteriores. Pago único con tarjeta, o fraccionado si lo prefieres. Recibes el acceso al momento.</p></details>
-        <details><summary>¿Y si empiezo y no es para mí?</summary><p>Tienes la garantía de la primera semana: haz el directo de bienvenida y las lecciones del módulo 1. Si antes del 11 de octubre decides que no es para ti, escribe a Nat y te devolvemos el importe.</p></details>
-        <details><summary>¿Por qué solo <b data-seats>50</b> plazas?</summary><p>Porque Nat revisa personalmente los retos en Auténticas y responde en directo cada domingo. Con más alumnas, el feedback deja de ser real. Cuando se cubren las plazas, la inscripción se cierra.</p></details>
+        <details><summary>“No tengo tiempo para un programa así, ¿de verdad voy a poder con esto?”</summary><p>Sí. Las lecciones duran entre 8 y 15 minutos y cada reto está pensado para 15 minutos al día. Los directos son una vez a la semana y quedan grabados. El programa está diseñado por y para mujeres con trabajo, familia y vida: la falta de tiempo fue la primera objeción que escuché al crearlo, y la primera que resolví.</p></details>
+        <details><summary>“Siento un poco de culpa por comprar esto para mí.”</summary><p>Esa culpa es exactamente lo que trabajamos en la primera semana. No estás gastando en ropa: estás invirtiendo en dejar de perder 17 minutos cada mañana delante del armario y en dejar de comprar por impulso. La mayoría de alumnas recupera el precio del programa en las compras que deja de hacer.</p></details>
+        <details><summary>“¿Y si a mitad de camino me quedo sola o me desmotivo?”</summary><p>No vas a hacerlo sola. Tienes la comunidad privada Auténticas, donde compartes tu reto cada semana, y una sesión en vivo conmigo al cierre de cada semana para resolver dudas y revisar casos reales. Está demostrado que quien comparte su progreso lo termina; por eso la comunidad es parte del método, no un extra.</p></details>
+        <details><summary>“A mí la moda me parece algo superficial, ¿realmente vale la pena?”</summary><p>Este programa no va de moda, va de identidad. La ropa que llevas activa una forma de pensar y de actuar, y está medido. Si tu imagen sigue vistiendo a la mujer que fuiste, cada mañana le mandas a tu cerebro una señal contradictoria. Alinear lo de fuera con lo de dentro no es superficial: es coherencia.</p></details>
+        <details><summary>“¿Cuándo empiezo exactamente?”</summary><p>El acceso al campus es inmediato al inscribirte. El directo de bienvenida con Nat es el domingo 4 de octubre a las 19:00 h y las lecciones de la semana 1 se abren al día siguiente. A partir de ahí, un módulo por semana durante 6 semanas.</p></details>
+        <details><summary>“¿Es seguro el pago?”</summary><p>Sí. El pago se procesa a través de una pasarela cifrada con tarjeta de crédito o débito. Nosotros nunca vemos ni guardamos los datos de tu tarjeta. La financiación en cuotas la gestiona la propia plataforma de pago.</p></details>
+        <details><summary>“¿Recibiré factura?”</summary><p>Sí. Recibirás la factura con IVA en tu email en cuanto se confirme el pago. Si la necesitas a nombre de tu empresa, indícalo en el formulario de inscripción.</p></details>
       </div>
     </div>
   </section>
 
-  <section class="final">
-    <div class="wrap reveal">
-      <p class="eyebrow">Quedan <b data-days-left>—</b> días para el directo de bienvenida</p>
-      <h2>La mujer que eres hoy, <em>por fin vestida.</em></h2>
-      <p class="lede">Sé una de las <b data-seats>50</b> alumnas de la primera edición. Reserva tu plaza y nos vemos el 4 de octubre a las 19:00 h.</p>
-      <a class="btn btn-primary" href="#inscripcion"><span>Quiero mi plaza</span></a>
+  <!-- 9. CIERRE -->
+  <section class="section final" id="cierre">
+    <div class="wrap">
+      <h2 class="reveal"><b>No necesitas más ropa.</b> Solo necesitas reconocerte y encontrar tu propio estilo.</h2>
+      <p class="lede reveal">Aprovecha mi gran oferta de lanzamiento (que no volverá a repetirse) y únete ahora a <b>“Mi nueva yo”</b> para empezar a <b>vestirte y sentirte empoderada</b>, en cualquier ocasión.</p>
+      <div class="offer-cta reveal" style="margin-top: 28px">
+        <div class="totals"><div><div class="lbl">Valorado en</div><div class="strike">1.287 €</div></div></div>
+        <p class="lbl" style="margin-top: 14px">Aprovecha ahora la oferta de lanzamiento <span>por tan solo</span></p>
+        <div class="price-big">247<small>€</small></div>
+        <p class="installments">O financia el pago hasta en 12 cuotas mensuales de unos 25 €/mes.</p>
+        <a class="btn btn-accent btn-xl" href="#" data-checkout><span>¡Me uno a “Mi nueva yo”!</span></a>
+        <p class="cta-note">Empieza en <b data-days-left>—</b> días · Sé una de las <b data-seats>50</b> alumnas · Garantía de 30 días</p>
+      </div>
     </div>
   </section>
 </main>
@@ -983,36 +508,47 @@
   </div>
 </footer>
 
-<div class="mobile-cta" id="mobile-cta"><div class="mcta-info"><span>Empieza en <b data-days-left>—</b> días</span><span><b data-seats>50</b> plazas · primera edición</span></div><a class="btn btn-primary" href="#inscripcion"><span>Quiero mi plaza</span></a></div>
+<div class="mobile-cta" id="mobile-cta"><div class="mcta-info"><span>Empieza en <b data-days-left>—</b> días</span><span><b>247 €</b> · lanzamiento</span></div><a class="btn btn-accent" href="#oferta"><span>Asegurar mi plaza</span></a></div>
 
 <dialog class="modal exit" id="exit-modal">
   <div class="exit-inner">
     <button class="modal-close" type="button" data-close-exit aria-label="Cerrar">×</button>
     <p class="eyebrow">Antes de irte</p>
-    <h3>Llévate gratis la hoja de ruta de los 21 días.</h3>
-    <p>El calendario día a día del programa, con las lecciones, los directos y los bonos. Y te avisamos si las plazas están a punto de cubrirse.</p>
+    <h3>Llévate gratis la hoja de ruta de las 6 semanas.</h3>
+    <p>El calendario semana a semana del programa, con las lecciones, los directos y los regalos. Y te avisamos si las plazas están a punto de cubrirse.</p>
     <form id="exit-form" action="#" method="post" novalidate>
       <div class="field"><label for="exit-email">Email</label><input id="exit-email" type="email" autocomplete="email" placeholder="tu@email.com" required></div>
       <button class="btn btn-accent" type="submit"><span>Enviarme la hoja de ruta</span></button>
-      <p class="small">Sin spam. Te la enviamos y te avisamos de la apertura y del cierre de plazas.</p>
+      <p class="small">Sin spam. Te la enviamos y te avisamos del cierre de plazas.</p>
     </form>
   </div>
 </dialog>
 <dialog class="modal" id="video-modal">
   <div class="modal-inner">
     <button class="modal-close" type="button" data-close-video aria-label="Cerrar">×</button>
-    <!-- Sustituye data-src por la URL del vídeo de Nat (mp4 o webm). -->
+    <!-- Sustituye data-src por la URL del VSL de Nat (mp4 o webm). -->
     <video id="video-el" data-src="" controls playsinline preload="none"></video>
-    <p class="empty">Aquí se reproduce el vídeo de Nat<br>Sube el archivo y apunta data-src a su URL</p>
+    <p class="empty">Aquí se reproduce el vídeo de venta de Nat<br>Sube el archivo y apunta data-src a su URL</p>
   </div>
 </dialog>
 
 <script>
 (function () {
-  var root = document.documentElement;
-  root.classList.add('js');
+  var root = document.documentElement; root.classList.add('js');
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var css = function (name) { return getComputedStyle(root).getPropertyValue(name).trim(); };
+  var css = function (n) { return getComputedStyle(root).getPropertyValue(n).trim(); };
+
+  /* ---------- Configuración comercial: cámbiala aquí ----------
+     CHECKOUT_URL: enlace de pago (Stripe, Hotmart, ThriveCart...).
+     MAX_SEATS: plazas de la edición. SEATS_TAKEN: vendidas (dato real; con 0 no se muestra la barra).
+     VIP_SEATS: auditorías VIP. LAUNCH: directo de bienvenida. */
+  var CHECKOUT_URL = '#oferta', MAX_SEATS = 50, SEATS_TAKEN = 0, VIP_SEATS = 25;
+  var LAUNCH = new Date('2026-10-04T19:00:00+02:00');
+  document.querySelectorAll('[data-checkout]').forEach(function (a) { a.href = CHECKOUT_URL; });
+  document.querySelectorAll('[data-seats]').forEach(function (el) { el.textContent = MAX_SEATS; });
+  document.querySelectorAll('[data-vip]').forEach(function (el) { el.textContent = VIP_SEATS; });
+  document.querySelectorAll('[data-left]').forEach(function (el) { el.textContent = Math.max(0, MAX_SEATS - SEATS_TAKEN); });
+  document.querySelectorAll('[data-seatbar]').forEach(function (bar) { if (SEATS_TAKEN > 0) { bar.hidden = false; requestAnimationFrame(function () { bar.querySelector('i').style.width = (SEATS_TAKEN / MAX_SEATS * 100) + '%'; }); } });
 
   /* ---------- Silk canvas ---------- */
   var canvas = document.getElementById('silk');
@@ -1021,18 +557,11 @@
     var readColors = function () { colors = [css('--silk-a'), css('--silk-b'), css('--silk-c')]; };
     var size = function () { var r = canvas.parentElement.getBoundingClientRect(); w = r.width; h = r.height; canvas.width = w * dpr; canvas.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); };
     var draw = function () {
-      ctx.clearRect(0, 0, w, h);
-      ctx.fillStyle = css('--brand'); ctx.fillRect(0, 0, w, h);
+      ctx.clearRect(0, 0, w, h); ctx.fillStyle = css('--brand'); ctx.fillRect(0, 0, w, h);
       for (var i = 0; i < 3; i++) {
-        ctx.beginPath();
-        var amp = h * (0.10 + i * 0.05), base = h * (0.55 + i * 0.14), speed = 0.0009 + i * 0.0004;
-        ctx.moveTo(0, h);
-        for (var x = 0; x <= w; x += 12) {
-          var y = base + Math.sin(x * 0.0035 + t * speed * 3 + i) * amp + Math.sin(x * 0.0011 - t * speed * 1.7) * amp * 0.6;
-          ctx.lineTo(x, y);
-        }
-        ctx.lineTo(w, h); ctx.closePath();
-        ctx.fillStyle = colors[i]; ctx.globalAlpha = 0.7 - i * 0.15; ctx.fill();
+        ctx.beginPath(); var amp = h * (0.08 + i * 0.04), base = h * (0.62 + i * 0.12), speed = 0.0009 + i * 0.0004; ctx.moveTo(0, h);
+        for (var x = 0; x <= w; x += 12) { ctx.lineTo(x, base + Math.sin(x * 0.0035 + t * speed * 3 + i) * amp + Math.sin(x * 0.0011 - t * speed * 1.7) * amp * 0.6); }
+        ctx.lineTo(w, h); ctx.closePath(); ctx.fillStyle = colors[i]; ctx.globalAlpha = 0.7 - i * 0.15; ctx.fill();
       }
       ctx.globalAlpha = 1;
     };
@@ -1049,183 +578,28 @@
     revealEls.forEach(function (el) { io.observe(el); });
   } else { revealEls.forEach(function (el) { el.classList.add('in'); }); }
 
-  /* ---------- Mobile menu ---------- */
-  var menu = document.getElementById('menu'), menuOpen = document.getElementById('menu-open'), menuClose = document.getElementById('menu-close');
-  var setMenu = function (open) { menu.classList.toggle('open', open); menuOpen.setAttribute('aria-expanded', String(open)); document.body.style.overflow = open ? 'hidden' : ''; if (open) menuClose.focus(); else menuOpen.focus(); };
-  menuOpen.addEventListener('click', function () { setMenu(true); });
-  menuClose.addEventListener('click', function () { setMenu(false); });
-  menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && menu.classList.contains('open')) setMenu(false); });
-
   /* ---------- Progress + mobile CTA ---------- */
-  var progress = document.getElementById('progress'), mobileCta = document.getElementById('mobile-cta');
-  var hero = document.getElementById('hero'), enrol = document.getElementById('inscripcion');
+  var progress = document.getElementById('progress'), mobileCta = document.getElementById('mobile-cta'), hero = document.getElementById('hero'), oferta = document.getElementById('oferta'), cierre = document.getElementById('cierre');
+  var inView = function (el) { var r = el.getBoundingClientRect(); return r.top < window.innerHeight && r.bottom > 0; };
   var onScroll = function () {
     var max = document.documentElement.scrollHeight - window.innerHeight;
     progress.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
-    var er = enrol.getBoundingClientRect();
-    mobileCta.classList.toggle('show', window.scrollY > hero.offsetHeight * 0.8 && !(er.top < window.innerHeight && er.bottom > 0));
+    mobileCta.classList.toggle('show', window.scrollY > hero.offsetHeight * 0.8 && !inView(oferta) && !inView(cierre));
   };
   window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
-  /* ---------- Cupo: cámbialo aquí y se actualiza en toda la página ----------
-     MAX_SEATS: plazas de la edición. SEATS_TAKEN: plazas ya vendidas (actualízalo a mano
-     con el dato real de la pasarela; con 0 la barra de plazas no se muestra). */
-  var MAX_SEATS = 50, SEATS_TAKEN = 0;
-  document.querySelectorAll('[data-seats]').forEach(function (el) { el.textContent = MAX_SEATS; });
-  var left = Math.max(0, MAX_SEATS - SEATS_TAKEN);
-  document.querySelectorAll('[data-left]').forEach(function (el) { el.textContent = left; });
-  document.querySelectorAll('[data-seatbar]').forEach(function (bar) {
-    if (SEATS_TAKEN > 0) { bar.hidden = false; requestAnimationFrame(function () { bar.querySelector('i').style.width = (SEATS_TAKEN / MAX_SEATS * 100) + '%'; }); }
-  });
-
-  /* ---------- Cuentas atrás: directo de bienvenida (4 oct 19:00) y cierre de inscripción (3 oct 23:59) ---------- */
-  var LAUNCH = new Date('2026-10-04T19:00:00+02:00'), CLOSE = new Date('2026-10-03T23:59:00+02:00');
-  var pad = function (n) { return String(n).padStart(2, '0'); };
-  var fill = function (el, target) {
-    var diff = Math.max(0, target - Date.now());
-    el.querySelector('[data-u=d]').textContent = pad(Math.floor(diff / 86400000));
-    el.querySelector('[data-u=h]').textContent = pad(Math.floor(diff / 3600000) % 24);
-    el.querySelector('[data-u=m]').textContent = pad(Math.floor(diff / 60000) % 60);
-    el.querySelector('[data-u=s]').textContent = pad(Math.floor(diff / 1000) % 60);
-  };
+  /* ---------- Countdown ---------- */
+  var pad = function (n) { return String(n).padStart(2, '0'); }, cd = document.getElementById('countdown');
   var tick = function () {
-    fill(document.getElementById('countdown'), LAUNCH);
-    document.querySelectorAll('[data-countdown]').forEach(function (el) { fill(el, CLOSE); });
-    var days = Math.max(0, Math.ceil((LAUNCH - Date.now()) / 86400000));
+    var diff = Math.max(0, LAUNCH - Date.now());
+    cd.querySelector('[data-u=d]').textContent = pad(Math.floor(diff / 86400000));
+    cd.querySelector('[data-u=h]').textContent = pad(Math.floor(diff / 3600000) % 24);
+    cd.querySelector('[data-u=m]').textContent = pad(Math.floor(diff / 60000) % 60);
+    cd.querySelector('[data-u=s]').textContent = pad(Math.floor(diff / 1000) % 60);
+    var days = Math.max(0, Math.ceil(diff / 86400000));
     document.querySelectorAll('[data-days-left]').forEach(function (el) { el.textContent = days; });
   };
   tick(); setInterval(tick, 1000);
-
-  /* ---------- Exit intent (una vez por sesión, solo escritorio) ---------- */
-  var exitModal = document.getElementById('exit-modal'), exitShown = false;
-  try { exitShown = sessionStorage.getItem('mny-exit') === '1'; } catch (e) {}
-  var showExit = function () {
-    if (exitShown || document.getElementById('waitlist').classList.contains('done')) return;
-    exitShown = true; try { sessionStorage.setItem('mny-exit', '1'); } catch (e) {}
-    if (exitModal.showModal) exitModal.showModal();
-  };
-  if (window.matchMedia('(pointer: fine)').matches) { document.addEventListener('mouseout', function (e) { if (!e.relatedTarget && e.clientY <= 0) showExit(); }); }
-  exitModal.querySelector('[data-close-exit]').addEventListener('click', function () { exitModal.close(); });
-  exitModal.addEventListener('click', function (e) { if (e.target === exitModal) exitModal.close(); });
-  document.getElementById('exit-form').addEventListener('submit', function (e) {
-    e.preventDefault(); var f = e.target; if (!f.checkValidity()) { f.reportValidity(); return; }
-    f.innerHTML = '<p><b>Hecho.</b> Te enviamos la hoja de ruta a ' + document.getElementById('exit-email').value + '. Conecta este formulario a tu herramienta de email para que el envío sea real.</p>';
-  });
-
-  /* ---------- Before / after ---------- */
-  var range = document.getElementById('compare-range'), after = document.getElementById('after'), handle = document.getElementById('handle');
-  var setCompare = function (v) { after.style.clipPath = 'inset(0 0 0 ' + v + '%)'; handle.style.left = v + '%'; };
-  range.addEventListener('input', function () { setCompare(range.value); });
-  setCompare(50);
-  if (!reduce) {
-    var demo = 50, dir = 1, demoOn = true;
-    range.addEventListener('pointerdown', function () { demoOn = false; });
-    var wobble = function () { if (!demoOn) return; demo += dir * 0.15; if (demo > 58 || demo < 42) dir *= -1; range.value = demo; setCompare(demo); requestAnimationFrame(wobble); };
-    wobble();
-  }
-
-  /* ---------- Programme tracker ---------- */
-  var mods = document.querySelectorAll('#modules .module'), big = document.getElementById('prog-big'), week = document.getElementById('prog-week'), bar = document.getElementById('prog-bar');
-  var setActive = function (el) {
-    mods.forEach(function (m) { m.classList.toggle('dim', m !== el); });
-    if (big.textContent !== el.dataset.num) { big.classList.add('swap'); setTimeout(function () { big.textContent = el.dataset.num; big.classList.remove('swap'); }, reduce ? 0 : 200); }
-    week.textContent = el.dataset.week; bar.style.width = el.dataset.pct + '%';
-  };
-  if ('IntersectionObserver' in window) {
-    var mio = new IntersectionObserver(function (entries) { entries.forEach(function (e) { if (e.isIntersecting) setActive(e.target); }); }, { rootMargin: '-40% 0px -45% 0px', threshold: 0 });
-    mods.forEach(function (m) { mio.observe(m); });
-  }
-  mods.forEach(function (m) { m.addEventListener('mouseenter', function () { setActive(m); }); });
-
-  /* ---------- Roadmap calendar (hoja de ruta, octubre 2026) ---------- */
-  var L = function (n) { return { t: 'lesson', l: 'Lección ' + n }; };
-  var LIVE = function (l) { return { t: 'live', l: l + ' · 19h' }; };
-  var BONO = function (l) { return { t: 'bono', l: 'Bono: ' + l + ' · 19h' }; };
-  var WEEKS = [
-    { name: 'Arranque', range: '28 sep – 4 oct', days: [['28', 'sep', true], ['29', 'sep', true], ['30', 'sep', true], ['1', 'oct'], ['2', 'oct'], ['3', 'oct'], ['4', 'oct', false, [LIVE('Directo de bienvenida')]]] },
-    { name: 'Semana 1', range: '5 – 11 oct', days: [['5', '', false, [L('1.1'), BONO('Invitada perfecta')]], ['6', '', false, [L('1.2')]], ['7', '', false, [L('1.3')]], ['8', '', false, [L('2.1')]], ['9', '', false, [L('2.2')]], ['10'], ['11', '', false, [LIVE('Directo Q&A 1')]]] },
-    { name: 'Semana 2', range: '12 – 18 oct', days: [['12', '', false, [L('2.3'), BONO('Colecciones cápsula')]], ['13', '', false, [L('2.4')]], ['14', '', false, [L('3.1')]], ['15', '', false, [L('3.2')]], ['16', '', false, [L('3.3')]], ['17'], ['18', '', false, [LIVE('Directo Q&A 2')]]] },
-    { name: 'Semana 3', range: '19 – 25 oct', days: [['19', '', false, [L('3.4'), BONO('Guía vintage')]], ['20', '', false, [L('4.1')]], ['21', '', false, [L('4.2')]], ['22', '', false, [L('4.3')]], ['23', '', false, [L('4.4')]], ['24'], ['25', '', false, [LIVE('Directo Q&A 3')]]] },
-    { name: 'Semana 4', range: '26 oct – 1 nov', days: [['26', '', false, [L('5.1'), BONO('Beauty realista')]], ['27', '', false, [L('5.2')]], ['28', '', false, [L('5.3')]], ['29', '', false, [L('6.1')]], ['30', '', false, [L('6.2')]], ['31'], ['1', 'nov', false, [LIVE('Directo Q&A 4')]]] },
-    { name: 'Cierre', range: '2 – 8 nov', days: [['2', 'nov', false, [L('6.3'), BONO('Marca personal')]], ['3', 'nov'], ['4', 'nov'], ['5', 'nov'], ['6', 'nov'], ['7', 'nov'], ['8', 'nov', false, [LIVE('Directo de graduación')]]] }
-  ];
-  var esc = function (s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;'); };
-  var cal = document.getElementById('cal'), calList = document.getElementById('cal-list');
-  var html = '<div class="cal-head"><div>Lun</div><div>Mar</div><div>Mié</div><div>Jue</div><div>Vie</div><div>Sáb</div><div>Dom</div></div>';
-  var list = '';
-  WEEKS.forEach(function (wk) {
-    html += '<div class="cal-week">';
-    var items = '';
-    wk.days.forEach(function (d) {
-      var evs = d[3] || [];
-      html += '<div class="day' + (d[2] ? ' off' : '') + '"><span class="n">' + d[0] + (d[1] ? '<small>' + d[1] + '</small>' : '') + '</span>';
-      evs.forEach(function (e) { html += '<span class="ev ' + e.t + '">' + esc(e.l) + '</span>'; items += '<li><span class="ev ' + e.t + '">' + d[0] + (d[1] ? ' ' + d[1] : '') + ' · ' + esc(e.l) + '</span></li>'; });
-      html += '</div>';
-    });
-    html += '</div>';
-    list += '<div class="wk"><h4>' + wk.name + '<small>' + wk.range + '</small></h4><ul>' + items + '</ul></div>';
-  });
-  cal.innerHTML = html; calList.innerHTML = list;
-
-  /* ---------- Scarf test (lección 3.3) ---------- */
-  var PAIRS = [
-    { q: 'Pareja 1 · Blancos', a: { l: 'Blanco', c: '#FFFFFF', t: 'frio' }, b: { l: 'Blanco roto', c: '#F3EAD8', t: 'calido' } },
-    { q: 'Pareja 2 · Oscuros', a: { l: 'Azul marino', c: '#1B2A4A', t: 'frio' }, b: { l: 'Verde oscuro', c: '#2F4A2E', t: 'calido' } },
-    { q: 'Pareja 3 · Vivos', a: { l: 'Fucsia', c: '#D9308A', t: 'frio' }, b: { l: 'Naranja', c: '#E8722B', t: 'calido' } },
-    { q: 'Pareja 4 · Neutros', a: { l: 'Negro', c: '#101114', t: 'frio' }, b: { l: 'Marrón oscuro', c: '#4A2E1F', t: 'calido' } },
-    { q: 'Pareja 5 · Metales', a: { l: 'Plateado', c: 'linear-gradient(135deg,#D9DDE3,#9AA3AE,#E6E9EE)', t: 'frio', s: 'Pendientes o collar' }, b: { l: 'Dorado', c: 'linear-gradient(135deg,#F1D58A,#C69A3A,#F6E2A6)', t: 'calido', s: 'Pendientes o collar' } }
-  ];
-  var RESULT = {
-    frio: { title: 'Tu paleta es fría.', text: 'Te iluminan el blanco puro, el azul marino, el fucsia, el negro y la plata. Tus neutros de fondo de armario son el negro, el gris y el blanco. Con la regla de los tres colores: una prenda principal, un secundario y un tercero en accesorios.', trio: ['#1B2A4A', '#FFFFFF', '#D9308A'] },
-    calido: { title: 'Tu paleta es cálida.', text: 'Te iluminan el blanco roto, el verde oscuro, el naranja, el marrón chocolate y el oro. Tus neutros de fondo de armario son el camel, el crema y el chocolate, no el negro. Con la regla de los tres colores: principal, secundario y accesorio.', trio: ['#4A2E1F', '#F3EAD8', '#E8722B'] },
-    empate: { title: 'Estás justo en el medio.', text: 'Repite el test frente a luz natural y con la cara lavada, como pide la lección. Si sigue empatado, eres neutra: puedes moverte entre las dos familias eligiendo por profundidad y no por temperatura.', trio: ['#4A5A6A', '#EDE4DA', '#B49B84'] }
-  };
-  var pairsEl = document.getElementById('pairs'), picks = {};
-  var chipHtml = function (i, side, o) { return '<button type="button" class="chip" aria-pressed="false" data-i="' + i + '" data-t="' + o.t + '"><i style="background:' + o.c + '"></i><span>' + o.l + (o.s ? '<small>' + o.s + '</small>' : '') + '</span></button>'; };
-  pairsEl.innerHTML = PAIRS.map(function (p, i) { return '<div class="pair"><span class="q">' + p.q + '</span>' + chipHtml(i, 'a', p.a) + chipHtml(i, 'b', p.b) + '</div>'; }).join('');
-  var score = document.getElementById('score'), vTitle = document.getElementById('verdict-title'), vText = document.getElementById('verdict-text'), trio = document.getElementById('trio');
-  var judge = function () {
-    var n = Object.keys(picks).length, f = 0, c = 0;
-    Object.keys(picks).forEach(function (k) { if (picks[k] === 'frio') f++; else c++; });
-    if (n < PAIRS.length) { score.textContent = n + ' de 5 parejas · ' + f + ' fríos, ' + c + ' cálidos'; return; }
-    var key = f > c ? 'frio' : c > f ? 'calido' : 'empate', r = RESULT[key];
-    score.textContent = f + ' fríos · ' + c + ' cálidos';
-    vTitle.innerHTML = '<b>' + r.title + '</b>'; vText.textContent = r.text;
-    Array.prototype.forEach.call(trio.children, function (el, i) { el.style.background = r.trio[i]; el.style.color = (i === 1) ? '#1E2B3A' : '#fff'; el.style.textShadow = (i === 1) ? 'none' : ''; });
-  };
-  pairsEl.addEventListener('click', function (e) {
-    var b = e.target.closest('.chip'); if (!b) return;
-    pairsEl.querySelectorAll('.chip[data-i="' + b.dataset.i + '"]').forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
-    b.setAttribute('aria-pressed', 'true'); picks[b.dataset.i] = b.dataset.t; judge();
-  });
-
-  /* ---------- Counters ---------- */
-  var counters = document.querySelectorAll('[data-count]');
-  var runCount = function (el) {
-    var target = +el.dataset.count, start = performance.now(), dur = reduce ? 0 : 1200;
-    var step = function (now) { var k = Math.min(1, (now - start) / (dur || 1)); k = 1 - Math.pow(1 - k, 3); el.textContent = Math.round(target * k); if (k < 1) requestAnimationFrame(step); };
-    requestAnimationFrame(step);
-  };
-  if ('IntersectionObserver' in window) {
-    var cio = new IntersectionObserver(function (entries) { entries.forEach(function (e) { if (e.isIntersecting) { runCount(e.target); cio.unobserve(e.target); } }); }, { threshold: 0.4 });
-    counters.forEach(function (c) { cio.observe(c); });
-  } else { counters.forEach(function (c) { c.textContent = c.dataset.count; }); }
-
-  /* ---------- Parallax ---------- */
-  var par = document.getElementById('parallax');
-  if (par && !reduce) {
-    var parTick = function () { var r = par.getBoundingClientRect(), mid = r.top + r.height / 2 - window.innerHeight / 2; par.style.transform = 'translateY(' + (mid * -0.06) + 'px)'; };
-    window.addEventListener('scroll', parTick, { passive: true }); parTick();
-  }
-
-  /* ---------- Carousel ---------- */
-  var car = document.getElementById('carousel');
-  document.querySelectorAll('[data-car]').forEach(function (b) { b.addEventListener('click', function () { var card = car.querySelector('.quote'); car.scrollBy({ left: (card.offsetWidth + 20) * +b.dataset.car, behavior: reduce ? 'auto' : 'smooth' }); }); });
-  var isDown = false, startX = 0, startLeft = 0;
-  car.addEventListener('pointerdown', function (e) { isDown = true; startX = e.clientX; startLeft = car.scrollLeft; car.classList.add('dragging'); });
-  car.addEventListener('pointermove', function (e) { if (!isDown) return; car.scrollLeft = startLeft - (e.clientX - startX); });
-  ['pointerup', 'pointerleave', 'pointercancel'].forEach(function (ev) { car.addEventListener(ev, function () { isDown = false; car.classList.remove('dragging'); }); });
 
   /* ---------- Video modal ---------- */
   var modal = document.getElementById('video-modal'), vid = document.getElementById('video-el'), empty = modal.querySelector('.empty');
@@ -1239,13 +613,16 @@
   modal.querySelector('[data-close-video]').addEventListener('click', closeVideo);
   modal.addEventListener('click', function (e) { if (e.target === modal) closeVideo(); });
 
-  /* ---------- Form (conectar a pasarela de pago / email) ---------- */
-  var form = document.getElementById('waitlist');
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    if (!form.checkValidity()) { form.reportValidity(); return; }
-    form.classList.add('done');
-    document.getElementById('success-msg').textContent = 'Te escribimos a ' + document.getElementById('email').value + ' con el acceso al directo de bienvenida del 4 de octubre. Conecta este formulario a la pasarela de pago para que la reserva sea real.';
+  /* ---------- Exit intent (una vez por sesión, solo escritorio) ---------- */
+  var exitModal = document.getElementById('exit-modal'), exitShown = false;
+  try { exitShown = sessionStorage.getItem('mny-exit') === '1'; } catch (e) {}
+  var showExit = function () { if (exitShown) return; exitShown = true; try { sessionStorage.setItem('mny-exit', '1'); } catch (e) {} if (exitModal.showModal) exitModal.showModal(); };
+  if (window.matchMedia('(pointer: fine)').matches) { document.addEventListener('mouseout', function (e) { if (!e.relatedTarget && e.clientY <= 0) showExit(); }); }
+  exitModal.querySelector('[data-close-exit]').addEventListener('click', function () { exitModal.close(); });
+  exitModal.addEventListener('click', function (e) { if (e.target === exitModal) exitModal.close(); });
+  document.getElementById('exit-form').addEventListener('submit', function (e) {
+    e.preventDefault(); var f = e.target; if (!f.checkValidity()) { f.reportValidity(); return; }
+    f.innerHTML = '<p><b>Hecho.</b> Te enviamos la hoja de ruta a ' + document.getElementById('exit-email').value + '. Conecta este formulario a tu herramienta de email para que el envío sea real.</p>';
   });
 })();
 </script>
