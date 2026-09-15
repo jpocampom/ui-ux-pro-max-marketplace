@@ -242,6 +242,7 @@
   .gift.vip .k { background: var(--ink); color: var(--bg); }
   .gift.vip h3, .gift.vip .val { color: var(--ink); }
   .gift.vip .val { font-style: italic; }
+  .gift.vip .val .inc { background: var(--ink); color: #FFFFFF; }
   @media (max-width: 700px) { .gifts { grid-template-columns: 1fr; } }
 
   /* Offer box */
@@ -272,16 +273,16 @@
   /* Tachado animado al hacer scroll: negro -> línea rosa -> INCLUIDO */
   .val { position: relative; display: inline-block; padding-right: 2px; }
   .val .t { position: relative; display: inline-block; }
-  .val .t::after { content: ""; position: absolute; left: -3%; top: 54%; height: 1.5px; width: 0; background: var(--accent); border-radius: 1px; transform: rotate(-2deg); transition: width 550ms var(--ease); }
+  .val .t::after { content: ""; position: absolute; left: -3%; top: 54%; height: 1.5px; width: 0; background: var(--accent); border-radius: 1px; transform: rotate(-2deg); transition: width 1100ms var(--ease); }
   .val.struck .t::after { width: 106%; }
   .items .val .t::after { height: 1.5px; }
-  .val .inc { display: inline-block; margin-left: 12px; vertical-align: 1px; background: var(--accent); color: var(--ink); font-family: var(--label); font-size: 9.5px; letter-spacing: .18em; text-transform: uppercase; font-weight: 700; padding: 3px 8px 2px; border-radius: 3px; opacity: 0; transform: scale(.6) rotate(-8deg); transition: opacity 260ms var(--ease) 480ms, transform 320ms cubic-bezier(.34,1.56,.64,1) 480ms; }
+  .val .inc { display: inline-block; margin-left: 12px; vertical-align: 1px; background: var(--accent); color: var(--ink); font-family: var(--label); font-size: 9.5px; letter-spacing: .18em; text-transform: uppercase; font-weight: 700; padding: 3px 8px 2px; border-radius: 3px; opacity: 0; transform: scale(.6) rotate(-8deg); transition: opacity 400ms var(--ease) 1000ms, transform 500ms cubic-bezier(.34,1.56,.64,1) 1000ms; }
   .val.struck .inc { opacity: 1; transform: scale(1) rotate(-3deg); }
   .val.nostrike .t::after { display: none; }
   .totals { text-align: center; display: flex; flex-direction: column; gap: 14px; padding-top: 6px; }
   .totals .lbl { font-family: var(--label); font-size: 12px; letter-spacing: .2em; text-transform: uppercase; font-weight: 600; color: var(--ink-soft); }
-  .totals .strike { font-family: var(--display); font-size: clamp(40px, 5vw, 56px); line-height: 1; color: var(--ink); position: relative; display: inline-block; transition: color 400ms var(--ease) 300ms; }
-  .totals .strike::after { content: ""; position: absolute; left: -6%; width: 0; top: 52%; height: 2.5px; background: var(--accent); transform: rotate(-6deg); border-radius: 2px; transition: width 600ms var(--ease); }
+  .totals .strike { font-family: var(--display); font-size: clamp(40px, 5vw, 56px); line-height: 1; color: var(--ink); position: relative; display: inline-block; transition: color 600ms var(--ease) 700ms; }
+  .totals .strike::after { content: ""; position: absolute; left: -6%; width: 0; top: 52%; height: 2.5px; background: var(--accent); transform: rotate(-6deg); border-radius: 2px; transition: width 1200ms var(--ease); }
   .totals .strike.struck { color: var(--muted); }
   .totals .strike.struck::after { width: 112%; }
   .offer-cta { text-align: center; margin-top: 36px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
@@ -725,7 +726,7 @@
         if (!e.isIntersecting) return;
         var el = e.target, parent = el.closest('.items, .gifts, .totals') || el.parentElement;
         var sibs = Array.prototype.slice.call(parent.querySelectorAll('[data-strike]')), i = sibs.indexOf(el);
-        setTimeout(function () { el.classList.add('struck'); }, reduce ? 0 : 200 + Math.max(0, i) * 160);
+        setTimeout(function () { el.classList.add('struck'); }, reduce ? 0 : 250 + Math.max(0, i) * 260);
         sio.unobserve(el);
       });
     }, { rootMargin: '0px 0px -15% 0px', threshold: 0.6 });
