@@ -24,16 +24,16 @@
   };
 
   /* ------------------------------------------------------------------
-     PRICING DATA (Método CAR) — from the official table, EUR excl. VAT
-     tiers: 0 = 1–2 rooms · 1 = 3–5 rooms · 2 = +5 rooms
+     PRICING DATA (Método CAR) — "from" prices only, EUR.
+     Final price depends on the client's needs; Renacer is bespoke
+     (specific needs + place of residence).
      ------------------------------------------------------------------ */
   const PRICING = {
-    estilizar:  { icon: "i-lamp",  img: "assets/estilizar.jpg",  tiers: [{ w: "2–3", p: 500 },  { w: "5–6", p: 1100 },  { w: "7–8", p: 1500 }] },
-    reamueblar: { icon: "i-sofa",  img: "assets/reamueblar.jpg", tiers: [{ w: "4–5", p: 1125 }, { w: "7–8", p: 1875 },  { w: "9–10", p: 2375 }], includesStyle: true, featured: true },
-    disenar:    { icon: "i-brush", img: "assets/disenar.jpg",    tiers: [{ w: "6–7", p: 1950 }, { w: "10–11", p: 3150 }, { w: "12–13", p: 3750 }], includesStyle: true },
+    estilizar:  { icon: "i-lamp",  img: "assets/estilizar.jpg",  from: 350 },
+    reamueblar: { icon: "i-sofa",  img: "assets/reamueblar.jpg", from: 1125, includesStyle: true, featured: true },
+    disenar:    { icon: "i-brush", img: "assets/disenar.jpg",    from: 1950, includesStyle: true },
     renacer:    { icon: "i-plan",  img: "assets/renacer.jpg",    custom: true }
   };
-  const MIN_PRICE = 350;
   const DELIVERABLE_ICONS = ["i-home", "i-list", "i-eye", "i-plan", "i-tag", "i-users"];
   const DELIVERABLE_IMGS = ["vision", "moodboards", "paleta", "plan", "sourcing", "acompanamiento"];
   const PHASE_IMGS = ["assets/fase-1.jpg", "assets/fase-3.jpg", "assets/fase-4.jpg"];
@@ -41,7 +41,7 @@
   /* ------------------------------------------------------------------
      STATE
      ------------------------------------------------------------------ */
-  const state = { lang: "es", tier: 0, phase: 0, step: 0, answers: {}, calendlyLoaded: false, result: null };
+  const state = { lang: "es", phase: 0, step: 0, answers: {}, calendlyLoaded: false, result: null };
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
   const t = () => window.I18N[state.lang];
@@ -88,7 +88,7 @@
     const d = t().services;
     $("#services-grid").innerHTML = d.items.map((s, i) => {
       const pr = PRICING[s.key];
-      const from = pr.custom ? `<span>${esc(d.custom)}</span><b class="b-sm">${esc(t().pricing.custom)}</b>` : `<span>${esc(d.from)}</span><b>${fmtEUR(pr.tiers[0].p)}</b>`;
+      const from = pr.custom ? `<span>${esc(d.custom)}</span><b class="b-sm">${esc(t().pricing.custom)}</b>` : `<span>${esc(d.from)}</span><b>${fmtEUR(pr.from)}</b>`;
       const pill = pr.includesStyle ? `<span class="pill">${icon("i-sparkle")}${esc(d.included)}</span>` : "";
       return `
         <article class="service-card reveal ${pr.custom ? "is-custom" : ""}" data-service="${s.key}" tabindex="0" role="link" aria-label="${esc(s.name)}">
@@ -104,7 +104,7 @@
         </article>`;
     }).join("");
     $$(".service-card").forEach((c) => {
-      const go = () => { state.tier = 0; $("#precios").scrollIntoView({ behavior: reduced ? "auto" : "smooth" }); highlightPrice(c.dataset.service); };
+      const go = () => { $("#precios").scrollIntoView({ behavior: reduced ? "auto" : "smooth" }); highlightPrice(c.dataset.service); };
       c.addEventListener("click", go);
       c.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } });
     });
@@ -157,9 +157,9 @@
       </div>`).join("");
   }
 
-  function renderPricing(animate) {
+  function renderPricing() {
     const d = t().pricing; const s = t().services;
-    const cards = s.items.map((svc) => {
+    $("#pricing-grid").innerHTML = s.items.map((svc) => {
       const pr = PRICING[svc.key];
       const feats = d.features[svc.key].map((f) => `<li>${icon("i-check")}<span>${esc(f)}</span></li>`).join("");
       if (pr.custom) {
@@ -168,42 +168,23 @@
             <h3>${icon(pr.icon)}${esc(svc.name)}</h3>
             <p class="p-tag">${esc(svc.tag)}</p>
             <div class="amount">${esc(d.custom)}</div>
-            <span class="weeks">${icon("i-calendar")}${esc(d.customWeeks)}</span>
+            <span class="weeks">${icon("i-compass")}${esc(d.customNote)}</span>
             <ul>${feats}</ul>
             <a href="#reserva" class="btn btn-primary">${esc(d.ctaCustom)}</a>
           </article>`;
       }
-      const tier = pr.tiers[state.tier];
       return `
         <article class="price-card reveal is-in ${pr.featured ? "is-featured" : ""}" data-service="${svc.key}">
           ${pr.featured ? `<span class="ribbon">${esc(d.popular)}</span>` : ""}
           <h3>${icon(pr.icon)}${esc(svc.name)}</h3>
           <p class="p-tag">${esc(svc.tag)}</p>
-          <div class="amount"><span class="amount-num" data-value="${tier.p}">${fmtEUR(tier.p)}</span><small>${esc(d.rooms[state.tier])}</small></div>
-          <span class="weeks">${icon("i-calendar")}${esc(tier.w)} ${esc(d.weeks)}</span>
+          <div class="amount"><small>${esc(d.fromLabel)}</small><span>${fmtEUR(pr.from)}</span></div>
+          <span class="weeks">${icon("i-tag")}${esc(d.subject)}</span>
           ${pr.includesStyle ? `<div class="incl">${icon("i-sparkle")}${esc(d.inclFree)}</div>` : ""}
           <ul>${feats}</ul>
           <a href="#reserva" class="btn ${pr.featured ? "btn-primary" : "btn-ghost"}">${esc(d.cta)}</a>
         </article>`;
-    });
-    $("#pricing-grid").innerHTML = cards.join("");
-    $$("#rooms-segmented button").forEach((b) => b.setAttribute("aria-pressed", String(+b.dataset.tier === state.tier)));
-    if (animate && !reduced) $$(".amount-num").forEach(countUp);
-
-    // Full table
-    const head = `<thead><tr><th>${esc(d.tableScope)}</th>${["estilizar", "reamueblar", "disenar"].map((k) => `<th>${esc(s.items.find((x) => x.key === k).name)}</th>`).join("")}</tr></thead>`;
-    const body = d.rooms.map((r, i) => `<tr><th scope="row">${esc(r)}</th>${["estilizar", "reamueblar", "disenar"].map((k) => `<td><b>${fmtEUR(PRICING[k].tiers[i].p)}</b><span>${esc(PRICING[k].tiers[i].w)} ${esc(d.weeks)}</span></td>`).join("")}</tr>`).join("");
-    $("#pricing-table").innerHTML = head + `<tbody>${body}</tbody>`;
-  }
-
-  function countUp(el) {
-    const target = +el.dataset.value; const start = performance.now(); const dur = 550; const from = Math.max(0, target - 900);
-    const step = (now) => {
-      const k = Math.min(1, (now - start) / dur); const e = 1 - Math.pow(1 - k, 3);
-      el.textContent = fmtEUR(Math.round(from + (target - from) * e));
-      if (k < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
+    }).join("");
   }
 
   function renderSocials() {
@@ -301,11 +282,9 @@
     if (nivel.includes("distribucion")) bump("disenar");
     if (nivel.includes("piezas") || nivel.includes("definir")) bump("reamueblar");
     if (nec.includes("implementacion")) bump("reamueblar");
-    const tier = +a.estancias || 0;
     const pr = PRICING[key];
-    const price = pr.custom ? null : pr.tiers[tier].p;
     const budgetMax = { "<1000": 1000, "1000-2500": 2500, "2500-5000": 5000, ">5000": Infinity }[a.inversion] || Infinity;
-    return { key, tier, price, weeks: pr.custom ? null : pr.tiers[tier].w, tight: price != null && price > budgetMax };
+    return { key, from: pr.custom ? null : pr.from, tight: !pr.custom && pr.from > budgetMax };
   }
 
   function showResult() {
@@ -324,19 +303,32 @@
           <p class="r-desc">${esc(svc.desc)}</p>
           ${note ? `<div class="result-note">${icon("i-check")}<span>${esc(note)}</span></div>` : ""}
         </div>
-        <div class="result-nums">
-          <div><span class="k">${esc(q.estimate)}</span><div class="v">${pr.custom ? esc(q.customPrice) : fmtEUR(r.price)}</div></div>
-          <div><span class="k">${esc(q.duration)}</span><div class="v">${pr.custom ? esc(q.customWeeks) : `${esc(r.weeks)} ${esc(q.weeksShort)}`}</div></div>
+        <div class="result-nums is-single">
+          <div>
+            <span class="k">${esc(q.estimate)}</span>
+            <div class="v">${pr.custom ? esc(q.customPrice) : `<small>${esc(q.fromLabel)}</small> ${fmtEUR(r.from)}`}</div>
+            <p class="tiny">${esc(pr.custom ? q.customNote : q.subject)}</p>
+          </div>
         </div>
       </div>
-      <div class="result-actions">
-        <a href="#reserva" class="btn btn-primary btn-lg" id="result-book">${esc(q.bookCta)}</a>
-        <button type="button" class="link-btn" id="quiz-restart">${esc(q.restart)}</button>
-      </div>
-      <p class="tiny" style="margin-top:12px">${esc(q.prefillNote)}</p>`;
-    $("#quiz-restart").addEventListener("click", () => { state.step = 0; state.answers = {}; state.result = null; res.hidden = true; $("#quiz-form").hidden = false; renderQuiz(); });
+      <div class="result-next">
+        <p class="eyebrow" style="margin:0 0 8px">${esc(q.nextStep)}</p>
+        <div class="result-actions">
+          <a href="#reserva" class="btn btn-primary btn-lg" id="result-book">${icon("i-calendar")}${esc(q.bookCta)}</a>
+          <button type="button" class="link-btn" id="quiz-restart">${esc(q.restart)}</button>
+        </div>
+        <p class="tiny" style="margin-top:12px">${esc(q.prefillNote)}</p>
+      </div>`;
+    $("#quiz-restart").addEventListener("click", () => { state.step = 0; state.answers = {}; state.result = null; state.autoScrolled = false; res.hidden = true; $("#quiz-form").hidden = false; renderQuiz(); });
     $("#result-book").addEventListener("click", () => { openCalendly(); });
     res.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
+    // Step 2 of the funnel: load the Calendly calendar right away (prefilled with the answers)
+    // so the booking is one scroll away, and pull it into view after the result has been read.
+    openCalendly();
+    if (!state.autoScrolled) {
+      state.autoScrolled = true;
+      setTimeout(() => { $("#reserva").scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" }); }, reduced ? 0 : 2600);
+    }
   }
 
   /* ------------------------------------------------------------------
@@ -428,10 +420,6 @@
     onScroll();
   }
 
-  function initPricing() {
-    $$("#rooms-segmented button").forEach((b) => b.addEventListener("click", () => { state.tier = +b.dataset.tier; renderPricing(true); }));
-  }
-
   function initQuiz() {
     $("#quiz-next").addEventListener("click", nextStep);
     $("#quiz-back").addEventListener("click", prevStep);
@@ -444,7 +432,7 @@
      ------------------------------------------------------------------ */
   function renderAll() {
     applyStatic();
-    renderServices(); renderPhases(); renderDeliverables(); renderPricing(false); renderSocials(); renderUniverse(); renderFaq();
+    renderServices(); renderPhases(); renderDeliverables(); renderPricing(); renderSocials(); renderUniverse(); renderFaq();
     if ($("#quiz-form").hidden && state.result) showResult(); else renderQuiz();
     if (!$("#calendly-widget").hidden) openCalendly();
     initReveal();
@@ -452,7 +440,7 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     state.lang = detectLang();
-    initHeader(); initPricing(); initQuiz();
+    initHeader(); initQuiz();
     renderAll();
     $$(".hero .reveal, .hero-visual").forEach((el) => el.classList.add("is-in"));
   });

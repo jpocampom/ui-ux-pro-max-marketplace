@@ -228,12 +228,6 @@ strong{font-weight:600}
 .deliv .ico{width:18px;height:18px;color:var(--taupe)}
 
 /* ---------- Pricing ---------- */
-.rooms-toggle{display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-bottom:28px}
-.rooms-label{font-family:var(--font-head);font-size:1.3rem;color:var(--brown)}
-.segmented{display:inline-flex;background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:4px;position:relative}
-.segmented button{min-height:44px;min-width:76px;padding:0 18px;border-radius:999px;font-weight:500;color:var(--taupe);transition:background var(--dur),color var(--dur),transform var(--dur)}
-.segmented button:hover{color:var(--brown-deep)}
-.segmented button[aria-pressed="true"]{background:var(--brown-deep);color:var(--cream)}
 .pricing-grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
 .price-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:28px 26px 26px;display:flex;flex-direction:column;gap:14px;position:relative;transition:transform var(--dur) var(--ease),box-shadow var(--dur)}
 .price-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
@@ -243,8 +237,8 @@ strong{font-weight:600}
 .price-card h3 .ico{color:var(--taupe);width:22px;height:22px}
 .price-card .p-tag{font-family:var(--font-head);font-style:italic;color:var(--taupe);font-size:1.1rem;margin-top:-8px}
 .price-card .amount{font-family:var(--font-head);font-size:clamp(2.6rem,4vw,3.4rem);font-weight:600;color:var(--brown-deep);line-height:1;font-variant-numeric:tabular-nums;display:flex;align-items:baseline;gap:6px}
-.price-card .amount small{font-size:1rem;font-family:var(--font-body);color:var(--text-soft);font-weight:400}
-.price-card .weeks{display:inline-flex;align-items:center;gap:8px;color:var(--brown);font-weight:500;font-size:.95rem}
+.price-card .amount small{font-size:.95rem;font-family:var(--font-body);color:var(--text-soft);font-weight:400;letter-spacing:.06em;text-transform:uppercase}
+.price-card .weeks{display:inline-flex;align-items:flex-start;gap:8px;color:var(--brown);font-weight:500;font-size:.92rem;line-height:1.4}
 .price-card .weeks .ico{width:18px;height:18px;color:var(--taupe)}
 .price-card ul{list-style:none;padding:0;margin:6px 0 0;display:flex;flex-direction:column;gap:8px;color:var(--text-soft);font-size:.95rem}
 .price-card li{display:flex;gap:10px;align-items:flex-start}
@@ -262,18 +256,6 @@ strong{font-weight:600}
 .pricing-rules{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
 .rule{display:flex;gap:12px;align-items:flex-start;background:var(--surface-2);border-radius:var(--r-md);padding:16px 18px;color:var(--brown);font-size:.95rem}
 .rule .ico{color:var(--taupe);margin-top:2px}
-.pricing-table-wrap{border:1px solid var(--border);border-radius:var(--r-md);background:var(--surface)}
-.pricing-table-wrap summary{cursor:pointer;padding:16px 20px;font-weight:500;color:var(--brown-deep);list-style:none;display:flex;justify-content:space-between;align-items:center}
-.pricing-table-wrap summary::-webkit-details-marker{display:none}
-.pricing-table-wrap summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--taupe)}
-.pricing-table-wrap[open] summary::after{content:"–"}
-.table-scroll{overflow-x:auto;padding:0 12px 16px}
-.pricing-table{width:100%;border-collapse:collapse;min-width:620px;font-size:.95rem}
-.pricing-table th,.pricing-table td{padding:14px 12px;text-align:left;border-top:1px solid var(--border);vertical-align:top}
-.pricing-table th{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe);font-weight:600}
-.pricing-table td b{font-family:var(--font-head);font-size:1.15rem;color:var(--brown-deep)}
-.pricing-table td span{display:block;color:var(--text-soft);font-size:.85rem}
-.pricing-table tr:hover td{background:var(--cream)}
 
 /* ---------- Quiz ---------- */
 .section-quiz{background:var(--brown-deep);color:var(--cream);position:relative;overflow:hidden}
@@ -316,12 +298,16 @@ strong{font-weight:600}
 .result-card .r-tag{font-family:var(--font-head);font-style:italic;color:var(--taupe);font-size:1.15rem}
 .result-card .r-desc{color:var(--text-soft);margin-top:10px}
 .result-nums{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+.result-nums.is-single{grid-template-columns:1fr}
+.result-nums .v small{font-size:.8rem;font-family:var(--font-body);color:var(--text-soft);font-weight:400;letter-spacing:.06em;text-transform:uppercase}
+.result-nums .tiny{margin-top:8px}
+.result-next{margin-top:22px;padding-top:20px;border-top:1px dashed var(--border)}
 .result-nums div{background:var(--surface-2);border-radius:var(--r-md);padding:14px}
 .result-nums .k{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--taupe);font-weight:600}
 .result-nums .v{font-family:var(--font-head);font-size:1.7rem;font-weight:600;color:var(--brown-deep);line-height:1.1;margin-top:4px}
 .result-note{display:flex;gap:10px;align-items:flex-start;background:var(--surface-2);border-radius:var(--r-md);padding:12px 14px;font-size:.9rem;color:var(--brown);margin-top:14px}
 .result-note .ico{color:var(--taupe);width:18px;height:18px;margin-top:2px}
-.result-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px;align-items:center}
+.result-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 .link-btn{color:var(--taupe);text-decoration:underline;text-underline-offset:3px;font-size:.95rem}
 .link-btn:hover{color:var(--brown-deep)}
 
@@ -332,6 +318,7 @@ strong{font-weight:600}
 .booking-head .sub{color:rgba(253,247,237,.8);margin:14px auto 0}
 .calendly-shell{background:var(--cream);border-radius:var(--r-xl);overflow:hidden;max-width:1000px;margin:0 auto;box-shadow:var(--shadow-lg);min-height:320px}
 .calendly-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;padding:56px 24px;min-height:320px;color:var(--brown)}
+.calendly-placeholder[hidden]{display:none}
 .calendly-placeholder .ico{color:var(--taupe)}
 .calendly-placeholder p{font-family:var(--font-head);font-size:1.4rem;color:var(--brown-deep)}
 .calendly-mount{min-width:320px;height:760px}

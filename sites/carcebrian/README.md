@@ -23,15 +23,20 @@ sites/carcebrian/
 
 Prefill de Calendly: el quiz envía `a1…a5` con las etiquetas **en español** del formulario actual de Calendly (punto de la vivienda, estancias, necesidad, nivel de ayuda, inversión). Si cambia el orden o el texto de las preguntas en Calendly, ajustar `CALENDLY_LABELS` en `app.js`.
 
-## Precios (fuente: tabla oficial Método CAR, IVA no incl.)
+## Precios (solo "desde")
 
-| Alcance | Estilizar | Reamueblar | Diseñar |
-|---|---|---|---|
-| 1–2 estancias | 2–3 sem · 500 € | 4–5 sem · 1.125 € | 6–7 sem · 1.950 € |
-| 3–5 estancias | 5–6 sem · 1.100 € | 7–8 sem · 1.875 € | 10–11 sem · 3.150 € |
-| +5 estancias | 7–8 sem · 1.500 € | 9–10 sem · 2.375 € | 12–13 sem · 3.750 € |
+| Servicio | En la web |
+|---|---|
+| Estilizar | desde 350 € |
+| Reamueblar | desde 1.125 € (Estilizar incluido) |
+| Diseñar | desde 1.950 € (Estilizar incluido) |
+| Renacer / proyectos integrales | Presupuesto a medida, según necesidad específica y lugar de residencia |
 
-Reglas mostradas en la página: primera sesión gratis; coste mínimo si se avanza 350 €; Estilizar incluido al contratar Reamueblar o Diseñar; Renacer con presupuesto a medida. Editar en `PRICING` (`app.js`).
+En toda la página: primera sesión gratis, coste mínimo si se avanza 350 €, precio final según las necesidades del proyecto. No se muestran tramos por estancias ni plazos. Editar en `PRICING` (`app.js`).
+
+## Flujo de conversión
+
+Cuestionario (5 preguntas) → recomendación de servicio con su "desde" → se abre automáticamente el calendario de Calendly embebido con las respuestas prellenadas y la página se desplaza a la reserva. También se puede abrir Calendly sin hacer el cuestionario ("Ver disponibilidad").
 
 ## Idiomas
 
