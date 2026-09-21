@@ -63,6 +63,13 @@
     return window.I18N[nav] ? nav : "es";
   }
 
+  // The hero seal: one phrase repeated around the ring, refilled on language change
+  function renderSeal() {
+    const el = $("#seal-text"); if (!el) return;
+    const phrase = `${t().hero.badge} · `;
+    el.textContent = (phrase + phrase).toUpperCase();
+  }
+
   function applyStatic() {
     const dict = t();
     $$("[data-i18n]").forEach((el) => { const v = get(dict, el.dataset.i18n); if (v != null) el.textContent = v; });
@@ -432,6 +439,7 @@
      ------------------------------------------------------------------ */
   function renderAll() {
     applyStatic();
+    renderSeal();
     renderServices(); renderPhases(); renderDeliverables(); renderPricing(); renderSocials(); renderUniverse(); renderFaq();
     if ($("#quiz-form").hidden && state.result) showResult(); else renderQuiz();
     if (!$("#calendly-widget").hidden) openCalendly();

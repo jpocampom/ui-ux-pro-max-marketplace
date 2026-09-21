@@ -22,7 +22,7 @@ window.I18N = {
       trust1: "Primera sesión gratuita, sin compromiso",
       trust2: "Proyectos desde 350 €",
       trust3: "Online, donde estés · ES · EN · IT",
-      badge: "desde · 1ª sesión gratis"
+      badge: "Desde 350 € · Primera sesión gratis"
     },
     services: {
       eyebrow: "Cada hogar parte de un punto diferente",
@@ -168,7 +168,7 @@ window.I18N = {
       trust1: "Free first session, no commitment",
       trust2: "Projects from €350",
       trust3: "Online, wherever you are · ES · EN · IT",
-      badge: "from · 1st session free"
+      badge: "From €350 · First session free"
     },
     services: {
       eyebrow: "Every home starts from a different place",
@@ -314,7 +314,7 @@ window.I18N = {
       trust1: "Prima sessione gratuita, senza impegno",
       trust2: "Progetti da 350 €",
       trust3: "Online, ovunque tu sia · ES · EN · IT",
-      badge: "da · 1ª sessione gratis"
+      badge: "Da 350 € · Prima sessione gratis"
     },
     services: {
       eyebrow: "Ogni casa parte da un punto diverso",

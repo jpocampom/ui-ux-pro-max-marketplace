@@ -131,16 +131,17 @@ strong{font-weight:600}
 .hero-photo{margin:0;position:absolute;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-lg)}
 .hero-photo img{width:100%;height:100%;object-fit:cover;transform:scale(1.02);transition:transform 1.2s var(--ease)}
 .hero-visual:hover .hero-photo img{transform:scale(1.07)}
-.hero-photo-a{right:0;top:22%;width:70%;aspect-ratio:4/3;z-index:2}
-.hero-photo-b{left:0;bottom:6%;width:52%;aspect-ratio:1/1;z-index:2;border-radius:var(--r-xl)}
-.hero-mosaic{position:absolute;right:10%;bottom:0;width:11%;height:52%;border-radius:999px;overflow:hidden;z-index:1;opacity:.9}
-.hero-mosaic img{width:100%;height:100%;object-fit:cover}
-.hero-badge{position:absolute;right:-2%;bottom:18%;z-index:4;background:var(--brown-deep);color:var(--cream);border-radius:50%;width:132px;height:132px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:var(--shadow-md);animation:spin-slow 24s linear infinite;padding:12px}
-.hero-badge .badge-num{font-family:var(--font-head);font-size:2rem;font-weight:600;line-height:1}
-.hero-badge .badge-txt{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;margin-top:6px;line-height:1.3}
+.hero-photo-a{right:0;top:15%;width:66%;aspect-ratio:4/3;z-index:2}
+.hero-photo-b{left:0;bottom:4%;width:50%;aspect-ratio:1/1;z-index:2;border-radius:var(--r-xl)}
+/* Rotating seal: the text turns around the marble, which is the axis */
+.hero-seal{position:absolute;right:2%;bottom:0;z-index:4;width:clamp(138px,33%,198px);aspect-ratio:1;display:grid;place-items:center}
+.seal-ring{position:absolute;inset:0;width:100%;height:100%;overflow:visible;animation:spin-slow 30s linear infinite;transform-origin:50% 50%}
+.seal-ring text{font-family:var(--font-body);font-size:13.5px;font-weight:500;text-transform:uppercase;fill:var(--brown-deep)}
+.seal-axis{position:relative;width:56%;aspect-ratio:1;border-radius:50%;overflow:hidden;box-shadow:var(--shadow-md);border:1px solid rgba(78,42,32,.18)}
+.seal-axis img{width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-seal:hover .seal-ring{animation-play-state:paused}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 @keyframes spin-slow{to{transform:rotate(360deg)}}
-.hero-badge:hover{animation-play-state:paused}
 @media (min-width:900px){
   .hero-grid{grid-template-columns:1.1fr .9fr}
 }
@@ -399,6 +400,6 @@ strong{font-weight:600}
 .reveal.is-in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
   .reveal{opacity:1;transform:none;transition:none}
-  .marquee-track,.hero-badge,.wordmark{animation:none}
+  .marquee-track,.seal-ring,.wordmark{animation:none}
   *{transition-duration:.01ms!important;animation-duration:.01ms!important}
 }
