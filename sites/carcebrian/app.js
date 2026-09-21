@@ -64,6 +64,24 @@
   }
 
   // The hero seal: one phrase repeated around the ring, refilled on language change
+  // The running band under the hero: the four service names, in the page's language
+  function renderMarquee() {
+    const el = $("#marquee-track"); if (!el) return;
+    const names = t().services.items.map((i) => i.name);
+    const run = names.map((n) => `<span>${esc(n)}</span><i></i>`).join("");
+    el.innerHTML = run + run + run;
+  }
+
+  function renderTestimonials() {
+    const d = t().testimonials;
+    $("#testimonios-grid").innerHTML = d.items.map((x) => `
+      <figure class="testi reveal">
+        <svg class="ico quote" aria-hidden="true"><use href="#i-quote"/></svg>
+        <blockquote>${esc(x.q)}</blockquote>
+        <figcaption><span class="t-name">${esc(x.a)}</span><span class="t-meta">${esc(x.r)}</span></figcaption>
+      </figure>`).join("");
+  }
+
   function renderSeal() {
     const el = $("#seal-text"); if (!el) return;
     const phrase = `${t().hero.badge} · `;
@@ -439,7 +457,7 @@
      ------------------------------------------------------------------ */
   function renderAll() {
     applyStatic();
-    renderSeal();
+    renderSeal(); renderMarquee(); renderTestimonials();
     renderServices(); renderPhases(); renderDeliverables(); renderPricing(); renderSocials(); renderUniverse(); renderFaq();
     if ($("#quiz-form").hidden && state.result) showResult(); else renderQuiz();
     if (!$("#calendly-widget").hidden) openCalendly();

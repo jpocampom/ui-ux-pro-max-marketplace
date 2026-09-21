@@ -142,6 +142,12 @@ strong{font-weight:600}
 .hero-seal:hover .seal-ring{animation-play-state:paused}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 @keyframes spin-slow{to{transform:rotate(360deg)}}
+@media (min-width:620px) and (max-width:899px){
+  .hero-visual{max-width:440px;margin-inline:0}
+  .wm-serif{font-size:2.4rem}
+  .wm-script{font-size:3.4rem}
+  .hero-grid{gap:32px}
+}
 @media (min-width:900px){
   .hero-grid{grid-template-columns:1.1fr .9fr}
 }
@@ -257,6 +263,17 @@ strong{font-weight:600}
 .pricing-rules{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
 .rule{display:flex;gap:12px;align-items:flex-start;background:var(--surface-2);border-radius:var(--r-md);padding:16px 18px;color:var(--brown);font-size:.95rem}
 .rule .ico{color:var(--taupe);margin-top:2px}
+
+/* ---------- Testimonios ---------- */
+.section-testimonios{padding-top:0}
+.testimonios-grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.testi{margin:0;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:30px 32px;display:flex;flex-direction:column;gap:16px;transition:transform var(--dur) var(--ease),box-shadow var(--dur)}
+.testi:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.testi .quote{width:28px;height:28px;color:var(--beige);stroke-width:1.4}
+.testi blockquote{margin:0;font-family:var(--font-head);font-style:italic;font-size:clamp(1.2rem,1.8vw,1.45rem);line-height:1.4;color:var(--brown)}
+.testi figcaption{display:flex;flex-direction:column;gap:2px;margin-top:auto;padding-top:8px;border-top:1px dashed var(--border)}
+.testi .t-name{font-weight:500;color:var(--brown-deep)}
+.testi .t-meta{font-size:.88rem;color:var(--text-soft)}
 
 /* ---------- Quiz ---------- */
 .section-quiz{background:var(--brown-deep);color:var(--cream);position:relative;overflow:hidden}

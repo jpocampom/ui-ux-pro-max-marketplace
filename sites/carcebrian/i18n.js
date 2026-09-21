@@ -15,8 +15,8 @@ window.I18N = {
     nav: { method: "Método", services: "Servicios", pricing: "Precios", about: "Carlota", faq: "FAQ", cta: "Primera sesión gratis" },
     hero: {
       eyebrow: "Dirección estética 1:1 · Método CAR",
-      title: "Un hogar que se sienta <em>tuyo</em>.<br>Con criterio.",
-      lead: "No sigo tendencias ni impongo un estilo. Te ayudo a descubrir el tuyo y a tomar cada decisión con claridad, desde el último detalle hasta la transformación integral de tu casa.",
+      title: "Tu casa, por fin <em>terminada</em>.",
+      lead: "Dejas de dudar, dejas de comprar muebles que no pegan y empiezas a vivir una casa que parece tuya. Con criterio, desde el último detalle hasta la transformación integral.",
       cta: "Reserva tu primera sesión gratis",
       cta2: "Descubre qué necesita tu casa",
       trust1: "Primera sesión gratuita, sin compromiso",
@@ -146,6 +146,14 @@ window.I18N = {
         { q: "¿Los precios incluyen el mobiliario?", a: "No. Los precios corresponden a la dirección estética (visión, plan, guía de compra y acompañamiento). El mobiliario y las compras son aparte y los adaptamos a tu presupuesto." }
       ]
     },
+    testimonials: {
+      eyebrow: "Lo que dicen sus clientas",
+      title: "Casas que ya han pasado por el método",
+      items: [
+        { q: "[TESTIMONIO REAL DE UNA CLIENTA · 2 o 3 líneas sobre cómo estaba su casa antes y qué cambió]", a: "[Nombre]", r: "[Ciudad] · [Servicio contratado]" },
+        { q: "[SEGUNDO TESTIMONIO REAL · lo que más valoró del acompañamiento de Carlota]", a: "[Nombre]", r: "[Ciudad] · [Servicio contratado]" }
+      ]
+    },
     final: { title: "Nos encantaría ayudarte a crear tu hogar", sub: "Empieza con una sesión gratuita. Sin compromiso, con criterio.", cta: "Reservar mi primera sesión" },
     footer: { tag: "Dirección estética · Método CAR", rights: "Todos los derechos reservados.", privacy: "Privacidad", legal: "Aviso legal" }
   },
@@ -161,8 +169,8 @@ window.I18N = {
     nav: { method: "Method", services: "Services", pricing: "Pricing", about: "Carlota", faq: "FAQ", cta: "Free first session" },
     hero: {
       eyebrow: "1:1 aesthetic direction · The CAR Method",
-      title: "A home that feels <em>yours</em>.<br>With intention.",
-      lead: "I don't follow trends or impose a style. I help you discover your own and make every decision with clarity, from the final detail to a full transformation of your home.",
+      title: "Your home, finally <em>finished</em>.",
+      lead: "Stop second-guessing, stop buying furniture that does not fit, and start living in a home that looks like you. With intention, from the final detail to a full transformation.",
       cta: "Book your free first session",
       cta2: "Find out what your home needs",
       trust1: "Free first session, no commitment",
@@ -292,6 +300,14 @@ window.I18N = {
         { q: "Do prices include furniture?", a: "No. Prices cover the aesthetic direction (vision, plan, shopping guide and support). Furniture and purchases are separate and we adapt them to your budget." }
       ]
     },
+    testimonials: {
+      eyebrow: "What her clients say",
+      title: "Homes that have already been through the method",
+      items: [
+        { q: "[REAL CLIENT TESTIMONIAL · 2 or 3 lines on how the home was before and what changed]", a: "[Name]", r: "[City] · [Service]" },
+        { q: "[SECOND REAL TESTIMONIAL · what they valued most about working with Carlota]", a: "[Name]", r: "[City] · [Service]" }
+      ]
+    },
     final: { title: "We'd love to help you create your home", sub: "Start with a free session. No commitment, with intention.", cta: "Book my first session" },
     footer: { tag: "Aesthetic direction · CAR Method", rights: "All rights reserved.", privacy: "Privacy", legal: "Legal notice" }
   },
@@ -307,8 +323,8 @@ window.I18N = {
     nav: { method: "Metodo", services: "Servizi", pricing: "Prezzi", about: "Carlota", faq: "FAQ", cta: "Prima sessione gratis" },
     hero: {
       eyebrow: "Direzione estetica 1:1 · Metodo CAR",
-      title: "Una casa che senti <em>tua</em>.<br>Con criterio.",
-      lead: "Non seguo le tendenze né impongo uno stile. Ti aiuto a scoprire il tuo e a prendere ogni decisione con chiarezza, dall'ultimo dettaglio alla trasformazione integrale della tua casa.",
+      title: "La tua casa, finalmente <em>finita</em>.",
+      lead: "Smetti di avere dubbi, smetti di comprare mobili che non stanno bene insieme e inizi a vivere una casa che ti somiglia. Con criterio, dall'ultimo dettaglio alla trasformazione integrale.",
       cta: "Prenota la tua prima sessione gratuita",
       cta2: "Scopri di cosa ha bisogno la tua casa",
       trust1: "Prima sessione gratuita, senza impegno",
@@ -436,6 +452,14 @@ window.I18N = {
         { q: "Se scelgo Riarredare o Progettare, pago Stilizzare a parte?", a: "No. La fase Stilizzare è inclusa senza costi aggiuntivi in Riarredare e Progettare." },
         { q: "Lavori online o di persona?", a: "Il Metodo CAR si svolge online, con sessioni 1:1 in videochiamata, e funziona allo stesso modo che tu sia a Madrid, Milano o Londra. Per i progetti integrali (Renacer) valutiamo caso per caso." },
         { q: "I prezzi includono l'arredo?", a: "No. I prezzi si riferiscono alla direzione estetica (visione, piano, guida agli acquisti e accompagnamento). Arredo e acquisti sono a parte e li adattiamo al tuo budget." }
+      ]
+    },
+    testimonials: {
+      eyebrow: "Cosa dicono le sue clienti",
+      title: "Case che sono già passate dal metodo",
+      items: [
+        { q: "[TESTIMONIANZA REALE DI UNA CLIENTE · 2 o 3 righe su com'era la casa prima e cosa è cambiato]", a: "[Nome]", r: "[Città] · [Servizio]" },
+        { q: "[SECONDA TESTIMONIANZA REALE · cosa ha apprezzato di più del percorso con Carlota]", a: "[Nome]", r: "[Città] · [Servizio]" }
       ]
     },
     final: { title: "Ci piacerebbe aiutarti a creare la tua casa", sub: "Inizia con una sessione gratuita. Senza impegno, con criterio.", cta: "Prenota la mia prima sessione" },
